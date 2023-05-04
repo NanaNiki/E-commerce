@@ -1,6 +1,10 @@
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
+import NavBar from './NavBar';
+import Start from './Start';
 
-const inter = Inter({ subsets: ['latin'] })
+{/* import { Castoro_Titling } from "next/font/google";
+const castoroT = Castoro_Titling({ subsets: ["latin"], weight: ["400"] }); */}
+const inter = Inter({ subsets: ["latin"], weight: ["300"] });
 
 export function observeScroll(elements) {
   const observer = new IntersectionObserver((entries) => {
@@ -19,8 +23,10 @@ export function observeScroll(elements) {
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-5 bg-stone-400 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between p-5 bg-gradient-to-b from-stone-200 to-stone-300 text-stone-800 ${inter.className}`}
     >
+    <NavBar />
+    <Start />  
     </main>
   )
 }
