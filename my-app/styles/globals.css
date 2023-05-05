@@ -13,6 +13,15 @@
   }
 }
 
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-2 bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-stone-600 bg-opacity-50;
+  }
+}
+
 /*
 .hover-line-through {
   animation: fade-in 0.5s ease-in-out forwards;
@@ -22,3 +31,9 @@
   @apply opacity-60 transition-all translate-x-0 duration-300 blur-0 ease-in;
 }
 
+@media (max-width: 640px) {
+  .special-main-nav-hide {
+    @apply hidden
+  }
+  
+}

@@ -23,7 +23,7 @@ export function observeScroll(elements) {
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-5 bg-gradient-to-b from-stone-200 to-stone-300 text-stone-800 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between bg-gradient-to-b from-stone-200 to-stone-300 text-stone-800 ${inter.className}`}
     >
     <NavBar />
     <Start />  
