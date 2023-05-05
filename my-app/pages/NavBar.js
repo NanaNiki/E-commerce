@@ -4,7 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function NavBar() {
-  const [isMiniNavOpen, setIsMiniNavOpen] = useState(false);
+  const [isMiniNavActive, setIsMiniNavActive] = useState(true);
+
+  const toggleMiniNav = () => {
+    setIsMiniNavActive((prev) => !prev);
+  };
 
   return (
     <>
@@ -16,26 +20,41 @@ export default function NavBar() {
           height={200}
           className="ms-2"
         />
-        <section className="mobile-nav flex flex-col justify-between items-center bg-stone-400 opacity-20 lg:hidden">
-          <RxHamburgerMenu
-            onClick={() => setIsMiniNavOpen((prev) => !prev)}
-            className="text-stone-800"
-          />
-          <div className="flex flex-row justify-end me-2">
-            <RxMagnifyingGlass className="my-auto mx-2 w-4 h-4 text-stone-700 cursor-pointer" />
-            <BsCart2 className="my-auto mx-2 w-4 h-4 text-stone-700 cursor-pointer" />
+        <button
+          onClick={toggleMiniNav}
+          className="text-stone-800 cursor-pointer flex flex-row w-screen justify-end z-20 m-auto me-10 lg:hidden md:hidden sm:hidden"
+        >
+          {isMiniNavActive ? <RxCross1 /> : <RxHamburgerMenu />}
+        </button>
+        <div
+          className={`special-mobile-nav absolute right-0 pt-12 flex flex-col justify-center ${
+            isMiniNavActive ? "visible" : "invisible"
+          }`}
+        >
+          <div className="flex flex-col justify-between items-center h-full w-full p-4 bg-stone-300 bg-opacity-100 lg:hidden md:hidden sm:hidden">
+            <div className="flex flex-row justify-end m-4">
+              <RxMagnifyingGlass className=" mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
+              <BsCart2 className="mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
+            </div>
+            <ul className="flex flex-col justify-evenly">
+              <li>
+                <a className="transition hover:text-stone-500 cursor-pointer">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="transition hover:text-stone-500 cursor-pointer">
+                  Catalogue
+                </a>
+              </li>
+              <li>
+                <a className=" transition hover:text-stone-500 cursor-pointer">
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul className="flex flex-col">
-            <li>Home</li>
-            <li>Catalogue</li>
-            <li>Contact</li>
-          </ul>
-          <RxCross1
-            onClick={() => setIsMiniNavOpen(false)}
-            className="text-stone-800"
-          />
-        </section>
-        {/** isMiniNavOpen ? "showMobileNav" : "hideMobileNav" */}
+        </div>
         <div className="special-main-nav-hide flex flex-row w-full">
           <ul className="lg:mx-28 w-full flex flex-row m-auto justify-evenly">
             <li className="flex flex-col justify-around has-tooltip">
@@ -57,9 +76,9 @@ export default function NavBar() {
               </a>
             </li>
           </ul>
-          <div className="flex flex-row justify-end me-2">
-            <RxMagnifyingGlass className="my-auto mx-2 w-6 h-6 text-stone-400 cursor-pointer hover:text-stone-800" />
-            <BsCart2 className="my-auto mx-2 w-6 h-6 text-stone-400 cursor-pointer hover:text-stone-800" />
+          <div className="flex flex-row justify-end me-7">
+            <RxMagnifyingGlass className="my-auto me-4 w-6 h-6 text-stone-400 cursor-pointer hover:text-stone-800" />
+            <BsCart2 className="my-auto me-5 w-6 h-6 text-stone-400 cursor-pointer hover:text-stone-800" />
           </div>
         </div>
       </nav>

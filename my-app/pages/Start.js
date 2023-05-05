@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { Castoro } from "next/font/google";
-
-const castoro = Castoro({ subsets: ["latin"], weight: ["400"] });
+import { castoro } from "./index.js";
 
 export default function Start() {
   return (
@@ -25,14 +23,18 @@ export default function Start() {
             </a>
           </span>
         </div>
-        <div className="z-10 flex flex-col justify-center w-[700px] h-[350px] bg-white absolute top-52">
-          <h1 className={`${castoro.className} text-5xl text-center`}>
+        <div className="z-10 flex flex-col justify-center lg:w-[700px] lg:h-[350px] p-8 bg-white absolute top-52 special-w-screen">
+          <h1
+            className={`${castoro.className} mt-3 lg:text-5xl sm:text-3xl text-center special-text-3xl`}
+          >
             Find perfect plants
           </h1>
-          <h1 className={`${castoro.className} text-5xl text-center`}>
+          <h1
+            className={`${castoro.className} mb-3 lg:text-5xl sm:text-3xl text-center special-text-3xl`}
+          >
             for your home
           </h1>
-          <h2 className="text-center mt-10 mb-5">
+          <h2 className="text-center mt-5 mb-5 special-text-sm">
             Beautiful plants that encourage you to get creative.
           </h2>
           <button className="mt-4 p-2 mx-auto cursor-pointer bg-black w-40 h-10 text-white text-sm font-bold hover:bg-stone-900 hover:animate-pulse">

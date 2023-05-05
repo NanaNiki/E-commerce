@@ -1,10 +1,13 @@
-import { Inter } from "next/font/google";
 import NavBar from './NavBar';
 import Start from './Start';
+import { Inter } from "next/font/google";
+import { Castoro } from "next/font/google";
+import { Castoro_Titling } from "next/font/google";
 
-{/* import { Castoro_Titling } from "next/font/google";
-const castoroT = Castoro_Titling({ subsets: ["latin"], weight: ["400"] }); */}
-const inter = Inter({ subsets: ["latin"], weight: ["300"] });
+export const inter = Inter({ subsets: ["latin"], weight: ["300"], variable: "--font-inter" });
+export const castoro = Castoro({ subsets: ["latin"], weight: ["400"], variable: "--font-castoro" });
+export const castoroT = Castoro_Titling({ subsets: ["latin"], weight: ["400"], variable: "--font-castotoT" });
+
 
 export function observeScroll(elements) {
   const observer = new IntersectionObserver((entries) => {

@@ -6,11 +6,17 @@
   0% {
     opacity: 0;
     transform: scaleX(0);
+    filter:blur(20%)
   }
   100% {
     opacity: 1;
     transform: scaleX(1);
+    filter: blur(0%);
   }
+}
+
+.special-mobile-nav {
+  animation: fade-in 0.5s ease forwards;
 }
 
 @layer utilities {
@@ -34,6 +40,15 @@
 @media (max-width: 640px) {
   .special-main-nav-hide {
     @apply hidden
+  }
+  .special-text-3xl {
+    @apply text-3xl
+  }
+  .special-text-sm {
+    @apply text-sm
+  }
+  .special-w-screen {
+    @apply w-screen
   }
   
 }
