@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function NavBar() {
-  const [isMiniNavActive, setIsMiniNavActive] = useState(true);
+  const [isMiniNavActive, setIsMiniNavActive] = useState(false);
 
   const toggleMiniNav = () => {
     setIsMiniNavActive((prev) => !prev);

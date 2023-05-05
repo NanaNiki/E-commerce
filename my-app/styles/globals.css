@@ -6,7 +6,7 @@
   0% {
     opacity: 0;
     transform: scaleX(0);
-    filter:blur(20%)
+    filter: blur(20%);
   }
   100% {
     opacity: 1;
@@ -21,10 +21,10 @@
 
 @layer utilities {
   ::-webkit-scrollbar {
-    @apply w-2 bg-transparent;
+    @apply w-2 h-2 bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-stone-600 bg-opacity-50;
+    @apply rounded-full bg-stone-500 bg-opacity-50;
   }
 }
 
@@ -39,16 +39,15 @@
 
 @media (max-width: 640px) {
   .special-main-nav-hide {
-    @apply hidden
+    @apply hidden;
   }
   .special-text-3xl {
-    @apply text-3xl
+    @apply text-3xl;
   }
   .special-text-sm {
-    @apply text-sm
+    @apply text-sm;
   }
   .special-w-screen {
-    @apply w-screen
+    @apply w-screen;
   }
-  
 }
