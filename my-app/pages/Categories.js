@@ -22,33 +22,27 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="h-full flex flex-col" id="categories">
-      <div className="relative w-full flex flex-row justify-start ps-16 pt-16">
-        <h1
-          className={` lg:text-5xl sm:text-3xl font-bold ${castoro.className}`}
-        >
-          Categories
-        </h1>
-      </div>
+    <section className="h-full flex flex-col" >
 
-      <div className="flex overflow-x-scroll scroll-smooth lg:flex-nowrap lg:ms-48">
+      <div className="flex overflow-x-scroll scroll-smooth lg:flex-nowrap justify-between mx-10 pt-5" id="categories">
         {categories.map((category, index) => {
           return (
             <span
               key={index}
-              className="inline-flex flex-col lg:flex-shrink-0 me-20"
+              className="inline-flex flex-col"
             >
-              <label
-                className={` z-20 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl p-3 mx-auto ${castoro.className}`}
+             <label
+                className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 text-2xl p-3 mx-auto ${castoro.className}`}
               >
                 {category.name}
               </label>
               <Image
                 src={category.src}
-                width={380}
-                height={500}
+                width={280}
+                height={400}
                 className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"
               />
+              
             </span>
           );
         })}

@@ -44,9 +44,11 @@ export default function Home() {
       <Start />
       <DynamicCategories />
       <DynamicFeatured />
+      <DynamicBlog />
     </main>
   );
 }
 
 const DynamicCategories = dynamic(() => import("./Categories"), { ssr: false });
 const DynamicFeatured = dynamic(() => import("./Featured"), { ssr: false });
+const DynamicBlog = dynamic(() => import("./Blog"), { ssr: false });

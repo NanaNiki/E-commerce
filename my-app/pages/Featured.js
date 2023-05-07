@@ -22,7 +22,7 @@ const plants = [
 export default function Featured() {
   return (
     <section className="h-full w-full" id="featured">
-      <div className="w-full flex flex-col justify-center m-auto lg:pt-32 lg:pb-20">
+      <div className="w-full flex flex-col justify-center m-auto p-32 ">
         <h1
           className={` lg:text-4xl sm:text-2xl text-center mb-3 ${castoro.className}`}
         >
@@ -66,7 +66,7 @@ export default function Featured() {
                   className="inline-block hover:scale-95 ease-in-out duration-300"
                 />
                 <label
-                  className={` lg:text-xl text-end pb-3 ${castoro.className}`}
+                  className={` lg:text-xl text-end ${castoro.className}`}
                 >
                   <div className="flex flex-row justify-between p-2">
                     <h5>{plant.name}</h5> <h5>{plant.price}</h5>

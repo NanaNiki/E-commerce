@@ -42,6 +42,12 @@ export default function Start() {
           <BsChevronDoubleDown className="text-stone-300 w-10 h-10 hover:text-white" />
         </a>
       </div>
+      <div className=" z-10 relative -translate-y-full w-full h-fit py-10 bg-white"></div>
+      <h1
+          className={` z-10 relative -translate-y-full flex flex-row justify-center lg:text-5xl sm:text-3xl font-bold ${castoro.className}`}
+        >
+          Categories
+        </h1>
     </section>
   );
 }
