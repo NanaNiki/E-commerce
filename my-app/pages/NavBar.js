@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="z-20 fixed top-0 left-0 h-14 w-full p-2 flex flex-row bg-white">
+      <nav className="z-20 fixed top-0 left-0 h-14 w-screen p-2 flex flex-row bg-white">
         <Image
           src="/plantealogo.svg"
           alt="logo"
@@ -55,10 +55,13 @@ export default function NavBar() {
             </ul>
           </div>
         </div>
-        <div className="special-main-nav-hide flex flex-row w-full">
+        <div className="special-hidden flex flex-row w-full">
           <ul className="lg:mx-28 w-full flex flex-row m-auto justify-evenly">
             <li className="flex flex-col justify-around has-tooltip">
-              <a className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer">
+              <a
+                className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer"
+                href="/#start"
+              >
                 Home
                 <span className="underline-special flex w-full h-[0.5px] bg-stone-500 rounded-full opacity-0 -translate-x-full blur-sm"></span>
               </a>

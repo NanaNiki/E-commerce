@@ -4,7 +4,7 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Start() {
   return (
-    <section className="w-full h-full overflow-hidden" id="start">
+    <section className="w-screen h-full overflow-hidden" id="start">
       <Image src="/planthero.jpg" width={1400} height={200} className="mt-5" />
       <span className="hidden">
         Photo by{" "}
@@ -42,12 +42,12 @@ export default function Start() {
           <BsChevronDoubleDown className="text-stone-300 w-10 h-10 hover:text-white" />
         </a>
       </div>
-      <div className=" z-10 relative -translate-y-full w-full h-fit py-10 bg-white"></div>
+      <div className="special-hidden z-10 relative -translate-y-full w-full h-fit py-10 bg-white"></div>
       <h1
-          className={` z-10 relative -translate-y-full flex flex-row justify-center lg:text-5xl sm:text-3xl font-bold ${castoro.className}`}
-        >
-          Categories
-        </h1>
+        className={` z-10 relative -translate-y-full flex flex-row justify-center lg:text-5xl sm:text-3xl font-bold ${castoro.className}`}
+      >
+        Categories
+      </h1>
     </section>
   );
 }

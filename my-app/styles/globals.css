@@ -38,16 +38,37 @@
 }
 
 @media (max-width: 640px) {
-  .special-main-nav-hide {
+  .special-hidden {
     @apply hidden;
   }
   .special-text-3xl {
     @apply text-3xl;
   }
+  .special-text-2xl {
+    @apply text-2xl;
+  }
   .special-text-sm {
     @apply text-sm;
   }
+  .special-text-xs {
+    @apply text-xs;
+  }
   .special-w-screen {
     @apply w-screen;
+  }
+  .special-flex-wrap {
+    @apply flex-wrap;
+  }
+  .special-p-10{
+    @apply p-10
+  }
+  .special-p-5 {
+    @apply p-5;
+  }
+  .special-p-2 {
+    @apply p-2;
+  }
+  .special-my-4 {
+    @apply my-4;
   }
 }
