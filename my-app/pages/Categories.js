@@ -3,19 +3,19 @@ import Image from "next/image.js";
 
 const categories = [
   {
-    src: "/jungle.jpg",
+    image: "/jungle.jpg",
     name: "Jungle Plants",
   },
   {
-    src: "/outdoors.jpg",
+    image: "/outdoors.jpg",
     name: "Outdoor Plants",
   },
   {
-    src: "/bedroom.jpg",
+    image: "/bedroom.jpg",
     name: "Bedroom Plants",
   },
   {
-    src: "/minimal.jpg",
+    image: "/minimal.jpg",
     name: "Minimalistic Plants",
   },
 ];
@@ -37,7 +37,7 @@ export default function Categories() {
                 {category.name}
               </label>
               <Image
-                src={category.src}
+                src={category.image}
                 width={280}
                 height={400}
                 className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"

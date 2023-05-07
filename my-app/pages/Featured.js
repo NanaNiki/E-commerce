@@ -3,17 +3,17 @@ import Image from "next/image.js";
 
 const plants = [
   {
-    src: "/plant1.jpg",
+    image: "/plant1.jpg",
     name: "Friedrich",
     price: "150€",
   },
   {
-    src: "/plant2.jpg",
+    image: "/plant2.jpg",
     name: "Mary Katie",
     price: "50€",
   },
   {
-    src: "/plant3.jpg",
+    image: "/plant3.jpg",
     name: "Bulbazie",
     price: "100€",
   },
@@ -60,7 +60,7 @@ export default function Featured() {
                 className="inline-flex flex-col lg:flex-shrink-0 me-8"
               >
                 <Image
-                  src={plant.src}
+                  src={plant.image}
                   width={270}
                   height={500}
                   className="inline-block hover:scale-95 ease-in-out duration-300"

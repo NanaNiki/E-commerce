@@ -1,28 +1,14 @@
 import { castoro } from "./index.js";
 import { inter } from "./index.js";
 import Image from "next/image";
+import Link from "next/link.js";
+import posts from "./post/posts.json";
 
-const posts = [
-  {
-    id: 1,
-    title: "How to water your freaking plants so they don't die after one week",
-    src: "/post1.jpg",
-    date: "2/4/2023",
-    author: "Mellissa Bail",
-  },
-  {
-    id: 2,
-    title: "How to repot a Monstera without killing it and foster its growth",
-    src: "/post2.jpg",
-    date: "1/3/2023",
-    author: "Jesse Rowe",
-  },
-];
 
 export default function Blog() {
   return (
     <>
-      <div className="flex flex-row justify-center p-10 pt-0">
+      <div className="flex flex-row justify-center p-10 pt-0" id="blog">
         {posts.map((post, index) => {
           return (
             <span key={index} className="flex flex-col p-10">
@@ -33,13 +19,13 @@ export default function Blog() {
                 <h5 className="text-base text-stone-600 italic">Written by</h5>
                 <h5 className="text-xl"> {post.author}</h5>
               </label>
-
+              <Link href={`/post/${post.id}`} passHref>
               <Image
-                src={post.src}
+                src={post.image}
                 width={550}
                 height={300}
                 className="inline-block hover:scale-95 ease-in-out duration-300"
-              />
+              /></Link>
 
               <div
                 className={` flex flex-col justify-between py-2 text-start ${castoro.className}`}
@@ -47,9 +33,11 @@ export default function Blog() {
                 <h5 className="text-end text-base text-stone-600 italic">
                   {post.date}
                 </h5>
+                <Link href={`/post/${post.id}`} passHref>
                 <h5 className="text-xl w-[70%] hover:scale-95 ease-in-out duration-300">
                   {post.title}
                 </h5>
+                </Link>
               </div>
             </span>
           );
