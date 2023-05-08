@@ -8,20 +8,20 @@ export default function PostCard({ posts }) {
   return (
     <>
       <NavBar />
-      <div className="relative flex flex-row justify-center mt-14 lg:flex-nowrap md:flex-nowrap flex-wrap">
+      <div className="relative flex flex-row justify-center mt-14 lg:flex-nowrap flex-wrap">
         <Image
           src={posts.image}
           width={900}
           height={400}
-          className="mb-4"
-          alt="three plants o the table with a watering pot"
+          className="mb-4 w-screen"
+          alt={posts.alt}
           priority
         />
         <div
           className={`flex flex-col text-end justify-center p-10 ${castoro.className}`}
         >
           <h1
-            className={`lg:text-4xl special-text-3xl text-start my-auto ${castoro.className}`}
+            className={`lg:text-4xl text-3xl text-start my-auto ${castoro.className}`}
           >
             {posts.title}
           </h1>
@@ -37,7 +37,7 @@ export default function PostCard({ posts }) {
         {posts.sections.map((section, index) => (
           <div key={index} className="lg:w-1/2">
             <h2
-              className={`lg:text-3xl special-text-2xl lg:p-16 special-p-10 text-center ${castoro.className}`}
+              className={`lg:text-3xl text-2xl lg:p-16 p-10 text-center ${castoro.className}`}
             >
               {section.sectiontitle}
             </h2>

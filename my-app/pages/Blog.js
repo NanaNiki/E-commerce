@@ -10,14 +10,15 @@ export default function Blog() {
       <section className="flex flex-row justify-center" id="blog">
         {posts.map((post, index) => {
           return (
-            <span key={index} className="flex flex-col md:px-8 sm:px-4 special-px-2">
+            <span
+              key={index}
+              className="flex flex-col justify-center lg:px-8 md:px-6 px-2"
+            >
               <label
-                className={`z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 py-3 lg:px-20 md:px-10 special-text-sm special-p-2 ${castoro.className}`}
+                className={`z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 py-3 p-2 lg:px-20 md:px-10 lg:text-base md:text-lg text-xs ${castoro.className}`}
               >
                 {" "}
-                <h5 className="lg:text-base text-stone-600 italic">
-                  Written by
-                </h5>
+                <h5 className="text-stone-600 italic">Written by</h5>
                 <h5 className="lg:text-xl"> {post.author}</h5>
               </label>
               <Link href={`/post/${post.id}`} passHref>
@@ -25,18 +26,21 @@ export default function Blog() {
                   src={post.image}
                   width={530}
                   height={300}
-                  className="hover:scale-95 ease-in-out duration-300"
+                  alt={post.alt}
+                  className="block hover:scale-95 ease-in-out duration-300"
                 />
-                <label className="flex flex-col">
+                <div className="w-full max-w-[530px]">
                   <h6
-                    className={`text-base text-stone-600 italic special-text-xs ${castoro.className}`}
-                  >{post.date}
+                    className={`lg:text-base md:text-base text-xs text-end text-stone-600 italic ${castoro.className}`}
+                  >
+                    {post.date}
                   </h6>
-                  <h4
-                    className={`lg:text-2xl md:text-xl lg:w-[70%] hover:scale-95 ease-in-out duration-300 special-text-sm  ${castoro.className}`}
-                  >{post.title}
-                  </h4>
-                </label>
+                  <h3
+                    className={`lg:text-2xl md:text-xl sm:text-lg text-sm hover:scale-95 ease-in-out duration-300 ${castoro.className}`}
+                  >
+                    {post.title}
+                  </h3>
+                </div>
               </Link>
             </span>
           );

@@ -15,9 +15,6 @@
   }
 }
 
-.special-mobile-nav {
-  animation: fade-in 0.5s ease forwards;
-}
 
 @layer utilities {
   ::-webkit-scrollbar {
@@ -28,65 +25,6 @@
   }
 }
 
-/*
-.hover-line-through {
-  animation: fade-in 0.5s ease-in-out forwards;
-}  */
-
-.has-tooltip:hover .underline-special {
+.has-tooltip:hover .underline-animation {
   @apply opacity-60 transition-all translate-x-0 duration-300 blur-0 ease-in;
-}
-
-@media (max-width: 640px) {
-  .special-start-message-box{
-    @apply w-8/12 h-1/6 absolute top-32 p-4 pb-3 items-end
-  }
-  .special-small-button {
-    @apply text-xs w-20 h-6 py-1 font-extralight
-  }
-  .special-hidden {
-    @apply hidden;
-  }
-  .special-text-3xl {
-    @apply text-3xl;
-  }
-  .special-text-2xl {
-    @apply text-2xl;
-  }
-  .special-text-xl{
-    @apply text-xl;
-  }
-  .special-text-lg{
-    @apply text-lg;
-  }
-  .special-text-base{
-    @apply text-base;
-  }
-  .special-text-sm {
-    @apply text-sm;
-  }
-  .special-text-xs {
-    @apply text-xs;
-  }
-  .special-w-screen {
-    @apply w-screen;
-  }
-  .special-p-10{
-    @apply p-10
-  }
-  .special-p-5 {
-    @apply p-5;
-  }
-  .special-p-2 {
-    @apply p-2;
-  }
-  .special-px-2{
-    @apply px-2
-  }
-  .special-my-4 {
-    @apply my-4;
-  }
-  .special-mx-4 {
-    @apply mx-4
-  }
 }
