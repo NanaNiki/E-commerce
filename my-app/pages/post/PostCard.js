@@ -1,20 +1,20 @@
+import { castoro } from "../index.js";
 import Image from "next/image";
 import Link from "next/link";
-import { castoro } from "../index.js";
-import { inter } from "../index.js";
 import NavBar from "../NavBar";
+import Footer from "../Footer.js";
 
 export default function PostCard({ posts }) {
   return (
     <>
       <NavBar />
-      <div className="relative flex flex-row justify-center mt-14 special-flex-wrap">
+      <div className="relative flex flex-row justify-center mt-14 lg:flex-nowrap md:flex-nowrap flex-wrap">
         <Image
           src={posts.image}
           width={900}
           height={400}
           className="mb-4"
-          alt={posts.title}
+          alt="three plants o the table with a watering pot"
           priority
         />
         <div
@@ -44,33 +44,16 @@ export default function PostCard({ posts }) {
             <p className="lg:text-lg">{section.content}</p>
           </div>
         ))}
-        <Link href="/#blog" passHref>
-          <button className="my-10 lg:text-2xl sm:text-xl text-center bg-stone-300  w-40 h-10 hover:text-stone-500">
-            Back
-          </button>
+        <Link
+          href="/#blog"
+          passHref
+          className="mt-10 lg:text-xl sm:text-lg text-center py-auto bg-stone-300 lg:w-32 h-8 p-0.5 w-20 hover:text-stone-500"
+        >
+          Back
         </Link>
       </div>
 
-      <div
-        className={`flex flex-col justify-between p-4 text-center lg:text-3xl sm:text-xl  ${castoro.className} `}
-        id="newsletter"
-      >
-        <h2 className="lg:p-2">Get 15% off your next order,</h2>
-        <h2 className="pb-2">Subscribe to our Newsletter</h2>
-
-        <div className="relative flex flex-row justify-center m-auto lg:p-10 sm:flex-wrap special-flex-wrap">
-          <input
-            type="email"
-            className="ps-2 lg:pe-72 lg:h-10 bg-neutral-200 text-stone-950 text-base mb-4"
-            placeholder="Enter your email here"
-          ></input>
-          <button
-            className={` mx-auto cursor-pointer bg-black w-40 h-10 text-white text-sm hover:bg-stone-700 ${inter.className}`}
-          >
-            SUBSCRIBE
-          </button>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }
