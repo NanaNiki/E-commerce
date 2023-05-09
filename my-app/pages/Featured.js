@@ -1,23 +1,7 @@
 import { castoro } from "./index.js";
 import Image from "next/image.js";
-
-const plants = [
-  {
-    image: "/plant1.jpg",
-    name: "Friedrich",
-    price: "150€",
-  },
-  {
-    image: "/plant2.jpg",
-    name: "Mary Katie",
-    price: "50€",
-  },
-  {
-    image: "/plant3.jpg",
-    name: "Bulbazie",
-    price: "100€",
-  },
-];
+import plants from "./product/plants.json";
+import Link from "next/link.js";
 
 export default function Featured() {
   return (
@@ -53,6 +37,7 @@ export default function Featured() {
                 key={index}
                 className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
               >
+              <Link href={`/product/${plant.id}`} passHref>
                 <Image
                   src={plant.image}
                   width={270}
@@ -65,6 +50,7 @@ export default function Featured() {
                 >
                   <h5>{plant.name}</h5> <h5>{plant.price}</h5>
                 </div>
+                </Link>
               </span>
             );
           })}
