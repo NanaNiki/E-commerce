@@ -3,103 +3,120 @@
     "id": 1,
     "image": "/plant1.jpg",
     "name": "Friedrich",
-    "price": "150€"
+    "price": "150€",
+    "favourites": true
   },
   {
     "id": 2,
     "image": "/plant2.jpg",
     "name": "Mary Katie",
-    "price": "50€"
-  },
+    "price": "50€",
+    "favourites": true  
+},
   {
     "id": 3,
     "image": "/plant3.jpg",
     "name": "Bulbazie",
-    "price": "100€"
+    "price": "100€",
+    "favourites": true
   },
   {
     "id": 4,
     "image": "/plant4.jpg",
     "name": "Frankie",
-    "price": "40€"
-  },
+    "price": "40€",
+    "favourites": false  
+},
   {
     "id": 5,
     "image": "/plant5.jpg",
     "name": "Louise",
-    "price": "300€"
+    "price": "300€",
+    "favourites": false
   }, 
   {
     "id": 6,
     "image": "/plant6.jpg",
     "name": "Georgie",
-    "price": "25€"
-  }, 
+    "price": "25€",
+    "favourites": false  
+}, 
   {
     "id": 7,
     "image": "/plant7.jpg",
     "name": "Bonzo",
-    "price": "150€"
+    "price": "150€",
+    "favourites": true
   },
   {
     "id": 8,
     "image": "/plant8.jpg",
     "name": "Hyoshi",
-    "price": "300€"
+    "price": "300€",
+    "favourites": false
   }, 
   {
     "id": 9,
     "image": "/plant9.jpg",
     "name": "Katie",
-    "price": "150€"
+    "price": "150€",
+    "favourites": false
   },
   {
     "id": 10,
     "image": "/plant10.jpg",
     "name": "LouLou",
-    "price": "150€"
+    "price": "150€",
+    "favourites": false
   },
   {
     "id": 11,
     "image": "/plant11.jpg",
     "name": "Sia",
-    "price": "50€"
-  },
+    "price": "50€",
+    "favourites": false  
+},
   {
     "id": 12,
     "image": "/plant12.jpg",
     "name": "Katie",
-    "price": "150€"
+    "price": "150€",
+    "favourites": false
   },
   {
     "id": 13,
     "image": "/plant13.jpg",
     "name": "Hope",
-    "price": "30€"
-  },
+    "price": "30€",
+    "favourites": true  
+},
   {
     "id": 14,
     "image": "/plant14.jpg",
     "name": "Leafy",
-    "price": "20€"
-  },
+    "price": "20€",
+    "favourites": true  
+},
   {
     "id": 15,
     "image": "/plant15.jpg",
     "name": "Slyth",
-    "price": "30€"
-  },
+    "price": "30€",
+    "favourites": true  
+},
   {
     "id": 16,
     "image": "/plant16.jpg",
     "name": "Maggie",
-    "price": "15€"
-  }, 
+    "price": "15€",
+    "favourites": false  
+}, 
   {
     "id": 17,
     "image": "/plant17.jpg",
     "name": "Moonshine",
-    "price": "10€"
-  }
+    "price": "10€",
+    "favourites": false  
+}
 
 ]
