@@ -5,6 +5,7 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 export default function Start() {
   return (
     <section className="w-full h-full overflow-hidden" id="start">
+   
       <Image
         src="/planthero.jpg"
         width={1400}
@@ -37,19 +38,19 @@ export default function Start() {
         <h2 className="md:text-center md:text-base sm:text-sm text-xs lg:mt-5 lg:mb-5 p-1">
           Beautiful plants that encourage you to get creative.
         </h2>
-        <button className="lg:mt-4 p-2 py-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse">
+        <a className="text-center lg:mt-4 p-2 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse" href="/#categories" passHref>
           Shop Now
-        </button>
+        </a>
       </div>
       <a
-        href="#categories"
+        href="#scroll-down"
         className="transition-all duration-500 ease-out scroll-smooth flex flex-row w-full justify-center"
       >
         <BsChevronDoubleDown className="lg:block hidden z-10 absolute bottom-0 mb-6 w-10 h-10 text-stone-300 hover:text-white " />
       </a>
       <h1
-        className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:pt-16 md:pt-12 pt-10 pb-5 flex flex-row justify-center font-bold ${castoro.className}`}
-      >
+        className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:pt-20 md:pt-12 pt-10 pb-5 flex flex-row justify-center font-bold ${castoro.className}`}
+        id="categories">
         Categories
       </h1>
     </section>

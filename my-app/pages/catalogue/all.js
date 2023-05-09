@@ -16,21 +16,22 @@ export default function AllProducts() {
       >
         All Products
       </h1>
-      <div className="grid grid-cols-4 p-2 justify-center mx-auto px-10">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 p-2 justify-center mx-auto px-10 w-fit">
         {plantsData.map((plant, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="w-fit p-4">
               <Link href={`/product/${plant.id}`} passHref target="_parent">
                 <Image
                   src={plant.image}
                   width={150}
                   height={100}
-                  className="lg:mb-2"
+                  alt={`Plant product ${plant.name}`}
+                  className="lg:mb-2 inline-block hover:scale-95 ease-in-out duration-300"
                 />
                 <div
                   className={` flex flex-row justify-between p-1 text-end md:text-base sm:text-sm text-xs ${inter.className}`}
                 >
-                  <h5>{plant.name}</h5> <h5>{plant.price}</h5>
+                  <h5>{plant.name}</h5> <h5 className="font-bold">{plant.price}</h5>
                 </div>
               </Link>
             </div>

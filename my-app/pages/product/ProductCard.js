@@ -27,13 +27,13 @@ export default function ProductCard({ plantsData }) {
   return (
     <>
       <NavBar />
-      <div className="flex md:flex-row flex-col justify-center md:justify-between w-full lg:items-end items-center mt-14">
-        <div className="flex lg:flex-row-reverse flex-col lg:min-w-fit max-w-[400px] lg:p-10 pb-0">
+      <div className="flex md:flex-row flex-col w-full lg:items-end items-center mt-14">
+        <div className="flex lg:flex-row-reverse flex-col lg:min-w-fit max-w-[400px] lg:pt-10 mx-auto lg:ms-auto lg:mx-0">
           <Image
             src={plantsData.image}
             width={400}
             height={600}
-            alt={plantsData.alt}
+            alt={`Plant product ${plantsData.name}`}
             priority
           />
           <div
@@ -74,7 +74,8 @@ export default function ProductCard({ plantsData }) {
                     src={plant.image}
                     width={90}
                     height={100}
-                    className="lg:mb-4"
+                    className="lg:mb-4 hover:scale-95 ease-in-out duration-300"
+                    alt={`Plant product ${plant.name}`}
                   />
                 </Link>
               </div>
@@ -82,31 +83,31 @@ export default function ProductCard({ plantsData }) {
           </div>
         </div>
         <div
-          className={` md:flex hidden flex-col h-full m-auto ${castoro.className}`}
+          className={` md:flex hidden flex-col h-full me-auto lg:px-7 w-fit ${castoro.className}`}
         >
-          <h1 className="lg:text-4xl text-3xl lg:p-5">{plantsData.name}</h1>
-          <h3 className="text-5xl lg:p-10">{plantsData.price}</h3>
+          <h1 className="lg:text-4xl text-3xl">{plantsData.name}</h1>
+          <h3 className="text-5xl ">{plantsData.price}</h3>
 
-          <div className="flex flex-row justify-between lg:pt-32">
+          <div className="flex flex-row justify-between lg:pt-32 max-w-fit flex-shrink">
             <h5 className="px-5 lg:text-lg sm:text-base">Quantity</h5>
             <button
-              className="text-2xl text-center py-auto bg-stone-300 w-32 h-8 p-0.5 hover:text-stone-500"
+              className="text-2xl text-center py-auto bg-stone-300 w-28 h-8 p-0.5 hover:text-stone-500"
               onClick={() => addToCart("remove")}
             >
               -
             </button>
-            <div className="text-2xl text-center text-stone-800 py-auto bg-stone-300 w-32 h-8 p-0.5">
+            <div className="text-2xl text-center text-stone-800 py-auto bg-stone-300 w-28 h-8 p-0.5">
               {quantity}
             </div>
             <button
-              className="text-2xl text-center py-auto bg-stone-300 w-32 h-8 p-0.5 hover:text-stone-500"
+              className="text-2xl text-center py-auto bg-stone-300 w-28 h-8 p-0.5 hover:text-stone-500"
               onClick={() => addToCart("add")}
             >
               +
             </button>
           </div>
           <button
-            className={`m-3 mx-auto cursor-pointer bg-black w-full h-10 text-white text-sm hover:bg-stone-700 ${inter.className}`}
+            className={`m-3 mb-0 mx-auto cursor-pointer bg-black w-full h-10 text-white text-sm hover:bg-stone-700 ${inter.className}`}
           >
             ADD TO CARD
           </button>

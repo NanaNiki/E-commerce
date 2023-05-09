@@ -14,13 +14,15 @@ export default function NavBar() {
   return (
     <>
       <nav className="z-20 fixed top-0 left-0 h-14 w-screen p-2 flex flex-row bg-white">
-        <Image
-          src="/plantealogo.svg"
-          alt="logo"
-          width={200}
-          height={200}
-          className="ms-2"
-        />
+        <a href="/" passHref>
+          <Image
+            src="/plantealogo.svg"
+            alt="logo"
+            width={200}
+            height={200}
+            className="ms-2"
+          />
+        </a>
         <button
           onClick={toggleMiniNav}
           className="text-stone-800 cursor-pointer flex flex-row w-screen justify-end z-20 m-auto me-10 lg:hidden md:hidden sm:hidden"
@@ -68,7 +70,11 @@ export default function NavBar() {
               </a>
             </li>
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
-              <Link className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer" href={`/catalogue/AllProducts`}  passHref>
+              <Link
+                className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer"
+                href={`/catalogue/all`}
+                passHref
+              >
                 Catalogue
                 <span className="underline-animation flex w-full h-[0.5px] bg-stone-500 rounded-full opacity-0 -translate-x-full blur-sm"></span>
               </Link>

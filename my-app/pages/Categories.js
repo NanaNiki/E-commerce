@@ -29,7 +29,7 @@ export default function Categories() {
     <section className="relative h-full mb-5">
       <div
         className="flex overflow-x-scroll scroll-smooth lg:justify-center lg:pt-10"
-        id="categories"
+        id="scroll-down"
       >
         {categories.map((category, index) => {
           return (
