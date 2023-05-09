@@ -2,6 +2,7 @@ import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function NavBar() {
   const [isMiniNavActive, setIsMiniNavActive] = useState(false);
@@ -67,10 +68,10 @@ export default function NavBar() {
               </a>
             </li>
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
-              <a className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer">
+              <Link className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer" href={`/catalogue/AllProducts`}  passHref>
                 Catalogue
                 <span className="underline-animation flex w-full h-[0.5px] bg-stone-500 rounded-full opacity-0 -translate-x-full blur-sm"></span>
-              </a>
+              </Link>
             </li>
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
               <a className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer">

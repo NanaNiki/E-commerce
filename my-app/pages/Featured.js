@@ -1,6 +1,6 @@
 import { castoro } from "./index.js";
 import Image from "next/image.js";
-import plants from "./product/plants.json";
+import plantsData from "./product/plants.json";
 import Link from "next/link.js";
 
 export default function Featured() {
@@ -31,7 +31,7 @@ export default function Featured() {
           </button>
         </div>
         <div className="flex overflow-x-scroll scroll-smooth justify-center md:justify-start">
-          {plants.map((plant, index) => {
+          {plantsData.map((plant, index) => {
             return (
               <span
                 key={index}

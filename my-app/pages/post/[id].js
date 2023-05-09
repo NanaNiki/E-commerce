@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
-import posts from "./posts.json";
+import postsData from "./posts.json";
 import PostCard from "./PostCard";
 
 export default function PostPage() {
   const router = useRouter();
   const postId = parseInt(router.query.id);
-  const post = posts.find((post) => post.id === postId);
+  const post = postsData.find((post) => post.id === postId);
 
   if (!post) {
     return <div>Post not found</div>;
@@ -13,7 +13,7 @@ export default function PostPage() {
 
   return (
     <>
-      <PostCard posts={post} />
+      <PostCard postsData={post} />
     </>
   );
 }
