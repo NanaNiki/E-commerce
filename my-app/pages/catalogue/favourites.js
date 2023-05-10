@@ -2,8 +2,6 @@ import { castoro } from "../index.js";
 import { inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
-import NavBar from "../NavBar.js";
-import Footer from "../Footer.js";
 import plantsData from "../product/plants.json";
 import { BsSuitHeart } from "react-icons/bs";
 
@@ -26,7 +24,8 @@ export default function Favourites() {
             <div
               className={` flex flex-row lg:justify-between p-1 text-end md:text-base sm:text-sm text-xs ${inter.className}`}
             >
-              <h5 className="p1-2 lg:ps-0">{plant.name}</h5> <h5 className="font-bold ps-2 lg:ps-0">{plant.price}</h5>
+              <h5 className="p1-2 lg:ps-0">{plant.name}</h5>{" "}
+              <h5 className="font-bold ps-2 lg:ps-0">{plant.price}</h5>
             </div>
           </Link>
         </div>
@@ -36,17 +35,17 @@ export default function Favourites() {
 
   return (
     <div id="favourites">
-      <NavBar />
       <div
         className={` mt-14 flex flex-row w-fit mx-auto lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center lg:my-20 my-10 font-bold ${castoro.className}`}
         id="catalogue"
       >
-        Our Fa<BsSuitHeart  className="lg:w-7 lg:h-7 lg:mt-2 w-5 h-5 text-center mt-1.5"/>ourites
+        Our Fa
+        <BsSuitHeart className="lg:w-7 lg:h-7 lg:mt-2 w-5 h-5 text-center mt-1.5" />
+        ourites
       </div>
       <div className="flex flex-row overflow-x-scroll scroll-smooth justify-start mx-auto pb-10">
         {favTegCheck(plantsData)}
       </div>
-      <Footer />
     </div>
   );
 }

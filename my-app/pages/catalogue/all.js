@@ -2,14 +2,11 @@ import { castoro } from "../index.js";
 import { inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
-import NavBar from "../NavBar.js";
-import Footer from "../Footer.js";
 import plantsData from "../product/plants.json";
 
 export default function AllProducts() {
   return (
     <div className="p-5 mt-14">
-      <NavBar />
       <h1
         className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center my-10 font-bold ${castoro.className}`}
         id="catalogue"
@@ -31,14 +28,14 @@ export default function AllProducts() {
                 <div
                   className={` flex flex-row justify-between p-1 text-end md:text-base sm:text-sm text-xs ${inter.className}`}
                 >
-                  <h5>{plant.name}</h5> <h5 className="font-bold">{plant.price}</h5>
+                  <h5>{plant.name}</h5>{" "}
+                  <h5 className="font-bold">{plant.price}</h5>
                 </div>
               </Link>
             </div>
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 }

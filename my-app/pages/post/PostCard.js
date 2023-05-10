@@ -1,13 +1,10 @@
 import { castoro } from "../index.js";
 import Image from "next/image";
 import Link from "next/link";
-import NavBar from "../NavBar";
-import Footer from "../Footer.js";
 
 export default function PostCard({ postsData }) {
   return (
     <>
-      <NavBar />
       <div className="relative flex flex-row justify-center mt-14 lg:flex-nowrap flex-wrap">
         <Image
           src={postsData.image}
@@ -52,8 +49,6 @@ export default function PostCard({ postsData }) {
           Back
         </Link>
       </div>
-
-      <Footer />
     </>
   );
 }

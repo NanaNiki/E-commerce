@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import Start from "./Start";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
@@ -40,7 +39,6 @@ export default function Home() {
     <main
       className={` min-h-screen bg-white text-stone-800 ${inter.className}`}
     >
-      <NavBar />
       <Start />
       <DynamicCategories />
       <DynamicFeatured />

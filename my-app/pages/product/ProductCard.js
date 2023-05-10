@@ -2,8 +2,6 @@ import { castoro } from "../index.js";
 import { inter } from "../index.js";
 import { useState } from "react";
 import Image from "next/image";
-import NavBar from "../NavBar.js";
-import Footer from "../Footer.js";
 import plants from "./plants.json";
 import Link from "next/link.js";
 
@@ -26,7 +24,6 @@ export default function ProductCard({ plantsData }) {
 
   return (
     <>
-      <NavBar />
       <div className="flex md:flex-row flex-col w-full lg:items-end items-center mt-14">
         <div className="flex lg:flex-row-reverse flex-col lg:min-w-fit max-w-[400px] lg:pt-10 mx-auto lg:ms-auto lg:mx-0">
           <Image
@@ -113,7 +110,6 @@ export default function ProductCard({ plantsData }) {
           </button>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

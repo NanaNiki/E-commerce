@@ -2,7 +2,6 @@ import { castoro } from "./index.js";
 import Image from "next/image";
 import Link from "next/link.js";
 import posts from "./post/posts.json";
-import Footer from "./Footer.js";
 
 export default function Blog() {
   return (
@@ -46,7 +45,6 @@ export default function Blog() {
           );
         })}
       </section>
-      <Footer />
     </>
   );
 }

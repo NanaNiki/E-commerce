@@ -4,8 +4,7 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Start() {
   return (
-    <section className="w-full h-full overflow-hidden" id="start">
-   
+    <section className="w-full h-full overflow-hidden" id="start">   
       <Image
         src="/planthero.jpg"
         width={1400}
