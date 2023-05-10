@@ -24,7 +24,7 @@ export default function Featured() {
                 <div
                   className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
                 >
-                  <h5>{plant.name}</h5> <h5>{plant.price}</h5>
+                  <h5>{plant.name}</h5> <h5>{plant.price}€</h5>
                 </div>
                 </Link>
               </span>
@@ -62,7 +62,7 @@ export default function Featured() {
           {favTegCheck(plantsData)}
         </div>
         <div className="flex flex-row w-screen justify-end lg:hidden md:hidden sm:hidden">
-        <Link className="m-4 cursor-pointer bg-stone-200 w-40 h-10 text-xs font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200" href={'/catalogue/favourites'} passHref>
+        <Link className="m-4 pt-3 text-center cursor-pointer bg-stone-200 w-40 h-10 text-xs font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200" href={'/catalogue/favourites'} passHref>
             Shop all Favourites
           </Link>
         </div>

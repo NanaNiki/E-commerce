@@ -14,7 +14,7 @@ export default function NavBar() {
   return (
     <>
       <nav className="z-20 fixed top-0 left-0 h-14 w-screen p-2 flex flex-row bg-white">
-        <a href="/" passHref>
+        <a href="/" passhref>
           <Image
             src="/plantealogo.svg"
             alt="logo"

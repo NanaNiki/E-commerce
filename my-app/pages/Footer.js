@@ -29,7 +29,7 @@ const footertags = [
 
 export default function Footer() {
   return (
-    <footer className="footer lg:pt-16">
+    <footer className="footer lg:pt-16 relative w-full">
       <div
         className={`flex flex-col justify-between p-5 pb-4 text-center lg:text-3xl sm:text-xl  ${castoro.className} `}
         id="newsletter"
@@ -53,7 +53,9 @@ export default function Footer() {
       </div>
       <div className="flex flex-row justify-between sm:p-5 pb-3">
         <div className="col-span-1 p-1.5">
+        <a href="/#start" passhref>
           <Image src="/plantealogo.svg" alt="logo" width={110} height={50} />
+          </a>
           <div className="dropdown-currency"></div>
         </div>
         <div className="grid grid-cols-3 sm:w-3/4 w-11/12 ">

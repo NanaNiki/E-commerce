@@ -37,7 +37,7 @@ export function observeScroll(elements) {
 export default function Home() {
   return (
     <main
-      className={` min-h-screen bg-white text-stone-800 ${inter.className}`}
+      className={`min-h-screen bg-white text-stone-800 ${inter.className}`}
     >
       <Start />
       <DynamicCategories />

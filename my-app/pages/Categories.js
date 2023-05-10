@@ -39,11 +39,11 @@ export default function Categories() {
         {categoriesData.map((category, index) => {
           return (
             <span key={index} className="flex flex-col me-8 flex-shrink-0">
-              <label
-                className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl md:text-xl sm:text-lg text-sm md:p-3 p-2 mx-auto ${castoro.className}`}
-              >
+              <Link
+                className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl md:text-xl sm:text-lg text-sm md:p-3 p-2 mx-auto ${castoro.className} hover:scale-105 ease-in-out duration-300`}
+                href={`/catalogue/category/${category.val}`}>
                 {category.name}
-              </label>
+              </Link>
               <Link href={`/catalogue/category/${category.val}`}>
               <Image
                 src={category.image}
