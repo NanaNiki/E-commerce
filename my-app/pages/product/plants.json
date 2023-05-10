@@ -6,7 +6,7 @@
     "price": "150€",
     "favourites": true,
     "jungle" : true,
-    "outdoors" : true,
+    "outdoor" : true,
     "bedroom" : false,
     "minimal" : false
   },
@@ -17,7 +17,7 @@
     "price": "50€",
     "favourites": true ,
     "jungle" : false,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true
 },
@@ -28,7 +28,7 @@
     "price": "100€",
     "favourites": true,
     "jungle" : true,
-    "outdoors" : true,
+    "outdoor" : true,
     "bedroom" : false,
     "minimal" : false
   },
@@ -39,7 +39,7 @@
     "price": "40€",
     "favourites": false,
     "jungle" : false,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : false
 },
@@ -50,7 +50,7 @@
     "price": "300€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : true,
+    "outdoor" : true,
     "bedroom" : false,
     "minimal" : false
   }, 
@@ -61,7 +61,7 @@
     "price": "25€",
     "favourites": false ,
     "jungle" :false,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true
 }, 
@@ -72,7 +72,7 @@
     "price": "150€",
     "favourites": true,
     "jungle" : false,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true
   },
@@ -83,7 +83,7 @@
     "price": "300€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : false
   }, 
@@ -94,7 +94,7 @@
     "price": "150€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : true,
+    "outdoor" : true,
     "bedroom" : false,
     "minimal" : false
   },
@@ -105,7 +105,7 @@
     "price": "150€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : true,
+    "outdoor" : true,
     "bedroom" : true,
     "minimal" : false
   },
@@ -116,7 +116,7 @@
     "price": "50€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : false
 },
@@ -127,7 +127,7 @@
     "price": "150€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : false
   },
@@ -138,7 +138,7 @@
     "price": "30€",
     "favourites": true,
     "jungle" : false,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true
 },
@@ -149,7 +149,7 @@
     "price": "20€",
     "favourites": true,
     "jungle" : true,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true
 },
@@ -160,7 +160,7 @@
     "price": "30€",
     "favourites": true ,
     "jungle" : true,
-    "outdoors" : true,
+    "outdoor" : true,
     "bedroom" : true,
     "minimal" : true
 },
@@ -171,7 +171,7 @@
     "price": "15€",
     "favourites": false,
     "jungle" : true,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true
 }, 
@@ -182,7 +182,7 @@
     "price": "10€",
     "favourites": false,
     "jungle" : false,
-    "outdoors" : false,
+    "outdoor" : false,
     "bedroom" : true,
     "minimal" : true 
 }

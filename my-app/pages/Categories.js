@@ -44,7 +44,7 @@ export default function Categories() {
               >
                 {category.name}
               </label>
-              <Link href={`/catalogue/category/${category.val}`} passHref target="_parent">
+              <Link href={`/catalogue/category/${category.val}`}>
               <Image
                 src={category.image}
                 width={280}

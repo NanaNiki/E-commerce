@@ -6,11 +6,22 @@ import plantsData from "../product/plants.json";
 import { BsSuitHeart } from "react-icons/bs";
 
 export default function Favourites() {
-  const favTegCheck = () => {
     const favouritePlants = plantsData.filter(
       (plant) => plant.favourites === true
     );
-    return favouritePlants.map((plant, index) => {
+
+  return (
+    <div id="favourites">
+      <div
+        className={` mt-14 flex flex-row w-fit mx-auto lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center lg:my-20 my-10 font-bold ${castoro.className}`}
+        id="catalogue"
+      >
+        Our Fa
+        <BsSuitHeart className="lg:w-7 lg:h-7 lg:mt-2 w-5 h-5 text-center mt-1.5" />
+        ourites
+      </div>
+      <div className="flex flex-row overflow-x-scroll scroll-smooth justify-start mx-auto pb-10">
+      {favouritePlants.map((plant, index) => {
       return (
         <div key={index} className="w-fit lg:pe-6 shrink-0">
           <Link href={`/product/${plant.id}`} passHref target="_parent">
@@ -30,21 +41,8 @@ export default function Favourites() {
           </Link>
         </div>
       );
-    });
+    })
   };
-
-  return (
-    <div id="favourites">
-      <div
-        className={` mt-14 flex flex-row w-fit mx-auto lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center lg:my-20 my-10 font-bold ${castoro.className}`}
-        id="catalogue"
-      >
-        Our Fa
-        <BsSuitHeart className="lg:w-7 lg:h-7 lg:mt-2 w-5 h-5 text-center mt-1.5" />
-        ourites
-      </div>
-      <div className="flex flex-row overflow-x-scroll scroll-smooth justify-start mx-auto pb-10">
-        {favTegCheck(plantsData)}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import CategoryCard from "./CategoryCard";
 
 export default function CategoryPage() {
   const router = useRouter();
-  const categoryVal = parseInt(router.query.val);
+  const categoryVal = router.query.val;
   const category = categoriesData.find((cat) => cat.val === categoryVal);
 
   if (!category) {
@@ -13,7 +13,7 @@ export default function CategoryPage() {
 
   return (
     <>
-      <CategoryCard category={category} />
+      <CategoryCard categoriesData={category} />
     </>
   );
 }
