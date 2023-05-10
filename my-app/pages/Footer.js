@@ -40,6 +40,7 @@ export default function Footer() {
         <div className="relative flex flex-row justify-center m-auto lg:p-10 lg:flex-nowrap md:flex-nowrap flex-wrap">
           <input
             type="email"
+            name="email"
             className="ps-2 lg:pe-72 h-10 bg-neutral-200 text-stone-950 text-base mb-4"
             placeholder="Enter your email here"
             required
@@ -53,9 +54,9 @@ export default function Footer() {
       </div>
       <div className="flex flex-row justify-between sm:p-5 pb-3">
         <div className="col-span-1 p-1.5">
-        <a href="/#start" passhref>
-          <Image src="/plantealogo.svg" alt="logo" width={110} height={50} />
-          </a>
+          <Link href="/#start" passHref>
+            <Image src="/plantealogo.svg" alt="logo" width={110} height={50} />
+          </Link>
           <div className="dropdown-currency"></div>
         </div>
         <div className="grid grid-cols-3 sm:w-3/4 w-11/12 ">
@@ -65,7 +66,7 @@ export default function Footer() {
                 <span className="sm:text-sm text-xs text-stone-400">
                   {tag.title}
                 </span>
-                <Link href={`${tag.url}`} passHref target="_blank">
+                <Link href={`${tag.url}`} target="_blank" passHref>
                   <span
                     className={`lg:text-base sm:text-sm text-xs hover:text-stone-500 ${castoro.className} `}
                   >
@@ -82,14 +83,14 @@ export default function Footer() {
         <p>Copyright &copy; 2023 All rights reserved</p>
         <p>
           Template from
-          <Link
+          <a
             href="https://app.uizard.io/templates/O4Q0AGM8ZruJw9GpR5YQ?_gl=1*r55hdo*_ga*MTgwNzYxODk1MC4xNjgzMTE1NTQ5*_ga_FV1FRPC5G4*MTY4MzQ0OTg1NS4xMS4xLjE2ODM0NTE5NzMuNTAuMC4w"
             target="_blank"
             className="hover:italic hover:text-stone-950"
           >
             {" "}
             Uizard
-          </Link>
+          </a>
         </p>
       </div>
     </footer>

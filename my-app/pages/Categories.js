@@ -41,17 +41,21 @@ export default function Categories() {
             <span key={index} className="flex flex-col me-8 flex-shrink-0">
               <Link
                 className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl md:text-xl sm:text-lg text-sm md:p-3 p-2 mx-auto ${castoro.className} hover:scale-105 ease-in-out duration-300`}
-                href={`/catalogue/category/${category.val}`}>
+                href={`/catalogue/category/${category.val}`}
+                passHref
+              >
                 {category.name}
               </Link>
-              <Link href={`/catalogue/category/${category.val}`}>
-              <Image
-                src={category.image}
-                width={280}
-                height={500}
-                alt={category.alt}
-                className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"
-              /> </Link>
+              <Link href={`/catalogue/category/${category.val}`} passHref>
+                <Image
+                  src={category.image}
+                  width={280}
+                  height={500}
+                  alt={category.alt}
+                  className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"
+                  priority
+                />{" "}
+              </Link>
             </span>
           );
         })}

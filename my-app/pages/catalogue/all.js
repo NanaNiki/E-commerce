@@ -54,7 +54,7 @@ export default function AllProducts() {
         {sortPlants(plantsData).map((plant, index) => {
           return (
             <div key={index} className="w-fit">
-              <Link href={`/product/${plant.id}`} passHref target="_parent">
+              <Link href={`/product/${plant.id}`} passHref>
                 <Image
                   src={plant.image}
                   width={200}

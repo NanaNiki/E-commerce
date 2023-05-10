@@ -24,7 +24,7 @@ export default function Favourites() {
       {favouritePlants.map((plant, index) => {
       return (
         <div key={index} className="w-fit shrink-0 flex flex-col">
-          <Link href={`/product/${plant.id}`} passHref target="_parent">
+          <Link href={`/product/${plant.id}`} passHref>
             <Image
               src={plant.image}
               width={220}

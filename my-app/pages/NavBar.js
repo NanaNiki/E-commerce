@@ -3,6 +3,7 @@ import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { castoro } from "./index.js";
 
 export default function NavBar() {
   const [isMiniNavActive, setIsMiniNavActive] = useState(false);
@@ -14,7 +15,7 @@ export default function NavBar() {
   return (
     <>
       <nav className="z-20 fixed top-0 left-0 h-14 w-screen p-2 flex flex-row bg-white">
-        <a href="/" passhref>
+        <Link href="/" passhref>
           <Image
             src="/plantealogo.svg"
             alt="logo"
@@ -22,7 +23,7 @@ export default function NavBar() {
             height={200}
             className="ms-2"
           />
-        </a>
+        </Link>
         <button
           onClick={toggleMiniNav}
           className="text-stone-800 cursor-pointer flex flex-row w-screen justify-end z-20 m-auto me-10 lg:hidden md:hidden sm:hidden"
@@ -39,21 +40,21 @@ export default function NavBar() {
               <RxMagnifyingGlass className=" mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
               <BsCart2 className="mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
             </div>
-            <ul className="flex flex-col justify-evenly">
+            <ul className={`flex flex-col justify-evenly ${castoro.className}`}>
               <li>
-                <a className="transition hover:text-stone-500 cursor-pointer">
+                <Link className="transition hover:text-stone-500 cursor-pointer" href="/#start" passHref>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="transition hover:text-stone-500 cursor-pointer">
+                <Link className="transition hover:text-stone-500 cursor-pointer" href={`/catalogue/all`} passHref>
                   Catalogue
-                </a>
+                </Link>
               </li>
               <li>
-                <a className=" transition hover:text-stone-500 cursor-pointer">
+                <Link className=" transition hover:text-stone-500 cursor-pointer" href="https://github.com/NanaNiki" passHref>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -61,29 +62,28 @@ export default function NavBar() {
         <div className="hidden sm:flex flex-row w-full">
           <ul className="lg:mx-28 w-full flex flex-row m-auto justify-evenly">
             <li className="flex flex-col justify-around has-tooltip">
-              <a
+              <Link
                 className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer"
-                href="/#start"
+                href="/#start" passHref
               >
                 Home
                 <span className="underline-animation flex w-full h-[0.5px] bg-stone-500 rounded-full opacity-0 -translate-x-full blur-sm"></span>
-              </a>
+              </Link>
             </li>
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
               <Link
                 className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer"
-                href={`/catalogue/all`}
-                passHref
+                href={`/catalogue/all`} passHref
               >
                 Catalogue
                 <span className="underline-animation flex w-full h-[0.5px] bg-stone-500 rounded-full opacity-0 -translate-x-full blur-sm"></span>
               </Link>
             </li>
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
-              <a className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer">
+              <Link className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer" href="https://github.com/NanaNiki" passHref>
                 Contact
                 <span className="underline-animation flex w-full h-[0.5px] bg-stone-500 rounded-full opacity-0 -translate-x-full blur-sm"></span>
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="flex flex-row justify-end me-7">

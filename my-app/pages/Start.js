@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link.js";
 import { castoro } from "./index.js";
 import { BsChevronDoubleDown } from "react-icons/bs";
 
@@ -37,7 +38,7 @@ export default function Start() {
         <h2 className="md:text-center md:text-base sm:text-sm text-xs lg:mt-5 lg:mb-5 p-1">
           Beautiful plants that encourage you to get creative.
         </h2>
-        <a className="text-center lg:mt-4 p-2 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse" href="/#categories" passHref>
+        <a href="#categories" className="text-center lg:mt-4 lg:p-2 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse" >
           Shop Now
         </a>
       </div>

@@ -66,7 +66,7 @@ export default function ProductCard({ plantsData }) {
           <div className="flex lg:flex-col md:flex-row lg:mx-5 max-h-[600px] overflow-y-scroll scroll-smooth">
             {plants.map((plant, index) => (
               <div key={index} className="me-3 flex-shrink-0">
-                <Link href={`/product/${plant.id}`} passHref target="_parent">
+                <Link href={`/product/${plant.id}`} passHref>
                   <Image
                     src={plant.image}
                     width={90}
