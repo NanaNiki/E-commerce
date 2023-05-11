@@ -1,4 +1,79 @@
 import { useState, useEffect } from "react";
+import SearchResults from "./SearchResults";
+import { RxMagnifyingGlass } from "react-icons/rx";
+import plantsData from "./product/plants.json";
+
+export default function Searchbar() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredPlants, setFilteredPlants] = useState([]);
+  const [serachbarOpen, setSerachbarOpen] = useState(true);
+
+  useEffect(() => {
+    function handleDocumentClick(event) {
+      if (!event.target.closest(".searchbar")) {
+        setSerachbarOpen(false);
+      }
+    }
+    document.addEventListener("click", handleDocumentClick);
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (searchTerm) {
+      const newFilteredPlants = plantsData.filter((plant) =>
+        plant.tags.some((tag) =>
+          tag.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+      setFilteredPlants(newFilteredPlants);
+    } else {
+      setFilteredPlants([]);
+    }
+  }, [searchTerm]);
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+    setSerachbarOpen(true)
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(searchTerm);
+  };
+
+  return (
+    serachbarOpen && ( 
+    <div className="searchbar sm:absolute right-0 z-20 sm:pt-14 sm:h-screen sm:w-4/12 sm:flex flex-col bg-stone-300 ">
+      <form
+        className="sm:p-5 mx-auto pb-2 flex place-items-start lg:w-7/12"
+        onSubmit={handleFormSubmit}
+        onFocus={() => setSerachbarOpen(true)}
+      >
+        <input
+          type="text"
+          placeholder="Search by tags"
+          value={searchTerm}
+          onChange={handleInputChange}          
+          className="rounded-s-full px-2 py-1 text-base w-8/12 sm:ms-8 ms-2"
+        />
+        <button
+          type="submit"
+          className="p-1 px-2 h-8 text-lg bg-white rounded-e-full hover:text-stone-400"
+        >
+          <RxMagnifyingGlass />
+        </button>
+      </form>
+      <SearchResults filteredPlants={filteredPlants} />
+    </div>
+    ) 
+  );
+}
+
+
+
+import { useState } from "react";
 import { castoro } from "./index.js";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,18 +92,6 @@ export default function NavBar() {
   const toggleSearch = () => {
     setSearchBarOpen((prev) => !prev);
   };
-
-  useEffect(() => {
-    function handleDocumentClick(event) {
-      if (searchBarOpen && !event.target.closest(".searchbar")) {
-        setSearchBarOpen(false);
-      }
-    }
-    document.addEventListener("click", handleDocumentClick);
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
-    };
-  }, []);
 
   return (
     <>
@@ -89,7 +152,7 @@ export default function NavBar() {
               </button>
               <BsCart2 className="mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
             </div>
-            <Searchbar searchBarOpen={searchBarOpen} className="searchbar"/>
+            <Searchbar searchBarOpen={searchBarOpen} />
           </div>
         </div>
         <div className="navbar-main hidden sm:flex flex-row w-full">
@@ -133,9 +196,8 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-      <div className={`${searchBarOpen ? "visible" : "invisible"} w-fit searchbar`}>
-      <Searchbar toggleSearch={toggleSearch}/>
-      </div>
+      <Searchbar searchBarOpen={searchBarOpen} />
     </>
   );
 }
+

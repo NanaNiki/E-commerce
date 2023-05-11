@@ -9,11 +9,14 @@ export default function Searchbar() {
 
   useEffect(() => {
     if (searchTerm) {
-        const newFilteredPlants = plantsData.filter((plant) =>
-        plant.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase())));
-        setFilteredPlants(newFilteredPlants)
+      const newFilteredPlants = plantsData.filter((plant) =>
+        plant.tags.some((tag) =>
+          tag.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
+      setFilteredPlants(newFilteredPlants);
     } else {
-        setFilteredPlants([]);
+      setFilteredPlants([]);
     }
   }, [searchTerm]);
 
@@ -36,7 +39,7 @@ export default function Searchbar() {
           type="text"
           placeholder="Search by tags"
           value={searchTerm}
-          onChange={handleInputChange}
+          onChange={handleInputChange}          
           className="rounded-s-full px-2 py-1 text-base w-8/12 sm:ms-8 ms-2"
         />
         <button
