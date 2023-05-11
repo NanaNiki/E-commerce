@@ -11,7 +11,7 @@ export default function Start() {
         width={1400}
         height={400}
         alt="Beige terrace with two wooden chairs and palm loooking plants"
-        className="mt-5 block max-h-screen"
+        className="sm:mt-5 block max-h-screen"
         priority
       />
       <span className="hidden">

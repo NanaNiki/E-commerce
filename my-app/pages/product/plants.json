@@ -1,189 +1,207 @@
 [
     {
     "id": 1,
-    "image": "/plant1.jpg",
+    "image": "/plant_1.jpg",
     "name": "Friedrich",
     "price": 150,
     "favourites": true,
     "jungle" : true,
     "outdoor" : true,
     "bedroom" : false,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "big", "outdoor", "jungle", "Friedrich"]
   },
   {
     "id": 2,
-    "image": "/plant2.jpg",
+    "image": "/plant_2.jpg",
     "name": "Mary Katie",
     "price": 50,
     "favourites": true ,
     "jungle" : false,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : true
+    "minimal" : true,
+    "tags" : ["cute", "small", "bedroom", "minimal", "Mary Katie"]
 },
   {
     "id": 3,
-    "image": "/plant3.jpg",
+    "image": "/plant_3.jpg",
     "name": "Bulbazie",
     "price": 100,
     "favourites": true,
     "jungle" : true,
     "outdoor" : true,
     "bedroom" : false,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "big", "outdoor", "jungle", "Bulbazie"]
   },
   {
     "id": 4,
-    "image": "/plant4.jpg",
+    "image": "/plant_4.jpg",
     "name": "Frankie",
     "price": 40,
     "favourites": false,
     "jungle" : false,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "medium-sized", "bedroom", "Frankie"]
 },
   {
     "id": 5,
-    "image": "/plant5.jpg",
+    "image": "/plant_5.jpg",
     "name": "Louise",
-    "price": 300,
+    "price": 70,
     "favourites": false,
     "jungle" : true,
     "outdoor" : true,
     "bedroom" : false,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "big", "outdoor", "jungle", "Lousie"]
   }, 
   {
     "id": 6,
-    "image": "/plant6.jpg",
+    "image": "/plant_6.jpg",
     "name": "Georgie",
-    "price": 25,
+    "price": 90,
     "favourites": false ,
     "jungle" :false,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : false}, 
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "small", "big", "bedroom", "outdoor","jungle", "minimal", "Friedrich"]
+  }, 
   {
     "id": 7,
-    "image": "/plant7.jpg",
+    "image": "/plant_7.jpg",
     "name": "Bonzo",
     "price": 150,
     "favourites": true,
     "jungle" : false,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : true
+    "minimal" : true,
+    "tags" : ["elegant", "small", "bedroom", "minimal", "Bonzo"]
   },
   {
     "id": 8,
-    "image": "/plant8.jpg",
+    "image": "/plant_8.jpg",
     "name": "LouLou",
-    "price": 150,
+    "price": 100,
     "favourites": false,
     "jungle" : true,
     "outdoor" : true,
     "bedroom" : true,
-    "minimal" : false    
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "small", "big", "bedroom", "outdoor","jungle", "minimal", "Friedrich"]    
   }, 
   {
     "id": 9,
-    "image": "/plant9.jpg",
+    "image": "/plant_9.jpg",
     "name": "Katie",
-    "price": 150,
+    "price": 80,
     "favourites": false,
     "jungle" : true,
     "outdoor" : true,
     "bedroom" : false,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "small", "big", "bedroom", "outdoor","jungle", "minimal", "Friedrich"]
   },
   {
     "id": 10,
-    "image": "/plant10.jpg",
+    "image": "/plant_10.jpg",
     "name": "Hyoshi",
     "price": 300,
     "favourites": false,
     "jungle" : true,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : false    
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "small", "big", "bedroom", "outdoor","jungle", "minimal", "Friedrich"]    
   },
   {
     "id": 11,
-    "image": "/plant11.jpg",
+    "image": "/plant_11.jpg",
     "name": "Sia",
-    "price": 50,
+    "price": 40,
     "favourites": false,
     "jungle" : true,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "small", "big", "bedroom", "outdoor","jungle", "minimal", "Friedrich"]
 },
   {
     "id": 12,
-    "image": "/plant12.jpg",
+    "image": "/plant_12.jpg",
     "name": "Pattie",
-    "price": 150,
+    "price": 35,
     "favourites": false,
     "jungle" : true,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : false
+    "minimal" : false,
+    "tags" : ["elegant", "cute", "small", "big", "bedroom", "outdoor","jungle", "minimal", "Friedrich"]
   },
   {
     "id": 13,
-    "image": "/plant13.jpg",
+    "image": "/plant_13.jpg",
     "name": "Hope",
     "price": 30,
     "favourites": true,
     "jungle" : false,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : true
+    "minimal" : true,
+    "tags" : ["cute", "small", "bedroom", "minimal", "Hope"]
 },
   {
     "id": 14,
-    "image": "/plant14.jpg",
+    "image": "/plant_14.jpg",
     "name": "Leafy",
     "price": 20,
     "favourites": true,
     "jungle" : true,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : true
+    "minimal" : true,
+    "tags" : ["elegant", "small", "bedroom", "minimal", "Leafy"]
 },
   {
     "id": 15,
-    "image": "/plant15.jpg",
+    "image": "/plant_15.jpg",
     "name": "Slyth",
     "price": 30,
     "favourites": true ,
     "jungle" : true,
     "outdoor" : true,
     "bedroom" : true,
-    "minimal" : true
+    "minimal" : true,
+    "tags" : ["elegant", "small", "bedroom", "outdoor", "jungle", "minimal", "Slyth"]
 },
   {
     "id": 16,
-    "image": "/plant16.jpg",
+    "image": "/plant_16.jpg",
     "name": "Maggie",
     "price": 15,
     "favourites": false,
     "jungle" : true,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : true
+    "minimal" : true,
+    "tags" : ["elegant", "medium-sized", "bedroom", "jungle", "minimal", "Maggie"]
 }, 
   {
     "id": 17,
-    "image": "/plant17.jpg",
+    "image": "/plant_17.jpg",
     "name": "Moonshine",
     "price": 10,
     "favourites": true,
     "jungle" : false,
     "outdoor" : false,
     "bedroom" : true,
-    "minimal" : true 
+    "minimal" : true,
+    "tags" : ["elegant", "small", "bedroom", "minimal", "Moonshine"] 
 }
 
 ]
