@@ -23,7 +23,7 @@ export default function Start() {
           Unsplash
         </a>
       </span>
-      <div className="absolute lg:top-52 sm:top-48 top-32 z-10 flex flex-col justify-evenly md:items-center items-end md:w-1/2 md:h-[350px] w-8/12 h-1/6 mx-auto sm:p-8 p-4 pb-3 bg-white">
+      <div className="absolute lg:top-52 sm:top-48 top-24 z-10 flex flex-col justify-evenly md:items-center items-end md:w-1/2 md:h-[350px] w-8/12 h-1/12 mx-auto sm:p-8 p-4 pb-3 bg-white">
         <h1
           className={`${castoro.className} text-end lg:mt-3 lg:text-5xl md:text-4xl sm:text-2xl text-xl lg:text-center md:text-center `}
         >
@@ -34,10 +34,10 @@ export default function Start() {
         >
           for your home
         </h1>
-        <h2 className="md:text-center md:text-base sm:text-sm text-xs lg:mt-5 lg:mb-5 p-1">
+        <h2 className="md:text-center md:text-base sm:text-sm text-xs lg:mt-5 lg:mb-5 pt-1 ">
           Beautiful plants that encourage you to get creative.
         </h2>
-        <a href="#categories" className="text-center lg:mt-4 lg:p-2 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse" >
+        <a href="#categories" className="text-center lg:mt-4 lg:p-2 md:pt-2 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse" >
           Shop Now
         </a>
       </div>

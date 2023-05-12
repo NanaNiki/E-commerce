@@ -4,11 +4,11 @@ import plantsData from "./product/plants.json";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Searchbar({ setSearchBarOpen }) {
+export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPlants, setFilteredPlants] = useState([]);
   const searchBarRef = useRef(null);
- 
+
   useEffect(() => {
     if (searchTerm) {
       const newFilteredPlants = plantsData.filter((plant) =>
@@ -38,10 +38,13 @@ export default function Searchbar({ setSearchBarOpen }) {
 
   useEffect(() => {
     const handleMouseDown = (event) => {
-      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+      if (
+        searchBarRef.current &&
+        !searchBarRef.current.contains(event.target)
+      ) {
         setSearchBarOpen(false);
         clearSearchTerm();
-      }  
+      }
     };
     window.addEventListener("mousedown", handleMouseDown);
     return () => {
@@ -50,11 +53,12 @@ export default function Searchbar({ setSearchBarOpen }) {
   }, [setSearchBarOpen, clearSearchTerm]);
 
   return (
-    <div ref={searchBarRef} 
-      className="search-bar sm:fixed sm:top-14 right-0 z-20 sm:h-screen sm:w-4/12 flex flex-col bg-stone-300 "
+    <div
+      ref={searchBarRef}
+      className="search-bar fixed sm:top-14 top-44 right-0 z-20 h-screen sm:w-4/12 w-4/12 flex flex-col bg-stone-300 "
     >
       <form
-        className="sm:p-5 mx-auto pb-2 flex place-items-start lg:w-7/12"
+        className="sm:p-5 pt-5 mx-auto pb-2 flex place-items-start lg:w-7/12"
         onSubmit={handleFormSubmit}
       >
         <input
@@ -74,11 +78,18 @@ export default function Searchbar({ setSearchBarOpen }) {
       <div className="overflow-y-scroll scroll-smooth">
         {filteredPlants.map((plant) => {
           return (
-            <div key={plant.id} onClick={() => setSearchBarOpen(false)} className="flex flex-col">
+            <div
+              key={plant.id}
+              onClick={() => {
+                setSearchBarOpen(false);
+                setMiniNavOpen(false);
+              }}
+              className="flex flex-col"
+            >
               <Link
                 href={`/product/${plant.id}`}
                 passHref
-                className="flex flex-row hover:scale-95 ease-in-out duration-300"
+                className="flex sm:flex-row flex-col sm:items-start items-center hover:scale-95 ease-in-out duration-300"
               >
                 <Image
                   width={80}
@@ -88,8 +99,8 @@ export default function Searchbar({ setSearchBarOpen }) {
                   className="p-2"
                   priority
                 />
-                <div className="flex flex-col my-auto">
-                  <h2 className="font-bold">{plant.name}</h2>
+                <div className="flex sm:flex-col sm:justify-normal flex-row my-auto">
+                  <h2 className="font-bold sm:pe-0 pe-2">{plant.name}</h2>
                   <h3>{plant.price}€</h3>
                   <div className="hidden sm:flex flex-row justify-end">
                     <h5 className="text-sm opacity-40 italic">
