@@ -1,5 +1,4 @@
-import { castoro } from "../index.js";
-import { inter } from "../index.js";
+import { castoro, inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
 import plantsData from "../product/plants.json";

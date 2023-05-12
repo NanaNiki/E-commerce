@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { castoro } from "./index.js";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,28 +7,18 @@ import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 export default function NavBar() {
-  const [miniNavOpen, setMiniNavOpen] = useState(false);
+  // const [miniNavOpen, setMiniNavOpen] = useState(false);
   const [searchBarOpen, setSearchBarOpen] = useState(false);
 
-  const toggleMiniNav = () => {
-    setMiniNavOpen((prev) => !prev);
-  };
+  // const toggleMiniNav = () => {
+  //   setMiniNavOpen((prev) => !prev);
+  // };
 
-  const toggleSearch = () => {
-    setSearchBarOpen((prev) => !prev);
-  };
-
-  useEffect(() => {
-    function handleDocumentClick(event) {
-      if (searchBarOpen && !event.target.closest(".searchbar")) {
-        setSearchBarOpen(false);
-      }
-    }
-    document.addEventListener("click", handleDocumentClick);
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
-    };
-  }, []);
+  const toggleSearchBar = () => {
+    if (searchBarOpen === false) {
+      setSearchBarOpen(true);
+    } 
+  }
 
   return (
     <>
@@ -42,7 +32,7 @@ export default function NavBar() {
             className="ms-2"
           />
         </Link>
-        <button
+        {/* <button
           onClick={toggleMiniNav}
           className="text-stone-800 cursor-pointer flex flex-row w-screen justify-end z-20 m-auto me-10 lg:hidden md:hidden sm:hidden"
         >
@@ -50,7 +40,7 @@ export default function NavBar() {
         </button>
         <div
           className={` mininavbar absolute right-0 flex flex-col w-4/12 mt-12 justify-center bg-stone-300 bg-opacity-100 ${
-            miniNavOpen ? "visible" : "invisible"
+            miniNavOpen ? "flex" : "hidden"
           }`}
         >
           <div className="flex flex-col justify-between items-center pt-3 lg:hidden md:hidden sm:hidden">
@@ -84,14 +74,14 @@ export default function NavBar() {
               </li>
             </ul>
             <div className="flex flex-row justify-end m-4">
-              <button onClick={toggleSearch}>
+              <button onClick={() => setSearchBarOpen((prev)=> !prev)}>
                 <RxMagnifyingGlass className=" mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
               </button>
               <BsCart2 className="mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
             </div>
             <Searchbar searchBarOpen={searchBarOpen} className="searchbar"/>
           </div>
-        </div>
+        </div> */}
         <div className="navbar-main hidden sm:flex flex-row w-full">
           <ul className="lg:mx-28 w-full flex flex-row m-auto justify-evenly">
             <li className="flex flex-col justify-around has-tooltip">
@@ -126,15 +116,15 @@ export default function NavBar() {
             </li>
           </ul>
           <div className="flex flex-row justify-end me-7">
-            <button onClick={toggleSearch}>
-              <RxMagnifyingGlass className="my-auto me-4 w-6 h-6 text-stone-400 cursor-pointer hover:text-stone-800" />
+            <button onClick={toggleSearchBar} className="my-auto me-4 text-2xl text-stone-400 cursor-pointer hover:text-stone-800">
+              { searchBarOpen ?  <RxCross1  className="text-xl mt-0.5"/> : <RxMagnifyingGlass  />}
             </button>
-            <BsCart2 className="my-auto me-5 w-6 h-6 text-stone-400 cursor-pointer hover:text-stone-800" />
+            <BsCart2 className="my-auto me-5 text-2xl text-stone-400 cursor-pointer hover:text-stone-800" />
           </div>
         </div>
       </nav>
-      <div className={`${searchBarOpen ? "visible" : "invisible"} w-fit searchbar`}>
-      <Searchbar toggleSearch={toggleSearch}/>
+      <div className={`${searchBarOpen ? "" : "hidden"} searchbar`}>
+      <Searchbar setSearchBarOpen={setSearchBarOpen}/>
       </div>
     </>
   );

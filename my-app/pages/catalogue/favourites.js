@@ -1,14 +1,13 @@
-import { castoro } from "../index.js";
-import { inter } from "../index.js";
+import { castoro, inter  } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
 import plantsData from "../product/plants.json";
 import { BsSuitHeart } from "react-icons/bs";
 
 export default function Favourites() {
-    const favouritePlants = plantsData.filter(
-      (plant) => plant.favourites === true
-    );
+  const favouritePlants = plantsData.filter(
+    (plant) => plant.favourites === true
+  );
 
   return (
     <div id="favourites">
@@ -21,28 +20,27 @@ export default function Favourites() {
         ourites
       </div>
       <div className="grid grid-cols-4 w-fit h-fit m-auto py-7">
-      {favouritePlants.map((plant, index) => {
-      return (
-        <div key={index} className="w-fit shrink-0 flex flex-col">
-          <Link href={`/product/${plant.id}`} passHref>
-            <Image
-              src={plant.image}
-              width={220}
-              height={100}
-              alt={`Plant product ${plant.name}`}
-              className="lg:mb-2 inline-block hover:scale-95 ease-in-out duration-300"
-            />
-            <div
-              className={` flex flex-row lg:justify-between p-1 text-end md:text-base sm:text-sm text-xs ${inter.className}`}
-            >
-              <h5 className="p1-2 lg:ps-0">{plant.name}</h5>{" "}
-              <h5 className="font-bold ps-2 lg:ps-0">{plant.price}€</h5>
+        {favouritePlants.map((plant, index) => {
+          return (
+            <div key={index} className="w-fit shrink-0 flex flex-col">
+              <Link href={`/product/${plant.id}`} passHref>
+                <Image
+                  src={plant.image}
+                  width={220}
+                  height={100}
+                  alt={`Plant product ${plant.name}`}
+                  className="lg:mb-2 inline-block hover:scale-95 ease-in-out duration-300"
+                />
+                <div
+                  className={` flex flex-row lg:justify-between p-1 text-end md:text-base sm:text-sm text-xs ${inter.className}`}
+                >
+                  <h5 className="p1-2 lg:ps-0">{plant.name}</h5>{" "}
+                  <h5 className="font-bold ps-2 lg:ps-0">{plant.price}€</h5>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
-      )
-    })
-  }
+          );
+        })}
       </div>
     </div>
   );

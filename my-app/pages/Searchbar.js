@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
-import SearchResults from "./SearchResults";
+import { useState, useEffect, useRef } from "react";
 import { RxMagnifyingGlass } from "react-icons/rx";
 import plantsData from "./product/plants.json";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Searchbar() {
+export default function Searchbar({ setSearchBarOpen }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPlants, setFilteredPlants] = useState([]);
-
+  const searchBarRef = useRef(null);
+ 
   useEffect(() => {
     if (searchTerm) {
       const newFilteredPlants = plantsData.filter((plant) =>
@@ -29,8 +31,28 @@ export default function Searchbar() {
     console.log(searchTerm);
   };
 
+  const clearSearchTerm = () => {
+    setSearchTerm("");
+    setFilteredPlants([]);
+  };
+
+  useEffect(() => {
+    const handleMouseDown = (event) => {
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+        setSearchBarOpen(false);
+        clearSearchTerm();
+      }  
+    };
+    window.addEventListener("mousedown", handleMouseDown);
+    return () => {
+      window.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, [setSearchBarOpen, clearSearchTerm]);
+
   return (
-    <div className="searchbar sm:absolute right-0 z-20 sm:pt-14 sm:h-screen sm:w-4/12 sm:flex flex-col bg-stone-300 ">
+    <div ref={searchBarRef} 
+      className="search-bar sm:fixed sm:top-14 right-0 z-20 sm:h-screen sm:w-4/12 flex flex-col bg-stone-300 "
+    >
       <form
         className="sm:p-5 mx-auto pb-2 flex place-items-start lg:w-7/12"
         onSubmit={handleFormSubmit}
@@ -39,7 +61,7 @@ export default function Searchbar() {
           type="text"
           placeholder="Search by tags"
           value={searchTerm}
-          onChange={handleInputChange}          
+          onChange={handleInputChange}
           className="rounded-s-full px-2 py-1 text-base w-8/12 sm:ms-8 ms-2"
         />
         <button
@@ -49,7 +71,38 @@ export default function Searchbar() {
           <RxMagnifyingGlass />
         </button>
       </form>
-      <SearchResults filteredPlants={filteredPlants} />
+      <div className="overflow-y-scroll scroll-smooth">
+        {filteredPlants.map((plant) => {
+          return (
+            <div key={plant.id} onClick={() => setSearchBarOpen(false)} className="flex flex-col">
+              <Link
+                href={`/product/${plant.id}`}
+                passHref
+                className="flex flex-row hover:scale-95 ease-in-out duration-300"
+              >
+                <Image
+                  width={80}
+                  height={80}
+                  src={plant.image}
+                  alt={plant.name}
+                  className="p-2"
+                  priority
+                />
+                <div className="flex flex-col my-auto">
+                  <h2 className="font-bold">{plant.name}</h2>
+                  <h3>{plant.price}€</h3>
+                  <div className="hidden sm:flex flex-row justify-end">
+                    <h5 className="text-sm opacity-40 italic">
+                      #{plant.tags.join(" #")}
+                    </h5>
+                  </div>
+                </div>
+              </Link>
+              <div className="w-full h-[1px] bg-stone-400 rounded-full"></div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

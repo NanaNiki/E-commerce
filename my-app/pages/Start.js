@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link.js";
 import { castoro } from "./index.js";
 import { BsChevronDoubleDown } from "react-icons/bs";
 
