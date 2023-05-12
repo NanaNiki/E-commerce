@@ -1,5 +1,4 @@
-import { castoro } from "../index.js";
-import { inter } from "../index.js";
+import { castoro, inter } from "../index.js";
 import { useState } from "react";
 import Image from "next/image";
 import plants from "./plants.json";
@@ -15,12 +14,13 @@ export default function ProductCard({ plantsData }) {
       }
       setQuantity((prev) => prev + 1);
     } else if (type === "remove") {
-      if (quantity <= 0) {
+      if (quantity <= 1) {
         return;
       }
       setQuantity((prev) => prev - 1);
     }
   }
+
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function ProductCard({ plantsData }) {
             alt={`Plant product ${plantsData.name}`}
             priority
           />
-          <div
+          {/* <div
             className={`md:hidden flex flex-col h-full m-auto my-5 ${castoro.className}`}
           >
             <h1 className="text-2xl ">{plantsData.name}</h1>
@@ -77,7 +77,7 @@ export default function ProductCard({ plantsData }) {
                 </Link>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         <div
           className={` md:flex hidden flex-col h-full me-auto lg:px-7 w-fit ${castoro.className}`}

@@ -1,14 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { castoro } from "./index.js";
 import Image from "next/image";
 import Link from "next/link";
 import Searchbar from "./Searchbar.js";
+import ShoppingCart from "./ShoppingCart.js";
 import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 export default function NavBar() {
   const [miniNavOpen, setMiniNavOpen] = useState(false);
   const [searchBarOpen, setSearchBarOpen] = useState(false);
+  const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
 
 
   const toggleMiniNav = () => {
@@ -18,6 +20,14 @@ export default function NavBar() {
   const toggleSearchBar = () => {
     if (searchBarOpen === false) {
       setSearchBarOpen(true);
+    }
+  };
+
+  const toggleShoppingCart = () => {
+    if (shoppingCartOpen === false) {
+      setShoppingCartOpen(true);
+    } else {
+      setShoppingCartOpen(false);
     }
   };
 
@@ -33,7 +43,7 @@ export default function NavBar() {
             className="ms-2"
           />
         </Link>
-        <button
+        {/* <button
           onClick={toggleMiniNav}
           className="text-stone-800 cursor-pointer flex flex-row w-screen justify-end z-20 m-auto me-10 lg:hidden md:hidden sm:hidden"
         >
@@ -88,7 +98,7 @@ export default function NavBar() {
               <BsCart2 className="mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="MAIN-NAVBAR hidden sm:flex flex-row w-full">
           <ul className="lg:mx-28 w-full flex flex-row m-auto justify-evenly">
             <li className="flex flex-col justify-around has-tooltip">
@@ -133,12 +143,18 @@ export default function NavBar() {
                 <RxMagnifyingGlass />
               )}
             </button>
-            <BsCart2 className="my-auto me-5 text-2xl text-stone-400 cursor-pointer hover:text-stone-800" />
+            <button onClick={toggleShoppingCart} className="my-auto me-5 text-2xl text-stone-400 cursor-pointer hover:text-stone-800" >
+            {shoppingCartOpen ? (
+              <RxCross1 className="text-xl mt-0.5" /> ) : ( <BsCart2 /> ) }
+            </button>
           </div>
         </div>
       </nav>
       <div className={`${searchBarOpen ? "" : "hidden"} searchbar`}>
-            <Searchbar setSearchBarOpen={setSearchBarOpen}  setMiniNavOpen={setMiniNavOpen} />
+        <Searchbar setSearchBarOpen={setSearchBarOpen} setMiniNavOpen={setMiniNavOpen} />
+      </div>
+      <div className={`${shoppingCartOpen? "" : "hidden"} shoppingcart`}>
+        <ShoppingCart setShoppingCartOpen={setShoppingCartOpen} setMiniNavOpen={setMiniNavOpen}/>
       </div>
     </>
   );
