@@ -1,7 +1,7 @@
 [
     {
     "id": 1,
-    "image": "/plant_1.jpg",
+    "image": "/images/plant_1.jpg",
     "name": "Friedrich",
     "price": 150,
     "favourites": true,
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "image": "/plant_2.jpg",
+    "image": "/images/plant_2.jpg",
     "name": "Mary Katie",
     "price": 50,
     "favourites": true ,
@@ -25,7 +25,7 @@
 },
   {
     "id": 3,
-    "image": "/plant_3.jpg",
+    "image": "/images/plant_3.jpg",
     "name": "Bulbazie",
     "price": 100,
     "favourites": true,
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "image": "/plant_4.jpg",
+    "image": "/images/plant_4.jpg",
     "name": "Frankie",
     "price": 40,
     "favourites": false,
@@ -49,7 +49,7 @@
 },
   {
     "id": 5,
-    "image": "/plant_5.jpg",
+    "image": "/images/plant_5.jpg",
     "name": "Louise",
     "price": 70,
     "favourites": false,
@@ -61,7 +61,7 @@
   }, 
   {
     "id": 6,
-    "image": "/plant_6.jpg",
+    "image": "/images/plant_6.jpg",
     "name": "Georgie",
     "price": 90,
     "favourites": false ,
@@ -73,7 +73,7 @@
   }, 
   {
     "id": 7,
-    "image": "/plant_7.jpg",
+    "image": "/images/plant_7.jpg",
     "name": "Bonzo",
     "price": 150,
     "favourites": true,
@@ -85,7 +85,7 @@
   },
   {
     "id": 8,
-    "image": "/plant_8.jpg",
+    "image": "/images/plant_8.jpg",
     "name": "LouLou",
     "price": 100,
     "favourites": false,
@@ -97,7 +97,7 @@
   }, 
   {
     "id": 9,
-    "image": "/plant_9.jpg",
+    "image": "/images/plant_9.jpg",
     "name": "Margeret",
     "price": 80,
     "favourites": false,
@@ -109,7 +109,7 @@
   },
   {
     "id": 10,
-    "image": "/plant_10.jpg",
+    "image": "/images/plant_10.jpg",
     "name": "Hyoshi",
     "price": 300,
     "favourites": false,
@@ -121,7 +121,7 @@
   },
   {
     "id": 11,
-    "image": "/plant_11.jpg",
+    "image": "/images/plant_11.jpg",
     "name": "Sia",
     "price": 40,
     "favourites": false,
@@ -133,7 +133,7 @@
 },
   {
     "id": 12,
-    "image": "/plant_12.jpg",
+    "image": "/images/plant_12.jpg",
     "name": "Pattie",
     "price": 35,
     "favourites": false,
@@ -145,7 +145,7 @@
   },
   {
     "id": 13,
-    "image": "/plant_13.jpg",
+    "image": "/images/plant_13.jpg",
     "name": "Hope",
     "price": 30,
     "favourites": true,
@@ -157,7 +157,7 @@
 },
   {
     "id": 14,
-    "image": "/plant_14.jpg",
+    "image": "/images/plant_14.jpg",
     "name": "Leafy",
     "price": 20,
     "favourites": true,
@@ -169,7 +169,7 @@
 },
   {
     "id": 15,
-    "image": "/plant_15.jpg",
+    "image": "/images/plant_15.jpg",
     "name": "Slyth",
     "price": 30,
     "favourites": true ,
@@ -181,7 +181,7 @@
 },
   {
     "id": 16,
-    "image": "/plant_16.jpg",
+    "image": "/images/plant_16.jpg",
     "name": "Maggie",
     "price": 15,
     "favourites": false,
@@ -193,7 +193,7 @@
 }, 
   {
     "id": 17,
-    "image": "/plant_17.jpg",
+    "image": "/images/plant_17.jpg",
     "name": "Moonshine",
     "price": 10,
     "favourites": true,

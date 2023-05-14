@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
 import plantsData from "./plants.json";
 import ProductCard from "./ProductCard";
-import { useContext } from 'react'
-import { ShoppingCartContext } from '../ShoppingCartContext'
+import { useContext } from "react";
+import { ShoppingCartContext } from "../ShoppingCartContext";
 
 export default function ProductPage() {
   const router = useRouter();
   const plantId = parseInt(router.query.id);
   const plant = plantsData.find((plant) => plant.id === plantId);
-  const { onAddToCart, updateQuantity, quantity } = useContext(ShoppingCartContext);
+  const { onAddToCart, updateQuantity, quantity, setCartItemsCount } =
+    useContext(ShoppingCartContext);
 
   if (!plant) {
     return <div>Plant not found</div>;
@@ -21,6 +22,7 @@ export default function ProductPage() {
         onAddToCart={onAddToCart}
         quantity={quantity}
         updateQuantity={updateQuantity}
+        setCartItemsCount={setCartItemsCount}
       />
     </>
   );

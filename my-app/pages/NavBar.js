@@ -13,7 +13,13 @@ export default function NavBar() {
   const [miniNavOpen, setMiniNavOpen] = useState(false);
   const [searchBarOpen, setSearchBarOpen] = useState(false);
 
-  const { shoppingCartOpen, toggleShoppingCart } = useContext(ShoppingCartContext);
+  const { shoppingCartOpen, toggleShoppingCart, cartItems } = useContext(ShoppingCartContext);
+
+  const cartItemsCount = cartItems.map((cartItem) => (cartItem.quantity));
+  const setCartItemsCount = cartItemsCount.reduce((a, b) => a + b, 0);
+
+
+  const cartClass = setCartItemsCount > 0 ? 'animate-bounce' : 'opacity-0';
 
   const toggleMiniNav = () => {
     setMiniNavOpen(!miniNavOpen);
@@ -139,14 +145,17 @@ export default function NavBar() {
                 <RxMagnifyingGlass />
               )}
             </button>
-            <button onClick={toggleShoppingCart} className="my-auto me-5 text-2xl text-stone-400 cursor-pointer hover:text-stone-800" >
+            <button onClick={toggleShoppingCart} className="my-auto text-2xl text-stone-400 cursor-pointer hover:text-stone-800" >
             {shoppingCartOpen ? (
-              <RxCross1 className="text-xl mt-0.5" /> ) : ( <BsCart2 /> ) }
+              <RxCross1 className="text-xl mt-0.5"/> ) : ( <BsCart2 /> ) }
             </button>
+            <p className={`${cartClass} bg-stone-300 p-1.5 pt-1 rounded-full mt-4 h-7 w-7 text-sm text-center font-bold`}>
+              {setCartItemsCount}
+            </p>
           </div>
         </div>
       </nav>
-      <div className={`${searchBarOpen ? "" : "hidden"} searchbar`}>
+      <div className={`${searchBarOpen ? "slide-in" : "slide-out"} searchbar fixed sm:top-14 top-44 right-0 z-20 h-screen sm:w-4/12 w-4/12 flex flex-col bg-stone-300 `}>
         <Searchbar setSearchBarOpen={setSearchBarOpen} setMiniNavOpen={setMiniNavOpen} />
       </div>
     </>

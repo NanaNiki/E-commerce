@@ -2,16 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fade-in {
+.slide-in{
+animation: slide-in 400ms ease-in-out forwards;
+}
+.slide-out{
+  animation: slide-out 300ms ease-in-out forwards;
+}
+
+
+@keyframes slide-in {
   0% {
     opacity: 0;
-    transform: scaleX(0);
-    filter: blur(20%);
+    transform: translateX(100%);
+    filter: blur(100%);
+    overflow: hidden;
   }
   100% {
     opacity: 1;
-    transform: scaleX(1);
+    transform: translateX(0);
     filter: blur(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+    filter: blur(100%);
+    overflow: hidden;
   }
 }
 

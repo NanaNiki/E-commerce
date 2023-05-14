@@ -1,12 +1,13 @@
-import { createContext, useState } from 'react'
-import ShoppingCart from './ShoppingCart'
+import { createContext, useState, useRef, useEffect } from "react";
+import ShoppingCart from "./ShoppingCart";
 
-export const ShoppingCartContext = createContext()
+export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
+  const cartRef = useRef(null);
 
   const toggleShoppingCart = () => {
     if (shoppingCartOpen === false) {
@@ -35,7 +36,9 @@ export const ShoppingCartProvider = ({ children }) => {
     if (exist) {
       setCartItems(
         cartItems.map((item) =>
-          item.id === plant.id ? { ...exist, quantity: exist.quantity + 1 } : item
+          item.id === plant.id
+            ? { ...exist, quantity: exist.quantity + 1 }
+            : item
         )
       );
     } else {
@@ -58,17 +61,44 @@ export const ShoppingCartProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const handleMouseDown = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setShoppingCartOpen(false);
+      }
+    };
+    window.addEventListener("mousedown", handleMouseDown);
+    return () => {
+      window.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, [setShoppingCartOpen]);
+
   return (
-    <ShoppingCartContext.Provider value={{ cartItems, onAddToCart, onRemoveFromCart, updateQuantity, quantity, shoppingCartOpen, toggleShoppingCart }}>
+    <ShoppingCartContext.Provider
+      value={{
+        cartItems,
+        onAddToCart,
+        onRemoveFromCart,
+        updateQuantity,
+        quantity,
+        shoppingCartOpen,
+        toggleShoppingCart,
+      }}
+    >
       {children}
-      <div className={`${shoppingCartOpen? "" : "hidden"} shoppingcart`}>      
-      <ShoppingCart
-        cartItems={cartItems}
-        onAddToCart={onAddToCart}
-        onRemoveFromCart={onRemoveFromCart}
-        setShoppingCartOpen={setShoppingCartOpen}/>
+      <div
+        className={`${
+          shoppingCartOpen ? "slide-in" : "slide-out"
+        } fixed top-44 right-0 z-20 h-1/2 sm:w-4/12 w-4/12 flex flex-col bg-stone-300 p-5`}
+        ref={cartRef}
+      >
+        <ShoppingCart
+          cartItems={cartItems}
+          onAddToCart={onAddToCart}
+          onRemoveFromCart={onRemoveFromCart}
+          setShoppingCartOpen={setShoppingCartOpen}
+        />
       </div>
     </ShoppingCartContext.Provider>
-  )
-
-}
+  );
+};

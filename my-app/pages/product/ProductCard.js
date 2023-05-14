@@ -4,7 +4,13 @@ import plants from "./plants.json";
 import Link from "next/link.js";
 
 export default function ProductCard(props) {
-   const { plantsData, onAddToCart, updateQuantity, quantity } = props;
+  const {
+    plantsData,
+    onAddToCart,
+    updateQuantity,
+    quantity,
+    setCartItemsCount,
+  } = props;
 
   return (
     <>
@@ -87,7 +93,8 @@ export default function ProductCard(props) {
               +
             </button>
           </div>
-          <button onClick={() => onAddToCart(plantsData, quantity)}
+          <button
+            onClick={() => onAddToCart(plantsData, quantity, setCartItemsCount)}
             className={`m-3 mb-0 mx-auto cursor-pointer bg-black w-full h-10 text-white text-sm hover:bg-stone-700 ${inter.className}`}
           >
             ADD TO CARD

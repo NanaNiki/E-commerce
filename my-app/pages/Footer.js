@@ -1,5 +1,4 @@
-import { castoro } from "./index.js";
-import { inter } from "./index.js";
+import { castoro, inter } from "./index.js";
 import Link from "next/link";
 import Image from "next/image.js";
 
@@ -41,16 +40,16 @@ export default function Footer() {
           <input
             type="email"
             name="email"
-            className="ps-2 lg:pe-72 h-10 bg-neutral-200 text-stone-950 text-base mb-4"
+            className="peer ps-2 lg:w-[440px] h-10 bg-neutral-200 text-stone-950 text-base mb-4 border-2 invalid:text-pink-900"
             placeholder="Enter your email here"
             required
-          ></input>
-          <button
-            className={` mx-auto cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
+          ></input>           
+          <Link href="mailto:nicol.wesolowska@gmail.com" target="_blank"
+            className={` mx-auto pt-2.5 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
           >
             SUBSCRIBE
-          </button>
-        </div>
+          </Link>
+        </div>        
       </div>
       <div className="flex flex-row justify-between sm:p-5 pb-3">
         <div className="col-span-1 p-1.5">

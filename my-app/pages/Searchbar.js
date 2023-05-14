@@ -53,10 +53,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
   }, [setSearchBarOpen, clearSearchTerm]);
 
   return (
-    <div
-      ref={searchBarRef}
-      className="search-bar fixed sm:top-14 top-44 right-0 z-20 h-screen sm:w-4/12 w-4/12 flex flex-col bg-stone-300 "
-    >
+    <div ref={searchBarRef} className="search-bar">
       <form
         className="sm:p-5 pt-5 mx-auto pb-2 flex place-items-start lg:w-7/12"
         onSubmit={handleFormSubmit}

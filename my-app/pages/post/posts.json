@@ -2,7 +2,7 @@
 [   {
       "id": 1,
       "title": "How to water your freaking plants so they don't die after one week",
-      "image": "/post1.jpg",
+      "image": "/images/post1.jpg",
       "alt": "Three plants on the table with a watering pot",
       "date": "2/4/2023",
       "author": "Mellissa Bail",
@@ -33,7 +33,7 @@
     {
       "id": 2,
       "title": "How to repot a Monstera without killing it and foster its growth",
-      "image": "/post2.jpg",
+      "image": "/images/post2.jpg",
       "alt" : "Monstera plant leaves and fern leaves",
       "date": "1/3/2023",
       "author": "Jesse Rowe",

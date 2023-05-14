@@ -4,25 +4,25 @@ import Link from "next/link";
 
 export const categoriesData = [
   {
-    image: "/jungle.jpg",
+    image: "/images/jungle.jpg",
     name: "Jungle Plants",
     alt: "Palm house with jungle plants and view on the sky",
     val: "jungle",
   },
   {
-    image: "/outdoors.jpg",
+    image: "/images/outdoors.jpg",
     name: "Outdoor Plants",
     alt: "Outdoors pool with turqoise water and blue sunbeds surrounded by plants",
     val: "outdoor",
   },
   {
-    image: "/bedroom.jpg",
+    image: "/images/bedroom.jpg",
     name: "Bedroom Plants",
     alt: "Modern and simple decored bedroom with wooden floor, white and gray accents with a big plant",
     val: "bedroom",
   },
   {
-    image: "/minimal.jpg",
+    image: "/images/minimal.jpg",
     name: "Minimalistic Plants",
     alt: "Minimalistic leafy plant with wooden holder on the white table",
     val: "minimal",
