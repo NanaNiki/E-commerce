@@ -7,11 +7,11 @@ import ShoppingCart from "./ShoppingCart.js";
 import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
+
 export default function NavBar() {
   const [miniNavOpen, setMiniNavOpen] = useState(false);
   const [searchBarOpen, setSearchBarOpen] = useState(false);
-  const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
-
+  // const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
 
   const toggleMiniNav = () => {
     setMiniNavOpen(!miniNavOpen);
@@ -143,19 +143,19 @@ export default function NavBar() {
                 <RxMagnifyingGlass />
               )}
             </button>
-            <button onClick={toggleShoppingCart} className="my-auto me-5 text-2xl text-stone-400 cursor-pointer hover:text-stone-800" >
+            {/* <button onClick={toggleShoppingCart} className="my-auto me-5 text-2xl text-stone-400 cursor-pointer hover:text-stone-800" >
             {shoppingCartOpen ? (
               <RxCross1 className="text-xl mt-0.5" /> ) : ( <BsCart2 /> ) }
-            </button>
+            </button> */}
           </div>
         </div>
       </nav>
       <div className={`${searchBarOpen ? "" : "hidden"} searchbar`}>
         <Searchbar setSearchBarOpen={setSearchBarOpen} setMiniNavOpen={setMiniNavOpen} />
       </div>
-      <div className={`${shoppingCartOpen? "" : "hidden"} shoppingcart`}>
+      {/* <div className={`${shoppingCartOpen? "" : "hidden"} shoppingcart`}>
         <ShoppingCart setShoppingCartOpen={setShoppingCartOpen} setMiniNavOpen={setMiniNavOpen}/>
-      </div>
+      </div> */}
     </>
   );
 }

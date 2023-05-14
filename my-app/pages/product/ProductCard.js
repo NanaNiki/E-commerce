@@ -1,26 +1,10 @@
 import { castoro, inter } from "../index.js";
-import { useState } from "react";
 import Image from "next/image";
 import plants from "./plants.json";
 import Link from "next/link.js";
 
-export default function ProductCard({ plantsData }) {
-  const [quantity, setQuantity] = useState(1);
-
-  function addToCart(type) {
-    if (type === "add") {
-      if (quantity >= 50) {
-        return;
-      }
-      setQuantity((prev) => prev + 1);
-    } else if (type === "remove") {
-      if (quantity <= 1) {
-        return;
-      }
-      setQuantity((prev) => prev - 1);
-    }
-  }
-
+export default function ProductCard(props) {
+   const { plantsData, onAddToCart, updateQuantity, quantity } = props;
 
   return (
     <>
@@ -33,7 +17,7 @@ export default function ProductCard({ plantsData }) {
             alt={`Plant product ${plantsData.name}`}
             priority
           />
-          {/* <div
+          <div
             className={`md:hidden flex flex-col h-full m-auto my-5 ${castoro.className}`}
           >
             <h1 className="text-2xl ">{plantsData.name}</h1>
@@ -43,7 +27,7 @@ export default function ProductCard({ plantsData }) {
               <h5 className="px-5 text-base">Quantity</h5>
               <button
                 className="text-lg text-center py-auto bg-stone-300 lg:w-32 h-8 p-0.5 w-20 hover:text-stone-500"
-                onClick={() => addToCart("remove")}
+                onClick={() => updateQuantity("remove")}
               >
                 -
               </button>
@@ -52,7 +36,7 @@ export default function ProductCard({ plantsData }) {
               </div>
               <button
                 className="text-lg text-center py-auto bg-stone-300 h-8 p-0.5 w-20 hover:text-stone-500"
-                onClick={() => addToCart("add")}
+                onClick={() => updateQuantity("add")}
               >
                 +
               </button>
@@ -77,7 +61,7 @@ export default function ProductCard({ plantsData }) {
                 </Link>
               </div>
             ))}
-          </div> */}
+          </div>
         </div>
         <div
           className={` md:flex hidden flex-col h-full me-auto lg:px-7 w-fit ${castoro.className}`}
@@ -89,7 +73,7 @@ export default function ProductCard({ plantsData }) {
             <h5 className="px-5 lg:text-lg sm:text-base">Quantity</h5>
             <button
               className="text-2xl text-center py-auto bg-stone-300 w-28 h-8 p-0.5 hover:text-stone-500"
-              onClick={() => addToCart("remove")}
+              onClick={() => updateQuantity("remove")}
             >
               -
             </button>
@@ -98,12 +82,12 @@ export default function ProductCard({ plantsData }) {
             </div>
             <button
               className="text-2xl text-center py-auto bg-stone-300 w-28 h-8 p-0.5 hover:text-stone-500"
-              onClick={() => addToCart("add")}
+              onClick={() => updateQuantity("add")}
             >
               +
             </button>
           </div>
-          <button
+          <button onClick={() => onAddToCart(plantsData, quantity)}
             className={`m-3 mb-0 mx-auto cursor-pointer bg-black w-full h-10 text-white text-sm hover:bg-stone-700 ${inter.className}`}
           >
             ADD TO CARD
