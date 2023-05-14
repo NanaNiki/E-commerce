@@ -1,10 +1,13 @@
-import '@/styles/globals.css'
-import Layout from './Layout'
+import "@/styles/globals.css";
+import Layout from "./Layout";
+import { ShoppingCartProvider } from "./ShoppingCartContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ShoppingCartProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ShoppingCartProvider>
   );
 }
