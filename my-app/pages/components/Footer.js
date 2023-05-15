@@ -1,6 +1,8 @@
 import { castoro, inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
+import PopUp from "./PopUp.js";
+import { useState } from "react";
 
 const footertags = [
   { title: "Conntact" },
@@ -27,73 +29,84 @@ const footertags = [
 ];
 
 export default function Footer() {
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  const handleOpen = () => setShowPopUp(true);
+  const handleClose = () => setShowPopUp(false);
+
   return (
-    <footer className="footer lg:pt-16 relative w-full">
-      <div
-        className={`flex flex-col justify-between p-5 pb-4 text-center lg:text-3xl sm:text-xl  ${castoro.className} `}
-        id="newsletter"
-      >
-        <h2 className="lg:p-2">Get 15% off your next order,</h2>
-        <h2 className="pb-2">Subscribe to our Newsletter</h2>
+    <>
+      <footer className="footer lg:pt-16 relative w-full">
+        <div
+          className={`flex flex-col justify-between p-5 pb-4 text-center lg:text-3xl sm:text-xl  ${castoro.className} `}
+          id="newsletter"
+        >
+          <h2 className="lg:p-2">Get 15% off your next order,</h2>
+          <h2 className="pb-2">Subscribe to our Newsletter</h2>
 
-        <div className="relative flex flex-row justify-center m-auto lg:p-10 lg:flex-nowrap md:flex-nowrap flex-wrap">
-          <input
-            type="email"
-            name="email"
-            className="ps-2 lg:w-[440px] h-10 bg-neutral-200 text-stone-950 text-base mb-4 border-2 invalid:text-pink-900"
-            placeholder="Enter your email here"
-            required
-          ></input>
-          <Link
-            href="mailto:nicol.wesolowska@gmail.com"
-            target="_blank"
-            className={` mx-auto lg:pt-2.5 pt-3 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
-          >
-            SUBSCRIBE
-          </Link>
+          <div className="relative flex flex-row justify-center m-auto lg:p-10 lg:flex-nowrap md:flex-nowrap flex-wrap">
+            <input
+              type="email"
+              name="email"
+              className="ps-2 lg:w-[440px] h-10 bg-neutral-200 text-stone-950 text-base mb-4 border-2 invalid:text-pink-900"
+              placeholder="Enter your email here"
+              required
+            ></input>
+            <Link
+              href="mailto:nicol.wesolowska@gmail.com"
+              target="_blank"
+            >
+              <button onClick={handleOpen} className={` mx-auto lg:pt-1 pt-3 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}>SUBSCRIBE</button>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-row justify-between sm:p-5 pb-3">
-        <div className="col-span-1 p-1.5">
-          <Link href="/#start" passHref>
-            <Image src="/plantealogo.svg" alt="logo" width={110} height={50} />
-          </Link>
-          <div className="dropdown-currency"></div>
-        </div>
-        <div className="grid grid-cols-3 sm:w-3/4 w-11/12 ">
-          {footertags.map((tag, index) => {
-            return (
-              <div key={index} className="w-fit mx-1">
-                <span className="sm:text-sm text-xs text-stone-400">
-                  {tag.title}
-                </span>
-                <Link href={`${tag.url}`} target="_blank" passHref>
-                  <span
-                    className={`lg:text-base sm:text-sm text-xs hover:text-stone-500 ${castoro.className} `}
-                  >
-                    {tag.name}
+        <div className="flex flex-row justify-between sm:p-5 pb-3">
+          <div className="col-span-1 p-1.5">
+            <Link href="/#start" passHref>
+              <Image
+                src="/plantealogo.svg"
+                alt="logo"
+                width={110}
+                height={50}
+              />
+            </Link>
+            <div className="dropdown-currency"></div>
+          </div>
+          <div className="grid grid-cols-3 sm:w-3/4 w-11/12 ">
+            {footertags.map((tag, index) => {
+              return (
+                <div key={index} className="w-fit mx-1">
+                  <span className="sm:text-sm text-xs text-stone-400">
+                    {tag.title}
                   </span>
-                </Link>
-              </div>
-            );
-          })}
+                  <Link href={`${tag.url}`} target="_blank" passHref>
+                    <span
+                      className={`lg:text-base sm:text-sm text-xs hover:text-stone-500 ${castoro.className} `}
+                    >
+                      {tag.name}
+                    </span>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-
-      <div className="flex flex-row justify-between text-xs text-stone-500 pt-0 p-2">
-        <p>Copyright &copy; 2023 All rights reserved</p>
-        <p>
-          Template from
-          <a
-            href="https://app.uizard.io/templates/O4Q0AGM8ZruJw9GpR5YQ?_gl=1*r55hdo*_ga*MTgwNzYxODk1MC4xNjgzMTE1NTQ5*_ga_FV1FRPC5G4*MTY4MzQ0OTg1NS4xMS4xLjE2ODM0NTE5NzMuNTAuMC4w"
-            target="_blank"
-            className="hover:italic hover:text-stone-950"
-          >
-            {" "}
-            Uizard
-          </a>
-        </p>
-      </div>
-    </footer>
+        <div className="flex flex-row justify-between text-xs text-stone-500 pt-0 p-2">
+          <p>Copyright &copy; 2023 All rights reserved</p>
+          <p>
+            Template from
+            <a
+              href="https://app.uizard.io/templates/O4Q0AGM8ZruJw9GpR5YQ?_gl=1*r55hdo*_ga*MTgwNzYxODk1MC4xNjgzMTE1NTQ5*_ga_FV1FRPC5G4*MTY4MzQ0OTg1NS4xMS4xLjE2ODM0NTE5NzMuNTAuMC4w"
+              target="_blank"
+              className="hover:italic hover:text-stone-950"
+            >
+              {" "}
+              Uizard
+            </a>
+          </p>
+        </div>
+      </footer>
+      {showPopUp && <PopUp onHandleClose={handleClose} />}
+    </>
   );
 }
