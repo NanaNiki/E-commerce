@@ -1,7 +1,7 @@
-import { castoro } from "./index.js";
+import { castoro } from "../index.js";
 import Image from "next/image";
 import Link from "next/link.js";
-import posts from "./post/posts.json";
+import posts from "../post/posts.json";
 
 export default function Blog() {
   return (

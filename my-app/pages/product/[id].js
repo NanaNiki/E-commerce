@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import plantsData from "./plants.json";
 import ProductCard from "./ProductCard";
 import { useContext } from "react";
-import { ShoppingCartContext } from "../ShoppingCartContext";
+import { ShoppingCartContext } from "../components/ShoppingCartContext";
 
 export default function ProductPage() {
   const router = useRouter();

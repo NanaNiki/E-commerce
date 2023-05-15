@@ -1,33 +1,32 @@
-import { castoro } from "./index.js";
+import { castoro } from "../index.js";
 import Image from "next/image.js";
-import plantsData from "./product/plants.json";
+import plantsData from "../product/plants.json";
 import Link from "next/link.js";
 
 export default function Featured() {
   const favTegCheck = () => {
-    const favouritePlants = plantsData.filter(
-      (plant) => plant.id <= 3 );
+    const favouritePlants = plantsData.filter((plant) => plant.id <= 3);
     return favouritePlants.map((plant, index) => {
       return (
         <span
-                key={index}
-                className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
-              >
-              <Link href={`/product/${plant.id}`} passHref target="_parent">
-                <Image
-                  src={plant.image}
-                  width={270}
-                  height={500}
-                  alt={`Plant product ${plant.name}`}
-                  className="inline-block hover:scale-95 ease-in-out duration-300"
-                />
-                <div
-                  className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
-                >
-                  <h5>{plant.name}</h5> <h5>{plant.price}€</h5>
-                </div>
-                </Link>
-              </span>
+          key={index}
+          className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
+        >
+          <Link href={`/product/${plant.id}`} passHref target="_parent">
+            <Image
+              src={plant.image}
+              width={270}
+              height={500}
+              alt={`Plant product ${plant.name}`}
+              className="inline-block hover:scale-95 ease-in-out duration-300"
+            />
+            <div
+              className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
+            >
+              <h5>{plant.name}</h5> <h5>{plant.price}€</h5>
+            </div>
+          </Link>
+        </span>
       );
     });
   };
@@ -54,7 +53,11 @@ export default function Featured() {
             <p className="mb-4">harmful chemicals.</p>
             But please don't eat them
           </span>
-          <Link className="hidden sm:block lg:my-10 md:my-5 sm:my-3 pt-2 cursor-pointer bg-stone-200 w-40 h-10 text-sm text-center font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200" href={'/catalogue/favourites'} passHref>
+          <Link
+            className="hidden sm:block lg:my-10 md:my-5 sm:my-3 pt-2 cursor-pointer bg-stone-200 w-40 h-10 text-sm text-center font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200"
+            href={"/catalogue/favourites"}
+            passHref
+          >
             Shop all Favourites
           </Link>
         </div>
@@ -62,7 +65,11 @@ export default function Featured() {
           {favTegCheck(plantsData)}
         </div>
         <div className="flex flex-row w-screen justify-end lg:hidden md:hidden sm:hidden">
-        <Link className="m-4 pt-3 text-center cursor-pointer bg-stone-200 w-40 h-10 text-xs font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200" href={'/catalogue/favourites'} passHref>
+          <Link
+            className="m-4 pt-3 text-center cursor-pointer bg-stone-200 w-40 h-10 text-xs font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200"
+            href={"/catalogue/favourites"}
+            passHref
+          >
             Shop all Favourites
           </Link>
         </div>

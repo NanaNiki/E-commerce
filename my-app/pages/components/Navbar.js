@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { castoro } from "./index.js";
+import { castoro } from "../index.js";
 import Image from "next/image";
 import Link from "next/link";
 import Searchbar from "./Searchbar.js";
 import { useContext } from "react";
-import { ShoppingCartContext } from "./ShoppingCartContext";
+import { ShoppingCartContext } from "./ShoppingCartContext.js";
 import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
@@ -55,10 +55,10 @@ export default function NavBar() {
           {miniNavOpen ? <RxCross1 /> : <RxHamburgerMenu />}
         </button>
         <span
-          class={`${miniNavNotification} relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
+          className={`${miniNavNotification} relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
         >
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-800 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-900"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-800 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-900"></span>
         </span>
         <div
           className={` MINI-NAVBAR lg:hidden md:hidden sm:hidden absolute right-0 flex flex-col w-4/12 h-36 top-14 justify-center bg-stone-300 bg-opacity-100 ${
@@ -91,7 +91,7 @@ export default function NavBar() {
               <li>
                 <Link
                   className=" transition hover:text-stone-500 cursor-pointer"
-                  href="https://github.com/NanaNiki"
+                  href={`../contact`}
                   passHref
                 >
                   Contact
@@ -144,7 +144,7 @@ export default function NavBar() {
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
               <Link
                 className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer"
-                href="https://github.com/NanaNiki"
+                href={`../contact`}
                 passHref
               >
                 Contact

@@ -1,4 +1,4 @@
-import Start from "./Start";
+import Start from "./components/Start";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import { Castoro } from "next/font/google";
@@ -36,9 +36,7 @@ export function observeScroll(elements) {
 
 export default function Home() {
   return (
-    <main
-      className={`min-h-screen bg-white text-stone-800 ${inter.className}`}
-    >
+    <main className={`min-h-screen bg-white text-stone-800 ${inter.className}`}>
       <Start />
       <DynamicCategories />
       <DynamicFeatured />
@@ -47,6 +45,10 @@ export default function Home() {
   );
 }
 
-const DynamicCategories = dynamic(() => import("./Categories"), { ssr: false });
-const DynamicFeatured = dynamic(() => import("./Featured"), { ssr: false });
-const DynamicBlog = dynamic(() => import("./Blog"), { ssr: false });
+const DynamicCategories = dynamic(() => import("./components/Categories"), {
+  ssr: false,
+});
+const DynamicFeatured = dynamic(() => import("./components/Featured"), {
+  ssr: false,
+});
+const DynamicBlog = dynamic(() => import("./components/Blog"), { ssr: false });

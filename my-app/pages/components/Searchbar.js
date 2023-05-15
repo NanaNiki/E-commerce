@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { RxMagnifyingGlass } from "react-icons/rx";
-import plantsData from "./product/plants.json";
+import plantsData from "../product/plants.json";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,4 +1,4 @@
-import { castoro } from "./index.js";
+import { castoro } from "../index.js";
 import Image from "next/image.js";
 import Link from "next/link";
 

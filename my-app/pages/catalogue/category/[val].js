@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { categoriesData } from "../../Categories";
+import { categoriesData } from "../../components/Categories";
 import CategoryCard from "./CategoryCard";
 
 export default function CategoryPage() {

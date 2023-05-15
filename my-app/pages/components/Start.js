@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { castoro } from "./index.js";
+import { castoro } from "../index.js";
 import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Start() {
   return (
-    <section className="w-full h-full overflow-hidden" id="start">   
+    <section className="w-full h-full overflow-hidden" id="start">
       <Image
         src="/planthero.jpg"
         width={1400}
@@ -37,7 +37,10 @@ export default function Start() {
         <h2 className="md:text-center md:text-base sm:text-sm text-xs lg:mt-5 lg:mb-5 pt-1 ">
           Beautiful plants that encourage you to get creative.
         </h2>
-        <a href="#categories" className="text-center lg:mt-4 lg:p-2 md:pt-2 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse" >
+        <a
+          href="#categories"
+          className="text-center lg:mt-4 lg:p-2 md:pt-2 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse"
+        >
           Shop Now
         </a>
       </div>
@@ -49,7 +52,8 @@ export default function Start() {
       </a>
       <h1
         className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:pt-20 md:pt-12 pt-10 pb-5 flex flex-row justify-center font-bold ${castoro.className}`}
-        id="categories">
+        id="categories"
+      >
         Categories
       </h1>
     </section>

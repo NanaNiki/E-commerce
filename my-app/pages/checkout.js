@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { castoro } from "./index.js";
 import { useContext, useState } from "react";
-import { ShoppingCartContext } from "./ShoppingCartContext";
+import { ShoppingCartContext } from "./components/ShoppingCartContext.js";
 import { RiPlantLine } from "react-icons/ri";
 import { BsPaypal } from "react-icons/bs";
 import { FaGooglePay, FaApplePay } from "react-icons/fa";
@@ -162,54 +162,54 @@ export default function Checkout() {
             <div className="lg:w-full lg:mx-none mx-auto w-10/12 h-[1px] bg-stone-400 rounded-full"></div>
             <p className="my-4 text-center">or pay using credit card</p>
             <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto">
-                <label>Card holder full name</label>
-                <input
-                  name="card-name"
-                  type="text"
-                  placeholder="Enter your full name"
-                  className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
-                />
-                <label>Card Number</label>
-                <input
-                  type="text"
-                  name="cardnumber"
-                  placeholder="0000 0000 0000 0000"
-                  pattern="(\d{4}\s?){3}\d{4}(?!\d)"
-                  maxLength="19"
-                  className="border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
-                />
-                <div className="flex flex-row justify-between">
-                  <h5>Expiry Date</h5> <h5> CVV</h5>
-                </div>
-                <div className="flex flex-row">
-                  <input
-                    type="text"
-                    name="carddate"
-                    title="Expiry Date"
-                    placeholder="01/23"
-                    pattern="(0[1-9]|1[0-2])\/\d{2}"
-                    maxLength={5}
-                    className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
-                  />
-                  <input
-                    type="text"
-                    name="cvv"
-                    title="CVV"
-                    placeholder="CVV"
-                    pattern="\d{3}"
-                    maxLength="3"
-                    className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
-                  />
-                </div>
-                <Link href="/yourorder" className="mx-auto my-5 md:hidden">
-                  <button
-                    onClick={handleOrderClick}
-                    className="pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs"
-                  >
-                    ORDER
-                  </button>
-                </Link>
+              <label>Card holder full name</label>
+              <input
+                name="card-name"
+                type="text"
+                placeholder="Enter your full name"
+                className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
+              />
+              <label>Card Number</label>
+              <input
+                type="text"
+                name="cardnumber"
+                placeholder="0000 0000 0000 0000"
+                pattern="(\d{4}\s?){3}\d{4}(?!\d)"
+                maxLength="19"
+                className="border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+              />
+              <div className="flex flex-row justify-between">
+                <h5>Expiry Date</h5> <h5> CVV</h5>
               </div>
+              <div className="flex flex-row">
+                <input
+                  type="text"
+                  name="carddate"
+                  title="Expiry Date"
+                  placeholder="01/23"
+                  pattern="(0[1-9]|1[0-2])\/\d{2}"
+                  maxLength={5}
+                  className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                />
+                <input
+                  type="text"
+                  name="cvv"
+                  title="CVV"
+                  placeholder="CVV"
+                  pattern="\d{3}"
+                  maxLength="3"
+                  className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                />
+              </div>
+              <Link href="/yourorder" className="mx-auto my-5 md:hidden">
+                <button
+                  onClick={handleOrderClick}
+                  className="pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs"
+                >
+                  ORDER
+                </button>
+              </Link>
+            </div>
           </div>
         </form>
         <div className="hidden md:flex md:flex-row md:justify-end md:ps-48">

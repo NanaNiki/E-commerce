@@ -1,6 +1,6 @@
 import { createContext, useState, useRef, useEffect } from "react";
 import ShoppingCart from "./ShoppingCart";
-import { setMiniNavOpen } from "./Navbar.js"
+import { setMiniNavOpen } from "./Navbar.js";
 
 export const ShoppingCartContext = createContext();
 
@@ -65,7 +65,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
   const onClearCart = () => {
     setCartItems([]);
-  }
+  };
 
   useEffect(() => {
     const handleMouseDown = (event) => {
