@@ -40,7 +40,7 @@ export default function Footer() {
           <input
             type="email"
             name="email"
-            className="peer ps-2 lg:w-[440px] h-10 bg-neutral-200 text-stone-950 text-base mb-4 border-2 invalid:text-pink-900"
+            className="ps-2 lg:w-[440px] h-10 bg-neutral-200 text-stone-950 text-base mb-4 border-2 invalid:text-pink-900"
             placeholder="Enter your email here"
             required
           ></input>           

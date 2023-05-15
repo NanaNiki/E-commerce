@@ -3,23 +3,28 @@ import { castoro } from "./index.js";
 import Image from "next/image";
 import Link from "next/link";
 import Searchbar from "./Searchbar.js";
-import { useContext } from 'react'
-import { ShoppingCartContext } from './ShoppingCartContext'
+import { useContext } from "react";
+import { ShoppingCartContext } from "./ShoppingCartContext";
 import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
-
 export default function NavBar() {
-  const [miniNavOpen, setMiniNavOpen] = useState(false);
   const [searchBarOpen, setSearchBarOpen] = useState(false);
 
-  const { shoppingCartOpen, toggleShoppingCart, cartItems } = useContext(ShoppingCartContext);
+  const {
+    miniNavOpen,
+    setMiniNavOpen,
+    shoppingCartOpen,
+    toggleShoppingCart,
+    cartItems,
+  } = useContext(ShoppingCartContext);
 
-  const cartItemsCount = cartItems.map((cartItem) => (cartItem.quantity));
+  const cartItemsCount = cartItems.map((cartItem) => cartItem.quantity);
   const setCartItemsCount = cartItemsCount.reduce((a, b) => a + b, 0);
 
-
-  const cartClass = setCartItemsCount > 0 ? 'animate-bounce' : 'opacity-0';
+  const cartClass = setCartItemsCount > 0 ? "animate-bounce" : "opacity-0";
+  const miniNavNotification =
+    setCartItemsCount > 0 ? "opacity-100" : "opacity-0";
 
   const toggleMiniNav = () => {
     setMiniNavOpen(!miniNavOpen);
@@ -30,8 +35,6 @@ export default function NavBar() {
       setSearchBarOpen(true);
     }
   };
-
-  
 
   return (
     <>
@@ -45,19 +48,28 @@ export default function NavBar() {
             className="ms-2"
           />
         </Link>
-        {/* <button
+        <button
           onClick={toggleMiniNav}
-          className="text-stone-800 cursor-pointer flex flex-row w-screen justify-end z-20 m-auto me-10 lg:hidden md:hidden sm:hidden"
+          className="text-stone-800 cursor-pointer text-xl flex flex-row w-screen justify-end z-20 m-auto lg:hidden md:hidden sm:hidden"
         >
           {miniNavOpen ? <RxCross1 /> : <RxHamburgerMenu />}
         </button>
+        <span
+          class={`${miniNavNotification} relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
+        >
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-800 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-900"></span>
+        </span>
         <div
-          className={` MINI-NAVBAR lg:hidden md:hidden sm:hidden absolute right-0 flex flex-col w-4/12 h-32 top-14 justify-center bg-stone-300 bg-opacity-100 ${
-            miniNavOpen ? "" : "hidden"
+          className={` MINI-NAVBAR lg:hidden md:hidden sm:hidden absolute right-0 flex flex-col w-4/12 h-36 top-14 justify-center bg-stone-300 bg-opacity-100 ${
+            miniNavOpen ? "slide-in" : "slide-out"
           }`}
         >
           <div className="flex flex-col justify-between items-center pt-5">
-            <ul className={`flex flex-col justify-evenly ${castoro.className}`} onClick={() => setMiniNavOpen(false)}>
+            <ul
+              className={`flex flex-col justify-evenly ${castoro.className}`}
+              onClick={() => setMiniNavOpen(false)}
+            >
               <li>
                 <Link
                   className="transition hover:text-stone-500 cursor-pointer"
@@ -86,21 +98,27 @@ export default function NavBar() {
                 </Link>
               </li>
             </ul>
-            <div className="flex flex-row justify-end m-4">
+            <div className="flex flex-row justify-end m-4 pb-3">
               <button
                 onClick={toggleSearchBar}
-                className=" mx-2 text-xl text-stone-700 cursor-pointer hover:text-stone-500"
+                className=" mx-2 w-4 h-4 text-2xl mt-0.5 text-stone-700 cursor-pointer hover:text-stone-500"
               >
-                {searchBarOpen ? (
-                  <RxCross1 className="text-lg mt-0.5" />
-                ) : (
-                  <RxMagnifyingGlass />
-                )}
+                {searchBarOpen ? <RxCross1 /> : <RxMagnifyingGlass />}
               </button>
-              <BsCart2 className="mx-2 w-4 h-4 text-stone-700 cursor-pointer hover:text-stone-500" />
+              <button
+                onClick={toggleShoppingCart}
+                className="mx-2 w-4 h-4 text-2xl text-stone-700 cursor-pointer hover:text-stone-500"
+              >
+                {shoppingCartOpen ? <RxCross1 /> : <BsCart2 />}
+              </button>
+              <p
+                className={`${cartClass} bg-stone-100 rounded-full px-0.5 h-4 w-4 text-sm text-center font-semibold`}
+              >
+                {setCartItemsCount}
+              </p>
             </div>
           </div>
-        </div> */}
+        </div>
         <div className="MAIN-NAVBAR hidden sm:flex flex-row w-full">
           <ul className="lg:mx-28 w-full flex flex-row m-auto justify-evenly">
             <li className="flex flex-col justify-around has-tooltip">
@@ -145,18 +163,33 @@ export default function NavBar() {
                 <RxMagnifyingGlass />
               )}
             </button>
-            <button onClick={toggleShoppingCart} className="my-auto text-2xl text-stone-400 cursor-pointer hover:text-stone-800" >
-            {shoppingCartOpen ? (
-              <RxCross1 className="text-xl mt-0.5"/> ) : ( <BsCart2 /> ) }
+            <button
+              onClick={toggleShoppingCart}
+              className="my-auto text-2xl text-stone-400 cursor-pointer hover:text-stone-800"
+            >
+              {shoppingCartOpen ? (
+                <RxCross1 className="text-xl mt-0.5" />
+              ) : (
+                <BsCart2 />
+              )}
             </button>
-            <p className={`${cartClass} bg-stone-300 p-1.5 pt-1 rounded-full mt-4 h-7 w-7 text-sm text-center font-bold`}>
+            <p
+              className={`${cartClass} bg-stone-300 rounded-full mt-6 h-5 w-5 text-sm text-center font-bold`}
+            >
               {setCartItemsCount}
             </p>
           </div>
         </div>
       </nav>
-      <div className={`${searchBarOpen ? "slide-in" : "slide-out"} searchbar fixed sm:top-14 top-44 right-0 z-20 h-screen sm:w-4/12 w-4/12 flex flex-col bg-stone-300 `}>
-        <Searchbar setSearchBarOpen={setSearchBarOpen} setMiniNavOpen={setMiniNavOpen} />
+      <div
+        className={`${
+          searchBarOpen ? "slide-in" : "slide-out"
+        } searchbar fixed sm:top-14 top-44 right-0 z-20 h-screen sm:w-4/12 w-4/12 flex flex-col bg-stone-300 overflow-y-scroll `}
+      >
+        <Searchbar
+          setSearchBarOpen={setSearchBarOpen}
+          setMiniNavOpen={setMiniNavOpen}
+        />
       </div>
     </>
   );

@@ -48,6 +48,9 @@ export default function ProductCard(props) {
               </button>
             </div>
             <button
+              onClick={() =>
+                onAddToCart(plantsData, quantity, setCartItemsCount)
+              }
               className={`m-3 mx-auto cursor-pointer bg-black w-full h-9 text-white hover:bg-stone-700 text-xs ${inter.className}`}
             >
               ADD TO CARD
