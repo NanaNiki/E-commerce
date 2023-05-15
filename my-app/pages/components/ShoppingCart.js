@@ -11,7 +11,7 @@ export default function ShoppingCart(props) {
     setMiniNavOpen,
   } = props;
   return (
-    <div className="shopping-car">
+    <div className="shopping-cart">
       <h1 className="text-center font-bold text-stone-600">Shopping Cart</h1>
       {cartItems.length === 0 && (
         <p className="p-5 flex flex-row">
