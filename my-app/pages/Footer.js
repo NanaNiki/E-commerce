@@ -45,7 +45,7 @@ export default function Footer() {
             required
           ></input>           
           <Link href="mailto:nicol.wesolowska@gmail.com" target="_blank"
-            className={` mx-auto pt-2.5 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
+            className={` mx-auto lg:pt-2.5 pt-3 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
           >
             SUBSCRIBE
           </Link>

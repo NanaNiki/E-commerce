@@ -10,8 +10,8 @@ import { FaGooglePay, FaApplePay } from "react-icons/fa";
 export default function Checkout() {
   const { cartItems, onAddToCart, onRemoveFromCart, onClearCart } =
     useContext(ShoppingCartContext);
-    const [formData, setFormData] = useState({});
-    const [delivery, setDelivery] = useState("");
+  const [formData, setFormData] = useState({});
+  const [delivery, setDelivery] = useState("");
 
   const deliveryOptions = [
     { type: "Pick up", price: 0 },
@@ -30,10 +30,10 @@ export default function Checkout() {
     );
     if (selectedDelivery) {
       total += selectedDelivery.price;
-    };
+    }
     return total;
   }
-  const totalCost = calculateTotal().toFixed(2); 
+  const totalCost = calculateTotal().toFixed(2);
 
   const handleOrderClick = () => {
     localStorage.setItem("orderItems", JSON.stringify(cartItems));
@@ -44,7 +44,7 @@ export default function Checkout() {
       JSON.stringify({
         name: formData.name,
         email: formData.email,
-        phone: formData.phone
+        phone: formData.phone,
       })
     );
     setFormData({});
@@ -53,12 +53,12 @@ export default function Checkout() {
   };
 
   return (
-    <div className={`mt-14 w-8/12 mx-auto ${castoro.className}`}>
-      <h1 className="text-center pt-10 text-2xl font-bold text-stone-600">
+    <div className={`mt-14 lg:w-8/12 mx-auto ${castoro.className}`}>
+      <h1 className="text-center lg:pt-10 py-5 text-2xl font-bold text-stone-600">
         Your Order
       </h1>
       {cartItems.length === 0 && (
-        <p className="p-5 pt-16 mx-auto text-2xl flex flex-row w-fit">
+        <p className="p-5 lg:pt-16 mx-auto text-2xl flex flex-row w-fit">
           Your order is empty <RiPlantLine className="ms-2 mt-1" />
         </p>
       )}
@@ -95,17 +95,22 @@ export default function Checkout() {
         </div>
       ))}
       <div className="w-full h-[1px] bg-stone-400 rounded-full"></div>
-      <div className="flex flex-row justify-between pt-3">
-        <h1 className=" text-2xl lg:ps-16 font-bold text-stone-600">Total</h1>
-        <span className=" text-2xl font-bold text-stone-600">
+      <div className="flex flex-row px-2 justify-between pt-3">
+        <h1 className=" text-2xl lg:ps-16 ps-14 font-bold text-stone-600">
+          Total
+        </h1>
+        <span className="lg:pe-0 pe-14 text-2xl font-bold text-stone-600">
           {calculateTotal().toFixed(2)}€
         </span>
       </div>
-      <div className="flex flex-row justify-end pt-3">
-        <h1 className=" text-base lg:pe-16 font-bold text-stone-600">
+      <div className="flex flex-row justify-end mt-5">
+        <h1 className="text-base lg:pe-16 font-bold text-stone-600">
           Choose your delivery:
         </h1>
-        <select value={delivery.type} onChange={(e) => setDelivery(e.target.value)}>
+        <select
+          value={delivery.type}
+          onChange={(e) => setDelivery(e.target.value)}
+        >
           {deliveryOptions.map((option) => (
             <option key={option.type} value={option.type}>
               {option.type} {option.price.toFixed(2)}€
@@ -113,9 +118,9 @@ export default function Checkout() {
           ))}
         </select>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row lg:mt-0 mt-5">
         <form>
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto justify-between">
             <input
               type="text"
               name="name"
@@ -154,10 +159,9 @@ export default function Checkout() {
               <FaGooglePay className="text-5xl hover:text-stone-400 hover:scale-105" />
               <FaApplePay className="text-5xl hover:text-stone-400 hover:scale-105" />
             </div>
-            <div className="w-full h-[1px] bg-stone-400 rounded-full"></div>
+            <div className="lg:w-full lg:mx-none mx-auto w-10/12 h-[1px] bg-stone-400 rounded-full"></div>
             <p className="my-4 text-center">or pay using credit card</p>
-            <div className="credit-card-info-form">
-              <div className="flex flex-col">
+            <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto">
                 <label>Card holder full name</label>
                 <input
                   name="card-name"
@@ -165,8 +169,6 @@ export default function Checkout() {
                   placeholder="Enter your full name"
                   className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
                 />
-              </div>
-              <div className="flex flex-col">
                 <label>Card Number</label>
                 <input
                   type="text"
@@ -175,10 +177,7 @@ export default function Checkout() {
                   pattern="(\d{4}\s?){3}\d{4}(?!\d)"
                   maxLength="19"
                   className="border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
-                
                 />
-              </div>
-              <div className="flex flex-col">
                 <div className="flex flex-row justify-between">
                   <h5>Expiry Date</h5> <h5> CVV</h5>
                 </div>
@@ -190,7 +189,7 @@ export default function Checkout() {
                     placeholder="01/23"
                     pattern="(0[1-9]|1[0-2])\/\d{2}"
                     maxLength={5}
-                    className="border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                    className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
                   />
                   <input
                     type="text"
@@ -199,15 +198,22 @@ export default function Checkout() {
                     placeholder="CVV"
                     pattern="\d{3}"
                     maxLength="3"
-                    className="border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                    className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
                   />
                 </div>
+                <Link href="/yourorder" className="mx-auto my-5 md:hidden">
+                  <button
+                    onClick={handleOrderClick}
+                    className="pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs"
+                  >
+                    ORDER
+                  </button>
+                </Link>
               </div>
-            </div>
           </div>
         </form>
-        <div className="flex flex-row w-full justify-end ps-20">
-          <Link href="/yourorder" className="px-14 m-auto">
+        <div className="hidden md:flex md:flex-row md:justify-end md:ps-48">
+          <Link href="/yourorder" className="md:m-auto">
             <button
               onClick={handleOrderClick}
               className="pt-2 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs"

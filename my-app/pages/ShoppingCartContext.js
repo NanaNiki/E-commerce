@@ -98,7 +98,7 @@ export const ShoppingCartProvider = ({ children }) => {
       <div
         className={`${
           shoppingCartOpen ? "slide-in" : "slide-out"
-        } fixed top-44 right-0 z-20 h-1/2 sm:w-4/12 w-full flex flex-col bg-stone-300 p-5`}
+        } fixed top-44 right-0 z-20 h-1/2 lg:w-4/12 sm:w-8/12 w-full flex flex-col bg-stone-300 p-5`}
         ref={cartRef}
       >
         <ShoppingCart
