@@ -53,7 +53,7 @@ export default function Categories() {
                   height={500}
                   alt={category.alt}
                   className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"
-                  priority
+                  priority = {true}
                 />{" "}
               </Link>
             </span>

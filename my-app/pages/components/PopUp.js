@@ -1,21 +1,14 @@
 import { GiThreeLeaves } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { castoro } from "../index.js";
+import Image from "next/image.js";
 
 export default function PopUp({ onHandleClose }) {
   return (
     <>
       <div
-        className={`peer z-30 fixed top-1/3 md:left-[30%] left-8 flex flex-col md:w-[40%] md:h-[40%] w-10/12 h-44 bg-stone-100 shadow-lg shadow-stone-400  ${castoro.className}`}
+        className={`z-30 fixed top-1/3 sm:left-[25%] left-8 flex flex-col sm:w-[50%] sm:h-[30%] w-10/12 h-44 bg-white shadow-lg shadow-stone-400 has-animation ${castoro.className}`}
       >
-        <div className="justify-end flex flex-row mt-4 me-4">
-          <button
-            onClick={onHandleClose}
-            className="hover:text-emerald-700 text-xl"
-          >
-            <RxCross1 />
-          </button>
-        </div>
         <div className="flex flex-col m-auto pb-4">
           <div className="justify-center flex flex-row text-center md:text-4xl text-xl text-stone-800">
             <h1>The best</h1>
@@ -35,6 +28,27 @@ export default function PopUp({ onHandleClose }) {
         <div className="absolute bottom-2 w-full h-[1px] bg-stone-400 rounded-full"></div>
         <div className="absolute left-2 h-full w-[1px] bg-stone-400 rounded-full"></div>
         <div className="absolute right-2 h-full w-[1px] bg-stone-400 rounded-full"></div>
+
+        <div
+          className={`z-30 fixed top-1/3 sm:left-[25%] left-8 flex flex-col sm:w-[50%] sm:h-[30%] w-10/12 h-44 bg-emerald-900 shadow-lg shadow-stone-400 opacity-0 popup-animation ${castoro.className}`}
+        >
+          <Image
+            src={"/popup.svg"}
+            alt="popup thank you! message on leaves"
+            fill={true}
+          />
+          <div className="justify-end flex flex-row mt-4 me-4 z-20">
+            <button
+              onClick={onHandleClose}
+              className="text-emerald-600 text-xl hover:text-stone-200"
+            >
+              <RxCross1 />
+            </button>
+          </div>
+          <h1 className="z-20 text-center mx-auto my-auto md:text-4xl text-xl text-stone-200">
+            Thank You!
+          </h1>
+        </div>
       </div>
     </>
   );

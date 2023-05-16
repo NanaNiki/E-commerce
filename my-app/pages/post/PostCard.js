@@ -12,7 +12,7 @@ export default function PostCard({ postsData }) {
           height={400}
           className="mb-4 w-screen"
           alt={postsData.alt}
-          priority
+          priority = {true}
         />
         <div
           className={`flex flex-col text-end justify-center p-10 ${castoro.className}`}

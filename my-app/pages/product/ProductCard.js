@@ -21,7 +21,7 @@ export default function ProductCard(props) {
             width={400}
             height={600}
             alt={`Plant product ${plantsData.name}`}
-            priority
+            priority = {true}
           />
           <div
             className={`md:hidden flex flex-col h-full m-auto my-5 ${castoro.className}`}

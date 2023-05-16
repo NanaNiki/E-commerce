@@ -28,8 +28,8 @@ const footertags = [
   { name: null },
 ];
 
-export default function Footer() {
-  const [showPopUp, setShowPopUp] = useState(false);
+export default function Footer({showPopUp, setShowPopUp}) {
+ 
 
   const handleOpen = () => setShowPopUp(true);
   const handleClose = () => setShowPopUp(false);
@@ -52,12 +52,12 @@ export default function Footer() {
               placeholder="Enter your email here"
               required
             ></input>
-            <Link
+            {/* <Link
               href="mailto:nicol.wesolowska@gmail.com"
               target="_blank"
-            >
-              <button onClick={handleOpen} className={` mx-auto lg:pt-1 pt-3 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}>SUBSCRIBE</button>
-            </Link>
+            > */}
+              <button onClick={handleOpen} className={` mx-auto sm:pt-1 pt-3 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}>SUBSCRIBE</button>
+            {/* </Link> */}
           </div>
         </div>
         <div className="flex flex-row justify-between sm:p-5 pb-3">

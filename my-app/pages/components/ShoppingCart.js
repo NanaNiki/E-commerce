@@ -32,7 +32,7 @@ export default function ShoppingCart(props) {
               width={30}
               height={50}
               alt={`Plant product ${cartItem.name}`}
-              priority
+              priority = {true}
             />
             <button
               className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"

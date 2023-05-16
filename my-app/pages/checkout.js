@@ -76,7 +76,7 @@ export default function Checkout() {
               width={70}
               height={90}
               alt={`Plant product ${cartItem.name}`}
-              priority
+              priority = {true}
               className="mx-3"
             />
             <button

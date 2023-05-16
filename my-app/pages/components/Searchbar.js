@@ -94,7 +94,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
                   src={plant.image}
                   alt={plant.name}
                   className="p-2"
-                  priority
+                  priority = {true}
                 />
                 <div className="flex sm:flex-col sm:justify-normal flex-row my-auto">
                   <h2 className="font-bold sm:pe-0 pe-2">{plant.name}</h2>

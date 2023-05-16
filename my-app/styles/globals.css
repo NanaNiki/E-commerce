@@ -38,6 +38,22 @@ animation: slide-in 400ms ease-in-out forwards;
   }
 }
 
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    filter: hue-rotate(30deg);
+    overflow: hidden;
+  }
+  100% {
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+}
+
+.has-animation:hover .popup-animation{
+  animation: pop-up 300ms ease-in-out forwards;
+}
+
 @layer utilities {
   ::-webkit-scrollbar {
     @apply w-2 h-2 bg-transparent;
