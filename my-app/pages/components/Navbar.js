@@ -91,7 +91,7 @@ export default function NavBar() {
               <li>
                 <Link
                   className=" transition hover:text-stone-500 cursor-pointer"
-                  href={`../contact`}
+                  href={`/contact`}
                   passHref
                 >
                   Contact
@@ -144,7 +144,7 @@ export default function NavBar() {
             <li className="flex flex-col justify-around has-tooltip cursor-pointer">
               <Link
                 className="ms-2 me-2 lg:text-base transition hover:text-stone-500 cursor-pointer"
-                href={`../contact`}
+                href={`/contact`}
                 passHref
               >
                 Contact

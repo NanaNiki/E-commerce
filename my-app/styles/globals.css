@@ -9,7 +9,6 @@ animation: slide-in 400ms ease-in-out forwards;
   animation: slide-out 300ms ease-in-out forwards;
 }
 
-
 @keyframes slide-in {
   0% {
     opacity: 0;

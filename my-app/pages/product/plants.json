@@ -9,7 +9,8 @@
     "outdoor" : true,
     "bedroom" : false,
     "minimal" : false,
-    "tags" : ["elegant", "big", "outdoor", "jungle", "Friedrich"]
+    "tags" : ["elegant", "big", "outdoor", "jungle", "Friedrich"],
+    "soldout" : false
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["cute", "small", "bedroom", "minimal", "Mary Katie"]
+    "tags" : ["cute", "small", "bedroom", "minimal", "Mary Katie"],
+    "soldout" : true
 },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "outdoor" : true,
     "bedroom" : false,
     "minimal" : false,
-    "tags" : ["elegant", "big", "outdoor", "jungle", "Bulbazie"]
+    "tags" : ["elegant", "big", "outdoor", "jungle", "Bulbazie"],
+    "soldout" : false
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : false,
-    "tags" : ["elegant", "cute", "medium-sized", "bedroom", "Frankie"]
+    "tags" : ["elegant", "cute", "medium-sized", "bedroom", "Frankie"],
+    "soldout" : true
 },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "outdoor" : true,
     "bedroom" : false,
     "minimal" : false,
-    "tags" : ["elegant", "big", "outdoor", "jungle", "Lousie"]
+    "tags" : ["elegant", "big", "outdoor", "jungle", "Lousie"],
+    "soldout" : false
   }, 
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "outdoor" : true,
     "bedroom" : false,
     "minimal" : false,
-    "tags" : ["cute", "big", "outdoor", "jungle", "Georgie"]
+    "tags" : ["cute", "big", "outdoor", "jungle", "Georgie"],
+    "soldout" : false
   }, 
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["elegant", "small", "bedroom", "minimal", "Bonzo"]
+    "tags" : ["elegant", "small", "bedroom", "minimal", "Bonzo"],
+    "soldout" : false
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "outdoor" : true,
     "bedroom" : true,
     "minimal" : false,
-    "tags" : ["elegant", "medium-sized", "bedroom", "outdoor", "jungle", "LouLou"]    
+    "tags" : ["elegant", "medium-sized", "bedroom", "outdoor", "jungle", "LouLou"],
+    "soldout" : false    
   }, 
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : false,
-    "tags" : ["elegant", "big", "bedroom", "jungle", "Margaret"]
+    "tags" : ["elegant", "big", "bedroom", "jungle", "Margaret"],
+    "soldout" : true
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : false,
-    "tags" : ["elegant", "medium-sized", "bedroom", "jungle", "Hyoshi"]    
+    "tags" : ["elegant", "medium-sized", "bedroom", "jungle", "Hyoshi"],
+    "soldout" : false    
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : false,
-    "tags" : ["cute", "medium-sized", "bedroom", "jungle", "Sia"]
+    "tags" : ["cute", "medium-sized", "bedroom", "jungle", "Sia"],
+    "soldout" : false
 },
   {
     "id": 12,
@@ -141,7 +152,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["elegant", "cute", "small", "bedroom", "jungle", "minimal", "Pattie"]
+    "tags" : ["elegant", "cute", "small", "bedroom", "jungle", "minimal", "Pattie"],
+    "soldout" : false
   },
   {
     "id": 13,
@@ -153,7 +165,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["cute", "small", "bedroom", "minimal", "Hope"]
+    "tags" : ["cute", "small", "bedroom", "minimal", "Hope"],
+    "soldout" : false
 },
   {
     "id": 14,
@@ -165,7 +178,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["elegant", "small", "bedroom", "minimal", "Leafy"]
+    "tags" : ["elegant", "small", "bedroom", "minimal", "Leafy"],
+    "soldout" : false
 },
   {
     "id": 15,
@@ -177,7 +191,8 @@
     "outdoor" : true,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["elegant", "small", "bedroom", "outdoor", "jungle", "minimal", "Slyth"]
+    "tags" : ["elegant", "small", "bedroom", "outdoor", "jungle", "minimal", "Slyth"],
+    "soldout" : false
 },
   {
     "id": 16,
@@ -189,7 +204,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["elegant", "medium-sized", "bedroom", "jungle", "minimal", "Maggie"]
+    "tags" : ["elegant", "medium-sized", "bedroom", "jungle", "minimal", "Maggie"],
+    "soldout" : true
 }, 
   {
     "id": 17,
@@ -201,7 +217,8 @@
     "outdoor" : false,
     "bedroom" : true,
     "minimal" : true,
-    "tags" : ["elegant", "small", "bedroom", "minimal", "Moonshine"] 
+    "tags" : ["elegant", "small", "bedroom", "minimal", "Moonshine"],
+    "soldout" : false 
 }
 
 ]

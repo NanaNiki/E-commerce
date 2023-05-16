@@ -2,6 +2,7 @@ import { castoro } from "../index.js";
 import Image from "next/image.js";
 import plantsData from "../product/plants.json";
 import Link from "next/link.js";
+import Soldout from "./Soldout.js";
 
 export default function Featured() {
   const favTegCheck = () => {
@@ -13,6 +14,7 @@ export default function Featured() {
           className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
         >
           <Link href={`/product/${plant.id}`} passHref target="_parent">
+          <div className="relative"> {plant.soldout && <Soldout />} </div>
             <Image
               src={plant.image}
               width={270}
@@ -20,6 +22,7 @@ export default function Featured() {
               alt={`Plant product ${plant.name}`}
               className="inline-block hover:scale-95 ease-in-out duration-300"
             />
+            
             <div
               className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
             >

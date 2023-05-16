@@ -2,6 +2,7 @@ import { castoro, inter } from "../index.js";
 import Image from "next/image";
 import plants from "./plants.json";
 import Link from "next/link.js";
+import Soldout from "../components/Soldout.js";
 
 export default function ProductCard(props) {
   const {
@@ -16,6 +17,7 @@ export default function ProductCard(props) {
     <>
       <div className="flex md:flex-row flex-col w-full lg:items-end items-center mt-14">
         <div className="flex lg:flex-row-reverse flex-col lg:min-w-fit max-w-[400px] lg:pt-10 mx-auto lg:ms-auto lg:mx-0">
+        <div className="relative"> {plantsData.soldout && <Soldout />} </div>
           <Image
             src={plantsData.image}
             width={400}

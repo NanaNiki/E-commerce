@@ -39,7 +39,7 @@ export default function Start() {
         </h2>
         <a
           href="#categories"
-          className="text-center lg:mt-4 lg:p-2 sm:pt-2.5 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse"
+          className="text-center lg:mt-4 sm:pt-2.5 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse"
         >
           Shop Now
         </a>

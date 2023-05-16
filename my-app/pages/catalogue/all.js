@@ -2,6 +2,7 @@ import { castoro, inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
 import plantsData from "../product/plants.json";
+import Soldout from "../components/Soldout.js";
 import { useState } from "react";
 
 export default function AllProducts() {
@@ -54,6 +55,7 @@ export default function AllProducts() {
           return (
             <div key={index} className="w-fit">
               <Link href={`/product/${plant.id}`} passHref>
+              <div className="relative"> {plant.soldout && <Soldout />} </div>
                 <Image
                   src={plant.image}
                   width={200}
