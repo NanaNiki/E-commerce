@@ -1,8 +1,14 @@
+/**
+ * The function exports a React component for a website footer with a newsletter subscription form and
+ * various links.
+ * @returns A React functional component that renders a footer section with a newsletter subscription
+ * form, links to various pages, and a copyright notice. It also conditionally renders a PopUp
+ * component based on the value of the `showPopUp` prop.
+ */
 import { castoro, inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
 import PopUp from "./PopUp.js";
-import { useState } from "react";
 
 const footertags = [
   { title: "Conntact" },
@@ -29,8 +35,6 @@ const footertags = [
 ];
 
 export default function Footer({showPopUp, setShowPopUp}) {
- 
-
   const handleOpen = () => setShowPopUp(true);
   const handleClose = () => setShowPopUp(false);
 
@@ -79,7 +83,7 @@ export default function Footer({showPopUp, setShowPopUp}) {
                   <span className="sm:text-sm text-xs text-stone-400">
                     {tag.title}
                   </span>
-                  <Link href={`${tag.url}`} target="_blank" passHref>
+                  <Link href={`${tag.url}`} target="_blank" passHref={true}>
                     <span
                       className={`lg:text-base sm:text-sm text-xs hover:text-stone-500 ${castoro.className} `}
                     >

@@ -1,6 +1,12 @@
+/** This is a React component that provides a context for managing a shopping cart. It imports the
+ * necessary hooks and components from React, creates a context using `createContext()`, and defines a
+ * provider component using `useState()` and `useRef()` hooks. The provider component passes down the
+ * necessary state and functions to its children through the context provider. It also renders a
+ * `ShoppingCart` component that displays the items in the cart and allows the user to add, remove, or
+ * clear items from the cart. 
+ */
 import { createContext, useState, useRef, useEffect } from "react";
 import ShoppingCart from "./ShoppingCart";
-import { setMiniNavOpen } from "./Navbar.js";
 
 export const ShoppingCartContext = createContext();
 
@@ -67,6 +73,14 @@ export const ShoppingCartProvider = ({ children }) => {
     setCartItems([]);
   };
 
+/* LEARING NOTE
+ * This `useEffect()` hook is adding and removing an event listener to the window for the "mousedown" event. 
+ * When the event is triggered, it checks if the click was outside of the shopping cart component (using
+ * the `cartRef` reference) and if so, it sets the `shoppingCartOpen` state to `false`. The
+ * `useEffect()` hook is dependent on the `setShoppingCartOpen` function, which means it will only
+ * run when `setShoppingCartOpen` changes. This is used to ensure that the event listener is added
+ * and removed only when necessary, and not on every re-render of the component. 
+ * the onMouseDown wouldn't be sufficient in this case, the changes in structure would be necesarry*/
   useEffect(() => {
     const handleMouseDown = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {

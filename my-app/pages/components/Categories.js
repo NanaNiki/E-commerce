@@ -1,3 +1,9 @@
+/** This is a React component that displays a list of categories with their corresponding images. 
+ * It also defines an array of objects called `categoriesData` that contains information
+ * about each category, including the image source, name, alt text, and value. The component then maps
+ * through this array to render each category as a clickable link with its corresponding image. 
+ * The URL is dynamically generated based on the `val` property of the current category object.  
+ */
 import { castoro } from "../index.js";
 import Image from "next/image.js";
 import Link from "next/link";
@@ -42,11 +48,11 @@ export default function Categories() {
               <Link
                 className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl md:text-xl sm:text-lg text-sm md:p-3 p-2 mx-auto ${castoro.className} hover:scale-105 ease-in-out duration-300`}
                 href={`/catalogue/category/${category.val}`}
-                passHref
+                passHref={true}
               >
                 {category.name}
               </Link>
-              <Link href={`/catalogue/category/${category.val}`} passHref>
+              <Link href={`/catalogue/category/${category.val}`} passHref={true}>
                 <Image
                   src={category.image}
                   width={280}

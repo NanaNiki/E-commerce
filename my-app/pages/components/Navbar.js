@@ -1,3 +1,8 @@
+/**
+ * This is a React component for a navigation bar with options for a mini navbar, search bar, and
+ * shopping cart.
+ * @returns A React component for a navigation bar with a search bar and shopping cart functionality.
+ */
 import { useState } from "react";
 import { castoro } from "../index.js";
 import Image from "next/image";
@@ -21,10 +26,6 @@ export default function NavBar() {
 
   const cartItemsCount = cartItems.map((cartItem) => cartItem.quantity);
   const setCartItemsCount = cartItemsCount.reduce((a, b) => a + b, 0);
-
-  const cartClass = setCartItemsCount > 0 ? "animate-bounce" : "opacity-0";
-  const miniNavNotification =
-    setCartItemsCount > 0 ? "opacity-100" : "opacity-0";
 
   const toggleMiniNav = () => {
     setMiniNavOpen(!miniNavOpen);
@@ -55,7 +56,7 @@ export default function NavBar() {
           {miniNavOpen ? <RxCross1 /> : <RxHamburgerMenu />}
         </button>
         <span
-          className={`${miniNavNotification} relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
+          className={`NOTIFICATION-DOT ${setCartItemsCount > 0 ? "opacity-100" : "opacity-0"} relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
         >
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-800 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-900"></span>
@@ -112,7 +113,7 @@ export default function NavBar() {
                 {shoppingCartOpen ? <RxCross1 /> : <BsCart2 />}
               </button>
               <p
-                className={`${cartClass} bg-stone-100 rounded-full px-0.5 h-4 w-4 text-sm text-center font-semibold`}
+                className={`${setCartItemsCount > 0 ? "animate-bounce" : "opacity-0"} bg-stone-100 rounded-full px-0.5 h-4 w-4 text-sm text-center font-semibold`}
               >
                 {setCartItemsCount}
               </p>
@@ -174,7 +175,7 @@ export default function NavBar() {
               )}
             </button>
             <p
-              className={`${cartClass} bg-stone-300 rounded-full mt-6 h-5 w-5 text-sm text-center font-bold`}
+              className={`${setCartItemsCount > 0 ? "animate-bounce" : "opacity-0"} bg-stone-300 rounded-full mt-6 h-5 w-5 text-sm text-center font-bold`}
             >
               {setCartItemsCount}
             </p>

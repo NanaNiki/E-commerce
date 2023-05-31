@@ -1,3 +1,11 @@
+/**
+ * The function returns a pop-up component with a message and an image, which can be closed by clicking
+ * a button.
+ * @returns A React functional component that renders a pop-up message with a title and an image, and a
+ * thank you message that appears after the pop-up is closed. The pop-up has a close button and is
+ * styled with CSS classes. The component takes a prop `onHandleClose` which is a function to handle
+ * the closing of the pop-up.
+ */
 import { GiThreeLeaves } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { castoro } from "../index.js";

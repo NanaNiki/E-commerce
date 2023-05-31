@@ -1,3 +1,8 @@
+/**
+ * The Start function returns a section with an image, text, and a link to shop for plants.
+ * @returns A React component that renders a section with an image, a heading, a subheading, and a
+ * button. It also includes a chevron icon for scrolling down and a heading for categories.
+ */
 import Image from "next/image";
 import { castoro } from "../index.js";
 import { BsChevronDoubleDown } from "react-icons/bs";

@@ -1,3 +1,9 @@
+/**
+ * This function displays the user's order details, including the items ordered, delivery information,
+ * and total cost.
+ * @returns A React component that displays the user's order details, including the items ordered,
+ * delivery information, and total cost. It also includes a button to go back to the previous page.
+ */
 import { useState, useEffect } from "react";
 import { GiThreeLeaves } from "react-icons/gi";
 import { castoro } from "./index.js";
@@ -9,6 +15,10 @@ export default function SeeYourOrder() {
   const [delivery, setDelivery] = useState("");
   const [totalCost, setTotalCost] = useState(0);
 
+  /* LEARNING NOTE
+Here we retrieve data from the browser's local storage then parse the data 
+from JSON format using `JSON.parse()` and update the state variables accordingly.
+*/
   useEffect(() => {
     const storedItems = localStorage.getItem("orderItems");
     const storedFormData = localStorage.getItem("formData");
@@ -28,7 +38,9 @@ export default function SeeYourOrder() {
       <h1 className="text-center pt-10 text-2xl font-bold text-stone-600">
         Your Order
       </h1>
-      <h2 className="p-5 mx-auto text-2xl flex flex-row w-fit"><GiThreeLeaves className="me-2" />  New Plants: </h2>
+      <h2 className="p-5 mx-auto text-2xl flex flex-row w-fit">
+        <GiThreeLeaves className="me-2" /> New Plants:{" "}
+      </h2>
       <div className="flex flex-row justify-center">
         {orderItems.map((item) => (
           <div className="flex flex-col">
@@ -41,7 +53,7 @@ export default function SeeYourOrder() {
             />
             <p className="text-center my-auto">{item.quantity} of</p>
             <p key={item.id} className="text-center my-auto">
-              {item.name}{" "}
+              {item.name}
             </p>
           </div>
         ))}

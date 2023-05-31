@@ -1,3 +1,9 @@
+/* This code is importing components and fonts, defining font variables, and exporting a default
+function that returns JSX elements. It also uses the `dynamic` function from Next.js to load some
+components dynamically. The `Start` component is rendered along with the dynamically loaded
+`Categories`, `Featured`, and `Blog` components inside a `main` element with some classes and styles
+applied. */
+
 import Start from "./components/Start";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
@@ -19,20 +25,6 @@ export const castoroT = Castoro_Titling({
   weight: ["400"],
   variable: "--font-castotoT",
 });
-
-export function observeScroll(elements) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  });
-  elements.forEach((el) => observer.observe(el));
-}
 
 export default function Home() {
   return (

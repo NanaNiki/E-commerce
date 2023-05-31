@@ -1,3 +1,8 @@
+/**
+ * The function returns a React component that renders a Leaflet map with a custom marker icon and a
+ * popup.
+ * @returns A React component that renders a Leaflet map with a custom marker icon and a popup.
+ */
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import React from "react";

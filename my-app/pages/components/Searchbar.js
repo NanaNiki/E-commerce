@@ -1,3 +1,10 @@
+/**
+ * This is a React component that renders a search bar with live filtering of plant data based on user
+ * input.
+ * @returns A React component that renders a search bar with a list of filtered plants based on the
+ * user's search term. The component also includes functionality to handle user input, form submission,
+ * and clicking on a plant to navigate to its product page.
+ */
 import { useState, useEffect, useRef } from "react";
 import { RxMagnifyingGlass } from "react-icons/rx";
 import plantsData from "../product/plants.json";
@@ -9,6 +16,13 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
   const [filteredPlants, setFilteredPlants] = useState([]);
   const searchBarRef = useRef(null);
 
+  /** LEARING NOTE
+   * The some() method is used to determine if at least one tag includes the search term, 
+   * ignoring case sensitivity. Without some(), using only filter() it would require an exact match
+   * between the searchTerm and any of the tags in order for the plant object to be included in the 
+   * filtered result. The parital matching is possible thanks to includes() method, which is used to 
+   * check if a string includes another string as a substring (within).
+   */
   useEffect(() => {
     if (searchTerm) {
       const newFilteredPlants = plantsData.filter((plant) =>
@@ -94,7 +108,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
                   src={plant.image}
                   alt={plant.name}
                   className="p-2"
-                  priority = {true}
+                  priority={true}
                 />
                 <div className="flex sm:flex-col sm:justify-normal flex-row my-auto">
                   <h2 className="font-bold sm:pe-0 pe-2">{plant.name}</h2>

@@ -1,3 +1,11 @@
+/**
+ * This is a React component that renders a blog section with posts fetched from a JSON file and
+ * displayed with images, titles, authors, and dates.
+ * @returns A React component that renders a section containing a list of blog posts. Each blog post is
+ * represented by an image, author name, date, and title, and is wrapped in a Link component that
+ * navigates to the individual blog post page when clicked. The data for the blog posts is sourced from
+ * a JSON file.
+ */
 import { castoro } from "../index.js";
 import Image from "next/image";
 import Link from "next/link.js";
@@ -5,7 +13,6 @@ import posts from "../post/posts.json";
 
 export default function Blog() {
   return (
-    <>
       <section className="flex flex-row justify-center" id="blog">
         {posts.map((post, index) => {
           return (
@@ -45,6 +52,5 @@ export default function Blog() {
           );
         })}
       </section>
-    </>
   );
 }

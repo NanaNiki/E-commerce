@@ -1,3 +1,13 @@
+/**
+ * This is a React component that renders a shopping cart with items, allowing users to add or remove
+ * items and proceed to checkout.
+ * @param props - props is an object that contains various properties passed down from the parent
+ * component to the ShoppingCart component. These properties include cartItems (an array of items in
+ * the shopping cart), onAddToCart (a function to add an item to the cart), onRemoveFromCart (a
+ * function to remove an item
+ * @returns A React component for a shopping cart, which displays the items in the cart, allows the
+ * user to add or remove items, and provides a link to the checkout page.
+ */
 import Link from "next/link";
 import Image from "next/image.js";
 import { RiPlantLine } from "react-icons/ri";
