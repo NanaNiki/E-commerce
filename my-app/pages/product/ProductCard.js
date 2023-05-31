@@ -1,3 +1,14 @@
+/**
+ * The ProductCard function displays a product page with information about a plant, including its
+ * image, name, price, and quantity, and allows the user to add it to their cart.
+ * @param props - props is an object that contains various properties passed down from the parent
+ * component to the ProductCard component. These properties include plantsData, onAddToCart,
+ * updateQuantity, quantity, and setCartItemsCount. The ProductCard component uses these properties to
+ * render the product information and handle user interactions.
+ * @returns A React functional component that renders a product card with information about a plant
+ * product, including its name, price, image, and quantity. It also includes buttons to add or remove
+ * items from the cart and a list of other plant products.
+ */
 import { castoro, inter } from "../index.js";
 import Image from "next/image";
 import plants from "./plants.json";

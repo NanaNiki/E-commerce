@@ -11,7 +11,7 @@ export default function Start() {
   return (
     <section className="w-full h-full overflow-hidden" id="start">
       <Image
-        src="/planthero.jpg"
+        src="/images/planthero.jpg"
         width={1400}
         height={400}
         alt="Beige terrace with two wooden chairs and palm loooking plants"

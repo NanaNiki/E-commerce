@@ -1,3 +1,11 @@
+/**
+ * This is a React component that displays all products, allows sorting by different criteria, and
+ * renders each product with an image, name, and price.
+ * @returns The code is returning a React component called "AllProducts" that displays a grid of plant
+ * products with sorting options. The grid is generated from a JSON file called "plantsData" and each
+ * product is displayed with an image, name, and price. The sorting options allow the user to sort the
+ * products by price (low to high or high to low) or by name (A to Z or Z).
+ */
 import { castoro, inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
@@ -15,6 +23,16 @@ export default function AllProducts() {
     { value: "nameAsc", label: "Name (A to Z)" },
     { value: "nameDesc", label: "Name (Z to A)" },
   ];
+ /** LEARNING NOTE 
+  * By default sort() method order is ascending
+  * localeCompare() method performs a string comparison based on alphabetical order
+  * 
+  * localeCompare and the subtraction (a.price - b.price) || (b.price - a.price) in the 
+  * sort() method produce integer results (e.g., -1, 1, 0) that determine the sorting order. 
+  * So when the result of `a.price - b.price` is negative it means that `a.price` is smaller than
+  * `b.price` and therefore `a` should be placed before `b`. And when `b.price - a.price` and the
+  * result is positive it means that `b.price` is larger than `a.price`, so `b` should be placed before `a`.
+ */
   const sortPlants = (plantsData) => {
     switch (sortMethod) {
       case "priceLow":

@@ -16,7 +16,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
   const [filteredPlants, setFilteredPlants] = useState([]);
   const searchBarRef = useRef(null);
 
-  /** LEARING NOTE
+  /** LEANRING NOTE
    * The some() method is used to determine if at least one tag includes the search term, 
    * ignoring case sensitivity. Without some(), using only filter() it would require an exact match
    * between the searchTerm and any of the tags in order for the plant object to be included in the 

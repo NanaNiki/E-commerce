@@ -49,7 +49,7 @@ export default function Featured() {
           key={index}
           className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
         >
-          <Link href={`/product/${plant.id}`} passHref={true}>
+          <Link href={`/product/${plant.id}`} passHref>
           <div className="relative"> {plant.soldout && <Soldout />} </div>
             <Image
               src={plant.image}

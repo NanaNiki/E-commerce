@@ -5,7 +5,7 @@
  * allows the user to select a delivery option, enter their personal information and payment details,
  * and place an order. The component uses the useContext and useState hooks to manage the shopping cart
  * and form data, and includes icons from the React-icons library. The component also calculates the
- * total cost of the order and saves the order information
+ * total cost of the order and saves the order information.
  */
 import Image from "next/image";
 import Link from "next/link";
@@ -43,7 +43,7 @@ export default function Checkout() {
     return total;
   }
   
-/** LEARING NOTE
+/** LEARNING NOTE
  The function handles the order click event by storing relevant data in local storage and clearing
  the cart. Because of navigation to other page: /yourorder, or going back or even refresheng the page
  the data will be still stored in local storage, contrary to the use of passing states and variables as props.
@@ -134,7 +134,7 @@ export default function Checkout() {
       <div className="flex flex-row lg:mt-0 mt-5">
         <form>
           <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto justify-between">
-           {/** LEARING NOTE
+           {/** LEARNING NOTE
             * || (OR) statement in the `value` atribute provides a default value of an empty string, 
            preventing the input field from being controlled by an undefined or null value, which 
            could lead to unexpected behavior or errors.

@@ -1,3 +1,12 @@
+/**
+ * This is a React component that renders a category card with plants data and links to individual
+ * product pages.
+ * @returns A React functional component that renders a section of the website displaying a category of
+ * plants with their respective images, names, and prices. The component receives a prop called
+ * categoriesData, which contains information about the category being displayed. The component filters
+ * the plantsData array to only include the plants that belong to the category being displayed, and
+ * then maps over this filtered array to render each plant's information.
+ */
 import { castoro } from "../../index.js";
 import { inter } from "../../index.js";
 import Link from "next/link";

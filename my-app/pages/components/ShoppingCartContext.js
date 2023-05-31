@@ -73,7 +73,7 @@ export const ShoppingCartProvider = ({ children }) => {
     setCartItems([]);
   };
 
-/* LEARING NOTE
+/* LEARNING NOTE
  * This `useEffect()` hook is adding and removing an event listener to the window for the "mousedown" event. 
  * When the event is triggered, it checks if the click was outside of the shopping cart component (using
  * the `cartRef` reference) and if so, it sets the `shoppingCartOpen` state to `false`. The

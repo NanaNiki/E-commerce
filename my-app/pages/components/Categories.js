@@ -48,11 +48,11 @@ export default function Categories() {
               <Link
                 className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl md:text-xl sm:text-lg text-sm md:p-3 p-2 mx-auto ${castoro.className} hover:scale-105 ease-in-out duration-300`}
                 href={`/catalogue/category/${category.val}`}
-                passHref={true}
+                passHref
               >
                 {category.name}
               </Link>
-              <Link href={`/catalogue/category/${category.val}`} passHref={true}>
+              <Link href={`/catalogue/category/${category.val}`} passHref>
                 <Image
                   src={category.image}
                   width={280}

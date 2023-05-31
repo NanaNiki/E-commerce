@@ -1,3 +1,8 @@
+/**
+ * This is a Next.js page component that displays a product card for a specific plant, allows the user
+ * to add it to their shopping cart, and updates the cart item count.
+ * @returns The `ProductPage` component is being returned.
+ */
 import { useRouter } from "next/router";
 import plantsData from "./plants.json";
 import ProductCard from "./ProductCard";

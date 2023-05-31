@@ -1,3 +1,10 @@
+/**
+ * The function displays a list of favourite plants with their images, names, and prices.
+ * @returns A React component for displaying a list of favourite plants. It filters the plant data from
+ * a JSON file to only include plants marked as favourites, and then maps over that filtered data to
+ * display each plant's image, name, and price in a grid format. It also includes a Soldout component
+ * to display over the image if the plant is sold out.
+ */
 import { castoro, inter  } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";

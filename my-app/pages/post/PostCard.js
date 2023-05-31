@@ -3,7 +3,7 @@
  * @returns This code is returning a React component that displays a blog post with an image, title,
  * author, date, and sections of content. The component receives a `postsData` prop that contains the
  * data for the post, including the image source, alt text, title, author, date, and an array of
- * sections with their titles and content. The component uses Next.js' `Image` component to
+ * sections with their titles and content.
  */
 import { castoro } from "../index.js";
 import Image from "next/image";

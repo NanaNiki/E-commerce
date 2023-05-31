@@ -83,7 +83,7 @@ export default function Footer({showPopUp, setShowPopUp}) {
                   <span className="sm:text-sm text-xs text-stone-400">
                     {tag.title}
                   </span>
-                  <Link href={`${tag.url}`} target="_blank" passHref={true}>
+                  <Link href={`${tag.url}`} target="_blank" passHref>
                     <span
                       className={`lg:text-base sm:text-sm text-xs hover:text-stone-500 ${castoro.className} `}
                     >
