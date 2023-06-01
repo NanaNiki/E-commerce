@@ -42,7 +42,7 @@ export default function NavBar() {
   return (
     <>
       <nav className="z-30 fixed top-0 left-0 h-14 w-screen p-2 flex flex-row bg-white">
-        <Link href="/" passhref>
+        <Link href="/" aria-label="Go to homepage"  passhref>
           <Image
             src="/plantealogo.svg"
             alt="logo"

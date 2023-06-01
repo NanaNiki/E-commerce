@@ -52,7 +52,7 @@ export default function Categories() {
               >
                 {category.name}
               </Link>
-              <Link href={`/catalogue/category/${category.val}`} passHref>
+              <Link href={`/catalogue/category/${category.val}`} aria-label="Go to see the category" passHref>
                 <Image
                   src={category.image}
                   width={280}

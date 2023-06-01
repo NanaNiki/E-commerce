@@ -100,6 +100,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
               <Link
                 href={`/product/${plant.id}`}
                 passHref
+                aria-label="Go to see the product" 
                 className="flex sm:flex-row flex-col sm:items-start items-center hover:scale-95 ease-in-out duration-300"
               >
                 <Image

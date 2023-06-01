@@ -68,7 +68,7 @@ export default function Footer({ showPopUp, setShowPopUp }) {
         </div>
         <div className="flex flex-row justify-between sm:p-5 pb-3">
           <div className="col-span-1 p-1.5">
-            <Link href="/#start" passHref>
+            <Link href="/#start" aria-label="Go to homepage"  passHref>
               <Image
                 src="/plantealogo.svg"
                 alt="logo"

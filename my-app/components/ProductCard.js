@@ -72,7 +72,7 @@ export default function ProductCard(props) {
           <div className="flex lg:flex-col md:flex-row lg:mx-5 max-h-[600px] overflow-y-scroll scroll-smooth">
             {plants.map((plant, index) => (
               <div key={index} className="me-3 flex-shrink-0">
-                <Link href={`/product/${plant.id}`} passHref>
+                <Link href={`/product/${plant.id}`} aria-label="Go to see the product" passHref>
                   <Image
                     src={plant.image}
                     width={90}

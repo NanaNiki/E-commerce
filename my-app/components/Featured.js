@@ -51,9 +51,8 @@ export default function Featured() {
                 key={index}
                 className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
               >
-                <Link href={`/product/${plant.id}`} passHref>
+                <Link href={`/product/${plant.id}`} aria-label="Go to see the product" passHref>
                   <div className="relative">
-                    {" "}
                     {plant.soldout && <Soldout />}{" "}
                   </div>
                   <Image
@@ -76,7 +75,7 @@ export default function Featured() {
         <div className="flex flex-row w-screen justify-end lg:hidden md:hidden sm:hidden">
           <Link
             className="m-4 pt-3 text-center cursor-pointer bg-stone-200 w-40 h-10 text-xs font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200"
-            href={"/catalogue/favourites"}
+            href={"/catalogue/favourites"} 
             passHref
           >
             Shop all Favourites

@@ -31,7 +31,7 @@ export default function Favourites() {
         {favouritePlants.map((plant, index) => {
           return (
             <div key={index} className="w-fit shrink-0 flex flex-col">
-              <Link href={`/product/${plant.id}`} passHref>
+              <Link href={`/product/${plant.id}`} aria-label="Go to see the product"  passHref>
                 <div className="relative"> {plant.soldout && <Soldout />} </div>
                 <Image
                   src={plant.image}

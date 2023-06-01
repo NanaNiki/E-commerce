@@ -27,7 +27,7 @@ export default function Blog() {
               <h5 className="text-stone-600 italic">Written by</h5>
               <h5 className="lg:text-xl"> {post.author}</h5>
             </label>
-            <Link href={`/post/${post.id}`} passHref>
+            <Link href={`/post/${post.id}`} aria-label="Go to see the post" passHref>
               <Image
                 src={post.image}
                 width={530}
