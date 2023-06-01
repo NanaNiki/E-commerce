@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Navbar />
-      <main className={`${showPopUp ? "opacity-40" : ""}`}>{children}</main>
+      <main className={`${showPopUp ? "opacity-30" : ""}`}>{children}</main>
       <Footer showPopUp={showPopUp} setShowPopUp={setShowPopUp} />
     </div>
   );

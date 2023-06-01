@@ -33,7 +33,7 @@ export default function ShoppingCart(props) {
           <div className="flex flex-row">
             <button
               className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"
-              onClick={() => onRemoveFromCart(cartItem)}
+              onClick={() => onRemoveFromCart(cartItem)} aria-label="Remove from cart"
             >
               -
             </button>
@@ -46,7 +46,7 @@ export default function ShoppingCart(props) {
             />
             <button
               className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"
-              onClick={() => onAddToCart(cartItem)}
+              onClick={() => onAddToCart(cartItem)} aria-label="Add to cart"
             >
               +
             </button>

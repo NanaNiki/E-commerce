@@ -6,8 +6,8 @@
  * message.
  */
 import { useRouter } from "next/router";
-import postsData from "./posts.json";
-import PostCard from "./PostCard";
+import postsData from "../../data/posts.json";
+import PostCard from "../../components/PostCard";
 
 export default function PostPage() {
   /* LEARNING NOTE

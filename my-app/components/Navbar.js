@@ -4,7 +4,7 @@
  * @returns A React component for a navigation bar with a search bar and shopping cart functionality.
  */
 import { useState } from "react";
-import { castoro } from "../index.js";
+import { castoro } from "../pages/index.js";
 import Image from "next/image";
 import Link from "next/link";
 import Searchbar from "./Searchbar.js";
@@ -14,7 +14,8 @@ import { BsCart2 } from "react-icons/bs";
 import { RxMagnifyingGlass, RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 export default function NavBar() {
-  const [searchBarOpen, setSearchBarOpen] = useState(false);
+  const [searchBarOpen, setSearchBarOpen] = useState(null);
+  const [initialSB, setInitialSB] = useState(null);
 
   const {
     miniNavOpen,
@@ -34,6 +35,7 @@ export default function NavBar() {
   const toggleSearchBar = () => {
     if (searchBarOpen === false) {
       setSearchBarOpen(true);
+      setInitialSB(true);
     }
   };
 
@@ -53,10 +55,12 @@ export default function NavBar() {
           onClick={toggleMiniNav}
           className="text-stone-800 cursor-pointer text-xl flex flex-row w-screen justify-end z-20 m-auto lg:hidden md:hidden sm:hidden"
         >
-          {miniNavOpen ? <RxCross1 /> : <RxHamburgerMenu />}
+          {miniNavOpen ? <RxCross1 aria-label="Open menu"/> : <RxHamburgerMenu aria-label="Close menu"/>}
         </button>
         <span
-          className={`NOTIFICATION-DOT ${setCartItemsCount > 0 ? "opacity-100" : "opacity-0"} relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
+          className={`NOTIFICATION-DOT ${
+            setCartItemsCount > 0 ? "opacity-100" : "opacity-0"
+          } relative flex h-3 w-3 me-6 lg:hidden md:hidden sm:hidden`}
         >
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-800 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-900"></span>
@@ -104,16 +108,18 @@ export default function NavBar() {
                 onClick={toggleSearchBar}
                 className=" mx-2 w-4 h-4 text-2xl mt-0.5 text-stone-700 cursor-pointer hover:text-stone-500"
               >
-                {searchBarOpen ? <RxCross1 /> : <RxMagnifyingGlass />}
+                {searchBarOpen ? <RxCross1 aria-label="Close searchbar"/> : <RxMagnifyingGlass aria-label="Open searchbar"/>}
               </button>
               <button
                 onClick={toggleShoppingCart}
                 className="mx-2 w-4 h-4 text-2xl text-stone-700 cursor-pointer hover:text-stone-500"
               >
-                {shoppingCartOpen ? <RxCross1 /> : <BsCart2 />}
+                {shoppingCartOpen ? <RxCross1 aria-label="Close shopping cart" /> : <BsCart2 aria-label="Open shopping cart"/>}
               </button>
               <p
-                className={`${setCartItemsCount > 0 ? "animate-bounce" : "opacity-0"} bg-stone-100 rounded-full px-0.5 h-4 w-4 text-sm text-center font-semibold`}
+                className={`${
+                  setCartItemsCount > 0 ? "animate-bounce" : "opacity-0"
+                } bg-stone-100 rounded-full px-0.5 h-4 w-4 text-sm text-center font-semibold`}
               >
                 {setCartItemsCount}
               </p>
@@ -159,9 +165,9 @@ export default function NavBar() {
               className="my-auto me-4 text-2xl text-stone-400 cursor-pointer hover:text-stone-800"
             >
               {searchBarOpen ? (
-                <RxCross1 className="text-xl mt-0.5" />
+                <RxCross1 className="text-xl mt-0.5" aria-label="Close searchbar" />
               ) : (
-                <RxMagnifyingGlass />
+                <RxMagnifyingGlass aria-label="Open searchbar" />
               )}
             </button>
             <button
@@ -169,21 +175,24 @@ export default function NavBar() {
               className="my-auto text-2xl text-stone-400 cursor-pointer hover:text-stone-800"
             >
               {shoppingCartOpen ? (
-                <RxCross1 className="text-xl mt-0.5" />
+                <RxCross1 className="text-xl mt-0.5" aria-label="Close shopping cart" />
               ) : (
-                <BsCart2 />
+                <BsCart2 aria-label="Open shopping cart" />
               )}
             </button>
             <p
-              className={`${setCartItemsCount > 0 ? "animate-bounce" : "opacity-0"} bg-stone-300 rounded-full mt-6 h-5 w-5 text-sm text-center font-bold`}
+              className={`${
+                setCartItemsCount > 0 ? "animate-bounce" : "opacity-0"
+              } bg-stone-300 rounded-full mt-6 h-5 w-5 text-sm text-center font-bold`}
             >
               {setCartItemsCount}
             </p>
           </div>
         </div>
       </nav>
-      <div
-        className={`${
+      
+        <div
+        className={`${initialSB ? "" : "hidden"} ${
           searchBarOpen ? "slide-in" : "slide-out"
         } searchbar fixed sm:top-14 top-44 right-0 z-20 h-screen sm:w-4/12 w-4/12 flex flex-col bg-stone-300 overflow-y-scroll `}
       >
@@ -192,6 +201,7 @@ export default function NavBar() {
           setMiniNavOpen={setMiniNavOpen}
         />
       </div>
+      
     </>
   );
 }

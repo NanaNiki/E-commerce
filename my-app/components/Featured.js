@@ -4,14 +4,16 @@
  * @returns The Featured component is being returned, which contains JSX elements and uses data from
  * the plantsData JSON file to display featured plants.
  */
-import { castoro } from "../index.js";
+import { castoro } from "../pages/index.js";
 import Image from "next/image.js";
-import plantsData from "../product/plants.json";
+import plantsData from "../data/plants.json";
 import Link from "next/link.js";
 import Soldout from "./Soldout.js";
 
 export default function Featured() {
-    const favouritePlants = plantsData.filter((plant) => plant.favourites === true).slice(0, 3);
+  const favouritePlants = plantsData
+    .filter((plant) => plant.favourites === true)
+    .slice(0, 3);
   return (
     <section className="h-full ms-6" id="featured">
       <div className="flex flex-col justify-center m-auto lg:p-32 md:p-20 sm:p-16 p-10 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-center">
@@ -43,30 +45,33 @@ export default function Featured() {
           </Link>
         </div>
         <div className="flex overflow-x-scroll scroll-smooth justify-center md:justify-start">
-         {favouritePlants.map((plant, index) => {
-      return (
-        <div
-          key={index}
-          className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
-        >
-          <Link href={`/product/${plant.id}`} passHref>
-          <div className="relative"> {plant.soldout && <Soldout />} </div>
-            <Image
-              src={plant.image}
-              width={270}
-              height={500}
-              alt={`Plant product ${plant.name}`}
-              className="inline-block hover:scale-95 ease-in-out duration-300"
-            />
-            <div
-              className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
-            >
-              <h5>{plant.name}</h5> <h5>{plant.price}€</h5>
-            </div>
-          </Link>
-        </div>
-      );
-    })}
+          {favouritePlants.map((plant, index) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
+              >
+                <Link href={`/product/${plant.id}`} passHref>
+                  <div className="relative">
+                    {" "}
+                    {plant.soldout && <Soldout />}{" "}
+                  </div>
+                  <Image
+                    src={plant.image}
+                    width={270}
+                    height={500}
+                    alt={`Plant product ${plant.name}`}
+                    className="inline-block hover:scale-95 ease-in-out duration-300"
+                  />
+                  <div
+                    className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
+                  >
+                    <h5>{plant.name}</h5> <h5>{plant.price}€</h5>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
         </div>
         <div className="flex flex-row w-screen justify-end lg:hidden md:hidden sm:hidden">
           <Link

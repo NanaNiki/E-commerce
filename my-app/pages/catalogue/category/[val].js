@@ -5,8 +5,8 @@
  * found". Otherwise, it returns a CategoryCard component with the data of the found category.
  */
 import { useRouter } from "next/router";
-import { categoriesData } from "../../components/Categories";
-import CategoryCard from "./CategoryCard";
+import { categoriesData } from "../../../components/Categories";
+import CategoryCard from "../../../components/CategoryCard";
 
 export default function CategoryPage() {
   const router = useRouter();

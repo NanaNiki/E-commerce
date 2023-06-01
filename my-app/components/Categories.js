@@ -1,10 +1,10 @@
-/** This is a React component that displays a list of categories with their corresponding images. 
+/** This is a React component that displays a list of categories with their corresponding images.
  * It also defines an array of objects called `categoriesData` that contains information
  * about each category, including the image source, name, alt text, and value. The component then maps
- * through this array to render each category as a clickable link with its corresponding image. 
- * The URL is dynamically generated based on the `val` property of the current category object.  
+ * through this array to render each category as a clickable link with its corresponding image.
+ * The URL is dynamically generated based on the `val` property of the current category object.
  */
-import { castoro } from "../index.js";
+import { castoro } from "../pages/index.js";
 import Image from "next/image.js";
 import Link from "next/link";
 
@@ -59,7 +59,7 @@ export default function Categories() {
                   height={500}
                   alt={category.alt}
                   className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"
-                  priority = {true}
+                  priority={true}
                 />{" "}
               </Link>
             </span>

@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { castoro } from "./index.js";
 import { useContext, useState } from "react";
-import { ShoppingCartContext } from "./components/ShoppingCartContext.js";
+import { ShoppingCartContext } from "../components/ShoppingCartContext.js";
 import { RiPlantLine } from "react-icons/ri";
 import { BsPaypal } from "react-icons/bs";
 import { FaGooglePay, FaApplePay } from "react-icons/fa";
@@ -42,11 +42,11 @@ export default function Checkout() {
     }
     return total;
   }
-  
-/** LEARNING NOTE
+  const totalCost = calculateTotal().toFixed(2);
+  /** LEARNING NOTE
  The function handles the order click event by storing relevant data in local storage and clearing
- the cart. Because of navigation to other page: /yourorder, or going back or even refresheng the page
- the data will be still stored in local storage, contrary to the use of passing states and variables as props.
+ the cart. Because of navigation to other page: /yourorder, or going back the data will be still 
+ stored in local storage, contrary to the use of passing states and variables as props.
  */
   const handleOrderClick = () => {
     localStorage.setItem("orderItems", JSON.stringify(cartItems));
@@ -89,7 +89,7 @@ export default function Checkout() {
               width={70}
               height={90}
               alt={`Plant product ${cartItem.name}`}
-              priority = {true}
+              priority={true}
               className="mx-3"
             />
             <button
@@ -132,9 +132,9 @@ export default function Checkout() {
         </select>
       </div>
       <div className="flex flex-row lg:mt-0 mt-5">
-        <form>
+        <form name="user checkoutmn data">
           <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto justify-between">
-           {/** LEARNING NOTE
+            {/** LEARNING NOTE
             * || (OR) statement in the `value` atribute provides a default value of an empty string, 
            preventing the input field from being controlled by an undefined or null value, which 
            could lead to unexpected behavior or errors.
@@ -142,7 +142,7 @@ export default function Checkout() {
            existing properties of formData (which are non-existent, as formData is initialized as empty object), 
            here it let's us dynamically build the object "from scratch" by adding or updating properties with the 
            current values from the input fields.
-           */ }
+           */}
             <input
               type="text"
               name="name"

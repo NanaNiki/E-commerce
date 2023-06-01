@@ -8,7 +8,7 @@
  */
 import { GiThreeLeaves } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-import { castoro } from "../index.js";
+import { castoro } from "../pages/index.js";
 import Image from "next/image.js";
 
 export default function PopUp({ onHandleClose }) {
@@ -50,7 +50,7 @@ export default function PopUp({ onHandleClose }) {
               onClick={onHandleClose}
               className="text-emerald-600 text-xl hover:text-stone-200"
             >
-              <RxCross1 />
+              <RxCross1 aria-label="Close message"/>
             </button>
           </div>
           <h1 className="z-20 text-center mx-auto my-auto md:text-4xl text-xl text-stone-200">

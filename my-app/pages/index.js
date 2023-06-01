@@ -4,11 +4,10 @@ components dynamically. The `Start` component is rendered along with the dynamic
 `Categories`, `Featured`, and `Blog` components inside a `main` element with some classes and styles
 applied. */
 
-import Start from "./components/Start";
+import Start from "../components/Start";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import { Castoro } from "next/font/google";
-import { Castoro_Titling } from "next/font/google";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -19,11 +18,6 @@ export const castoro = Castoro({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-castoro",
-});
-export const castoroT = Castoro_Titling({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-castotoT",
 });
 
 export default function Home() {
@@ -37,10 +31,10 @@ export default function Home() {
   );
 }
 
-const DynamicCategories = dynamic(() => import("./components/Categories"), {
+const DynamicCategories = dynamic(() => import("../components/Categories"), {
   ssr: false,
 });
-const DynamicFeatured = dynamic(() => import("./components/Featured"), {
+const DynamicFeatured = dynamic(() => import("../components/Featured"), {
   ssr: false,
 });
-const DynamicBlog = dynamic(() => import("./components/Blog"), { ssr: false });
+const DynamicBlog = dynamic(() => import("../components/Blog"), { ssr: false });

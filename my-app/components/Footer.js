@@ -5,7 +5,7 @@
  * form, links to various pages, and a copyright notice. It also conditionally renders a PopUp
  * component based on the value of the `showPopUp` prop.
  */
-import { castoro, inter } from "../index.js";
+import { castoro, inter } from "../pages/index.js";
 import Link from "next/link";
 import Image from "next/image.js";
 import PopUp from "./PopUp.js";
@@ -34,7 +34,7 @@ const footertags = [
   { name: null },
 ];
 
-export default function Footer({showPopUp, setShowPopUp}) {
+export default function Footer({ showPopUp, setShowPopUp }) {
   const handleOpen = () => setShowPopUp(true);
   const handleClose = () => setShowPopUp(false);
 
@@ -56,11 +56,13 @@ export default function Footer({showPopUp, setShowPopUp}) {
               placeholder="Enter your email here"
               required
             ></input>
-            <Link
-              href="mailto:nicol.wesolowska@gmail.com"
-              target="_blank"
-            >
-              <button onClick={handleOpen} className={` mx-auto pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}>SUBSCRIBE</button>
+            <Link href="mailto:nicol.wesolowska@gmail.com" target="_blank">
+              <button
+                onClick={handleOpen}
+                className={` mx-auto pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
+              >
+                SUBSCRIBE
+              </button>
             </Link>
           </div>
         </div>
@@ -74,7 +76,6 @@ export default function Footer({showPopUp, setShowPopUp}) {
                 height={50}
               />
             </Link>
-            <div className="dropdown-currency"></div>
           </div>
           <div className="grid grid-cols-3 sm:w-3/4 w-11/12 ">
             {footertags.map((tag, index) => {

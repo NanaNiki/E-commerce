@@ -3,7 +3,7 @@
  * provider component using `useState()` and `useRef()` hooks. The provider component passes down the
  * necessary state and functions to its children through the context provider. It also renders a
  * `ShoppingCart` component that displays the items in the cart and allows the user to add, remove, or
- * clear items from the cart. 
+ * clear items from the cart.
  */
 import { createContext, useState, useRef, useEffect } from "react";
 import ShoppingCart from "./ShoppingCart";
@@ -14,12 +14,14 @@ export const ShoppingCartProvider = ({ children }) => {
   const [miniNavOpen, setMiniNavOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
+  const [shoppingCartOpen, setShoppingCartOpen] = useState(null);
+  const [initialSC, setInitialSC] = useState(false);
   const cartRef = useRef(null);
 
   const toggleShoppingCart = () => {
     if (shoppingCartOpen === false) {
       setShoppingCartOpen(true);
+      setInitialSC(true);
     } else {
       setShoppingCartOpen(false);
     }
@@ -73,14 +75,14 @@ export const ShoppingCartProvider = ({ children }) => {
     setCartItems([]);
   };
 
-/* LEARNING NOTE
- * This `useEffect()` hook is adding and removing an event listener to the window for the "mousedown" event. 
- * When the event is triggered, it checks if the click was outside of the shopping cart component (using
- * the `cartRef` reference) and if so, it sets the `shoppingCartOpen` state to `false`. The
- * `useEffect()` hook is dependent on the `setShoppingCartOpen` function, which means it will only
- * run when `setShoppingCartOpen` changes. This is used to ensure that the event listener is added
- * and removed only when necessary, and not on every re-render of the component. 
- * the onMouseDown wouldn't be sufficient in this case, the changes in structure would be necesarry*/
+  /* LEARNING NOTE
+   * This `useEffect()` hook is adding and removing an event listener to the window for the "mousedown" event.
+   * When the event is triggered, it checks if the click was outside of the shopping cart component (using
+   * the `cartRef` reference) and if so, it sets the `shoppingCartOpen` state to `false`. The
+   * `useEffect()` hook is dependent on the `setShoppingCartOpen` function, which means it will only
+   * run when `setShoppingCartOpen` changes. This is used to ensure that the event listener is added
+   * and removed only when necessary, and not on every re-render of the component.
+   * the onMouseDown wouldn't be sufficient in this case, the changes in structure would be necesarry*/
   useEffect(() => {
     const handleMouseDown = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
@@ -110,7 +112,7 @@ export const ShoppingCartProvider = ({ children }) => {
     >
       {children}
       <div
-        className={`${
+        className={`${initialSC ? "" : "hidden"} ${
           shoppingCartOpen ? "slide-in" : "slide-out"
         } z-20 fixed top-44 right-0 h-1/2 lg:w-4/12 sm:w-8/12 w-full flex flex-col bg-stone-300 p-5`}
         ref={cartRef}

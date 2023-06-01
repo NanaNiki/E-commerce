@@ -7,7 +7,7 @@
  */
 import { useState, useEffect, useRef } from "react";
 import { RxMagnifyingGlass } from "react-icons/rx";
-import plantsData from "../product/plants.json";
+import plantsData from "../data/plants.json";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -83,7 +83,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
           type="submit"
           className="p-1 px-2 h-8 text-lg bg-white rounded-e-full hover:text-stone-400"
         >
-          <RxMagnifyingGlass />
+          <RxMagnifyingGlass aria-label="search"/>
         </button>
       </form>
       <div className="overflow-y-scroll scroll-smooth">

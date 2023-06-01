@@ -11,7 +11,6 @@ module.exports = {
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
         castoro: ["var(--font-castoro)", "serif"],
-        castotoT: ["var(--font-castotoT)", "sans-serif"],
       },
     },
   },

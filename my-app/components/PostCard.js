@@ -5,7 +5,7 @@
  * data for the post, including the image source, alt text, title, author, date, and an array of
  * sections with their titles and content.
  */
-import { castoro } from "../index.js";
+import { castoro } from "../pages/index.js";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ export default function PostCard({ postsData }) {
           height={400}
           className="mb-4 w-screen"
           alt={postsData.alt}
-          priority = {true}
+          priority={true}
         />
         <div
           className={`flex flex-col text-end justify-center p-10 ${castoro.className}`}

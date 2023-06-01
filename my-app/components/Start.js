@@ -4,7 +4,7 @@
  * button. It also includes a chevron icon for scrolling down and a heading for categories.
  */
 import Image from "next/image";
-import { castoro } from "../index.js";
+import { castoro } from "../pages/index.js";
 import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Start() {
@@ -14,9 +14,10 @@ export default function Start() {
         src="/images/planthero.jpg"
         width={1400}
         height={400}
+        sizes="100vw"
         alt="Beige terrace with two wooden chairs and palm loooking plants"
         className="sm:mt-5 block max-h-screen"
-        priority = {true}
+        priority={true}
       />
       <span className="hidden">
         Photo by{" "}
@@ -51,6 +52,7 @@ export default function Start() {
       </div>
       <a
         href="#scroll-down"
+        aria-label="scroll down"
         className="transition-all duration-500 ease-out scroll-smooth flex flex-row w-full justify-center"
       >
         <BsChevronDoubleDown className="lg:block hidden z-10 absolute bottom-0 mb-6 w-10 h-10 text-stone-300 hover:text-white " />

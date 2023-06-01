@@ -9,11 +9,11 @@
  * product, including its name, price, image, and quantity. It also includes buttons to add or remove
  * items from the cart and a list of other plant products.
  */
-import { castoro, inter } from "../index.js";
+import { castoro, inter } from "../pages/index.js";
 import Image from "next/image";
-import plants from "./plants.json";
+import plants from "../data/plants.json";
 import Link from "next/link.js";
-import Soldout from "../components/Soldout.js";
+import Soldout from "./Soldout.js";
 
 export default function ProductCard(props) {
   const {
@@ -28,13 +28,13 @@ export default function ProductCard(props) {
     <>
       <div className="flex md:flex-row flex-col w-full lg:items-end items-center mt-14">
         <div className="flex lg:flex-row-reverse flex-col lg:min-w-fit max-w-[400px] lg:pt-10 mx-auto lg:ms-auto lg:mx-0">
-        <div className="relative"> {plantsData.soldout && <Soldout />} </div>
+          <div className="relative"> {plantsData.soldout && <Soldout />} </div>
           <Image
             src={plantsData.image}
             width={400}
             height={600}
             alt={`Plant product ${plantsData.name}`}
-            priority = {true}
+            priority={true}
           />
           <div
             className={`md:hidden flex flex-col h-full m-auto my-5 ${castoro.className}`}
@@ -46,7 +46,7 @@ export default function ProductCard(props) {
               <h5 className="px-5 text-base">Quantity</h5>
               <button
                 className="text-lg text-center py-auto bg-stone-300 lg:w-32 h-8 p-0.5 w-20 hover:text-stone-500"
-                onClick={() => updateQuantity("remove")}
+                onClick={() => updateQuantity("remove")} aria-label="Remove one plant"
               >
                 -
               </button>
@@ -55,7 +55,7 @@ export default function ProductCard(props) {
               </div>
               <button
                 className="text-lg text-center py-auto bg-stone-300 h-8 p-0.5 w-20 hover:text-stone-500"
-                onClick={() => updateQuantity("add")}
+                onClick={() => updateQuantity("add")} aria-label="Add one plant"
               >
                 +
               </button>
@@ -95,7 +95,7 @@ export default function ProductCard(props) {
             <h5 className="px-5 lg:text-lg sm:text-base">Quantity</h5>
             <button
               className="text-2xl text-center py-auto bg-stone-300 w-28 h-8 p-0.5 hover:text-stone-500"
-              onClick={() => updateQuantity("remove")}
+              onClick={() => updateQuantity("remove")} aria-label="Remove one plant"
             >
               -
             </button>
@@ -104,7 +104,7 @@ export default function ProductCard(props) {
             </div>
             <button
               className="text-2xl text-center py-auto bg-stone-300 w-28 h-8 p-0.5 hover:text-stone-500"
-              onClick={() => updateQuantity("add")}
+              onClick={() => updateQuantity("add")} aria-label="Add one plant"
             >
               +
             </button>

@@ -8,7 +8,9 @@ import { BsFillTelephoneFill, BsMailbox2 } from "react-icons/bs";
 import Link from "next/link.js";
 import dynamic from "next/dynamic";
 
-const DynamicMap = dynamic(() => import("./components/Map"), { ssr: false });
+const DynamicMap = dynamic(() => import("../components/Map.js"), {
+  ssr: false,
+});
 
 export default function Contact() {
   return (

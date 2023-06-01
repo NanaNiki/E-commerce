@@ -7,13 +7,13 @@
  * the plantsData array to only include the plants that belong to the category being displayed, and
  * then maps over this filtered array to render each plant's information.
  */
-import { castoro } from "../../index.js";
-import { inter } from "../../index.js";
+import { castoro } from "../pages/index.js";
+import { inter } from "../pages/index.js";
 import Link from "next/link";
 import Image from "next/image.js";
-import Categories from "../../components/Categories.js";
-import plantsData from "../../product/plants.json";
-import Soldout from "../../components/Soldout.js";
+import Categories from "./Categories.js";
+import plantsData from "../data/plants.json";
+import Soldout from "./Soldout.js";
 
 export default function CategoryCard({ categoriesData }) {
   const categoryPlants = plantsData.filter(
@@ -33,7 +33,7 @@ export default function CategoryCard({ categoriesData }) {
           return (
             <div key={index} className="w-fit shrink-0 flex flex-col">
               <Link href={`/product/${plant.id}`} passHref>
-              <div className="relative"> {plant.soldout && <Soldout />} </div>
+                <div className="relative"> {plant.soldout && <Soldout />} </div>
                 <Image
                   src={plant.image}
                   width={220}

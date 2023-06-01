@@ -4,10 +4,10 @@
  * @returns The `ProductPage` component is being returned.
  */
 import { useRouter } from "next/router";
-import plantsData from "./plants.json";
-import ProductCard from "./ProductCard";
+import plantsData from "../../data/plants.json";
+import ProductCard from "../../components/ProductCard";
 import { useContext } from "react";
-import { ShoppingCartContext } from "../components/ShoppingCartContext";
+import { ShoppingCartContext } from "../../components/ShoppingCartContext";
 
 export default function ProductPage() {
   const router = useRouter();

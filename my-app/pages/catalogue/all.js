@@ -9,8 +9,8 @@
 import { castoro, inter } from "../index.js";
 import Link from "next/link";
 import Image from "next/image.js";
-import plantsData from "../product/plants.json";
-import Soldout from "../components/Soldout.js";
+import plantsData from "../../data/plants.json";
+import Soldout from "../../components/Soldout.js";
 import { useState } from "react";
 
 export default function AllProducts() {
@@ -23,16 +23,16 @@ export default function AllProducts() {
     { value: "nameAsc", label: "Name (A to Z)" },
     { value: "nameDesc", label: "Name (Z to A)" },
   ];
- /** LEARNING NOTE 
-  * By default sort() method order is ascending
-  * localeCompare() method performs a string comparison based on alphabetical order
-  * 
-  * localeCompare and the subtraction (a.price - b.price) || (b.price - a.price) in the 
-  * sort() method produce integer results (e.g., -1, 1, 0) that determine the sorting order. 
-  * So when the result of `a.price - b.price` is negative it means that `a.price` is smaller than
-  * `b.price` and therefore `a` should be placed before `b`. And when `b.price - a.price` and the
-  * result is positive it means that `b.price` is larger than `a.price`, so `b` should be placed before `a`.
- */
+  /** LEARNING NOTE
+   * By default sort() method order is ascending
+   * localeCompare() method performs a string comparison based on alphabetical order
+   *
+   * localeCompare and the subtraction (a.price - b.price) || (b.price - a.price) in the
+   * sort() method produce integer results (e.g., -1, 1, 0) that determine the sorting order.
+   * So when the result of `a.price - b.price` is negative it means that `a.price` is smaller than
+   * `b.price` and therefore `a` should be placed before `b`. And when `b.price - a.price` and the
+   * result is positive it means that `b.price` is larger than `a.price`, so `b` should be placed before `a`.
+   */
   const sortPlants = (plantsData) => {
     switch (sortMethod) {
       case "priceLow":
@@ -73,7 +73,7 @@ export default function AllProducts() {
           return (
             <div key={index} className="w-fit">
               <Link href={`/product/${plant.id}`} passHref>
-              <div className="relative"> {plant.soldout && <Soldout />} </div>
+                <div className="relative"> {plant.soldout && <Soldout />} </div>
                 <Image
                   src={plant.image}
                   width={200}
