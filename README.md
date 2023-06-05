@@ -1,1 +1,1 @@
-E-commeerce website - plant shop
+E-commerce website - plant shop
