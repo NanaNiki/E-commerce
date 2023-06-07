@@ -10,7 +10,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en" className="scroll-smooth" title="Plant Shop">
+    <Html lang="en" className="scroll-smooth">
       <Head>
         <meta name="description" content="Shop the best plants, for all your needs!" />
       </Head>
