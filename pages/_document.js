@@ -17,6 +17,7 @@ export default function Document() {
           content="Shop the best plants, for all your needs!"
         />
         <link rel="shortcut icon" href="/images/favicon.ico" />
+        <title>Plantea Shop</title>
       </Head>
       <body>
         <Main />
