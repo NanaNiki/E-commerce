@@ -41,7 +41,7 @@ export default function PopUp({ onHandleClose }) {
           className={`z-30 fixed top-1/3 sm:left-[25%] left-8 flex flex-col sm:w-[50%] sm:h-[30%] w-10/12 h-44 bg-emerald-900 shadow-lg shadow-stone-400 opacity-0 popup-animation ${castoro.className}`}
         >
           <Image
-            src={"/popup.svg"}
+            src={"/images/popup.svg"}
             alt="popup thank you! message on leaves"
             fill={true}
           />

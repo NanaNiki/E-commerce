@@ -9,14 +9,14 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Start() {
   return (
-    <section className="w-full h-full overflow-hidden" id="start">
+    <section className="h-full w-full overflow-hidden" id="start">
       <Image
         src="/images/planthero.jpg"
         width={1400}
         height={400}
         sizes="100vw"
         alt="Beige terrace with two wooden chairs and palm loooking plants"
-        className="sm:mt-5 block max-h-screen"
+        className="block max-h-screen sm:mt-5"
         priority={true}
       />
       <span className="hidden">
@@ -29,23 +29,23 @@ export default function Start() {
           Unsplash
         </a>
       </span>
-      <div className="absolute lg:top-52 sm:top-48 top-24 z-10 flex flex-col justify-evenly md:items-center items-end md:w-1/2 md:h-[350px] w-8/12 h-1/12 mx-auto sm:p-8 p-4 pb-3 bg-white">
+      <div className="h-1/12 absolute top-24 z-10 mx-auto flex w-8/12 flex-col items-end justify-evenly bg-white p-4 pb-3 sm:top-48 sm:p-8 md:h-[350px] md:w-1/2 md:items-center lg:top-52">
         <h1
-          className={`${castoro.className} text-end lg:mt-3 lg:text-5xl md:text-4xl sm:text-2xl text-xl lg:text-center md:text-center `}
+          className={`${castoro.className} text-end text-xl sm:text-2xl md:text-center md:text-4xl lg:mt-3 lg:text-center lg:text-5xl `}
         >
           Find perfect plants
         </h1>
         <h1
-          className={`${castoro.className} text-end lg:mb-3 lg:text-5xl md:text-4xl sm:text-2xl text-xl lg:text-center md:text-center `}
+          className={`${castoro.className} text-end text-xl sm:text-2xl md:text-center md:text-4xl lg:mb-3 lg:text-center lg:text-5xl `}
         >
           for your home
         </h1>
-        <h2 className="md:text-center md:text-base sm:text-sm text-xs lg:mt-5 lg:mb-5 pt-1 ">
+        <h2 className="pt-1 text-xs sm:text-sm md:text-center md:text-base lg:mb-5 lg:mt-5 ">
           Beautiful plants that encourage you to get creative.
         </h2>
         <a
           href="#categories"
-          className="text-center lg:mt-4 sm:pt-2.5 p-1 lg:mx-auto cursor-pointer bg-black sm:w-40 sm:h-10 w-20 h-6 text-white sm:text-sm text-xs md:font-bold font-extralight hover:bg-stone-900 hover:animate-pulse"
+          className="h-6 w-20 cursor-pointer bg-black p-1 text-center text-xs font-extralight text-white hover:animate-pulse hover:bg-stone-900 sm:h-10 sm:w-40 sm:pt-2.5 sm:text-sm md:font-bold lg:mx-auto lg:mt-4"
         >
           Shop Now
         </a>
@@ -53,12 +53,12 @@ export default function Start() {
       <a
         href="#scroll-down"
         aria-label="scroll down"
-        className="transition-all duration-500 ease-out scroll-smooth flex flex-row w-full justify-center"
+        className="flex w-full flex-row justify-center scroll-smooth transition-all duration-500 ease-out"
       >
-        <BsChevronDoubleDown className="lg:block hidden z-10 absolute bottom-0 mb-6 w-10 h-10 text-stone-300 hover:text-white " />
+        <BsChevronDoubleDown className="absolute bottom-0 z-10 mb-6 hidden h-10 w-10 text-stone-300 hover:text-white lg:block " />
       </a>
       <h1
-        className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:pt-20 md:pt-12 pt-10 pb-5 flex flex-row justify-center font-bold ${castoro.className}`}
+        className={` flex flex-row justify-center pb-5 pt-10 text-2xl font-bold sm:text-3xl md:pt-12 md:text-4xl lg:pt-20 lg:text-5xl ${castoro.className}`}
         id="categories"
       >
         Categories

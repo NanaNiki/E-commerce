@@ -12,7 +12,11 @@ export default function Document() {
   return (
     <Html lang="en" className="scroll-smooth">
       <Head>
-        <meta name="description" content="Shop the best plants, for all your needs!" />
+        <meta
+          name="description"
+          content="Shop the best plants, for all your needs!"
+        />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
       </Head>
       <body>
         <Main />

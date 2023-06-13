@@ -15,43 +15,47 @@ export default function Featured() {
     .filter((plant) => plant.favourites === true)
     .slice(0, 3);
   return (
-    <section className="h-full ms-6" id="featured">
-      <div className="flex flex-col justify-center m-auto lg:p-32 md:p-20 sm:p-16 p-10 lg:text-4xl md:text-3xl sm:text-2xl text-xl text-center">
+    <section className="ms-6 h-full" id="featured">
+      <div className="m-auto flex flex-col justify-center p-10 text-center text-xl sm:p-16 sm:text-2xl md:p-20 md:text-3xl lg:p-32 lg:text-4xl">
         <h1 className={` lg:mb-3 ${castoro.className}`}>
           Love and work are to people what water
         </h1>
         <h1 className={` ${castoro.className}`}>and sunshine are to plants</h1>
       </div>
 
-      <div className="flex flex-row lg:flex-nowrap md:flex-nowrap flex-wrap">
-        <div className="flex flex-col lg:w-1/3 lg:ps-20 md:px-8 pb-8 justify-center">
+      <div className="flex flex-row flex-wrap md:flex-nowrap lg:flex-nowrap">
+        <div className="flex flex-col justify-center pb-8 md:px-8 lg:w-1/3 lg:ps-20">
           <h1
-            className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl mb-5 font-bold ${castoro.className}`}
+            className={` mb-5 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl ${castoro.className}`}
           >
             Featured
           </h1>
-          <span className="lg:text-xl md:text-base sm:text-sm text-xs">
+          <span className="text-xs sm:text-sm md:text-base lg:text-xl">
             <p>Our plants are 100% organic,</p>
             <p>we don't use pesticides or</p>{" "}
             <p className="mb-4">harmful chemicals.</p>
             But please don't eat them
           </span>
           <Link
-            className="hidden sm:block lg:my-10 md:my-5 sm:my-3 pt-2 cursor-pointer bg-stone-200 w-40 h-10 text-sm text-center font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200"
+            className="hidden h-10 w-40 cursor-pointer bg-stone-200 pt-2 text-center text-sm font-bold underline underline-offset-4 transition-all duration-200 hover:animate-bounce hover:bg-stone-500 hover:text-stone-50 sm:my-3 sm:block md:my-5 lg:my-10"
             href={"/catalogue/favourites"}
             passHref
           >
             Shop all Favourites
           </Link>
         </div>
-        <div className="flex overflow-x-scroll scroll-smooth justify-center md:justify-start">
+        <div className="flex justify-center overflow-x-scroll scroll-smooth md:justify-start">
           {favouritePlants.map((plant, index) => {
             return (
               <div
                 key={index}
-                className="flex flex-col lg:flex-shrink-0 lg:me-6 sm:me-8"
+                className="flex flex-col sm:me-8 lg:me-6 lg:flex-shrink-0"
               >
-                <Link href={`/product/${plant.id}`} aria-label="Go to see the product" passHref>
+                <Link
+                  href={`/product/${plant.id}`}
+                  aria-label="Go to see the product"
+                  passHref
+                >
                   <div className="relative">
                     {plant.soldout && <Soldout />}{" "}
                   </div>
@@ -60,10 +64,10 @@ export default function Featured() {
                     width={270}
                     height={500}
                     alt={`Plant product ${plant.name}`}
-                    className="inline-block hover:scale-95 ease-in-out duration-300"
+                    className="inline-block duration-300 ease-in-out hover:scale-95"
                   />
                   <div
-                    className={` flex flex-row justify-between p-2 text-end lg:text-xl md:text-base sm:text-sm text-xs ${castoro.className}`}
+                    className={` flex flex-row justify-between p-2 text-end text-xs sm:text-sm md:text-base lg:text-xl ${castoro.className}`}
                   >
                     <h5>{plant.name}</h5> <h5>{plant.price}€</h5>
                   </div>
@@ -72,10 +76,10 @@ export default function Featured() {
             );
           })}
         </div>
-        <div className="flex flex-row w-screen justify-end lg:hidden md:hidden sm:hidden">
+        <div className="flex w-screen flex-row justify-end sm:hidden md:hidden lg:hidden">
           <Link
-            className="m-4 pt-3 text-center cursor-pointer bg-stone-200 w-40 h-10 text-xs font-bold underline underline-offset-4 hover:bg-stone-500 hover:text-stone-50 hover:animate-bounce transition-all duration-200"
-            href={"/catalogue/favourites"} 
+            className="m-4 h-10 w-40 cursor-pointer bg-stone-200 pt-3 text-center text-xs font-bold underline underline-offset-4 transition-all duration-200 hover:animate-bounce hover:bg-stone-500 hover:text-stone-50"
+            href={"/catalogue/favourites"}
             passHref
           >
             Shop all Favourites

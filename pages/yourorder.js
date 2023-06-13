@@ -34,11 +34,11 @@ from JSON format using `JSON.parse()` and update the state variables accordingly
   }, []);
 
   return (
-    <div className={`mt-14 lg:w-6/12 mx-auto ${castoro.className}`}>
-      <h1 className="text-center pt-10 text-2xl font-bold text-stone-600">
+    <div className={`mx-auto mt-14 lg:w-6/12 ${castoro.className}`}>
+      <h1 className="pt-10 text-center text-2xl font-bold text-stone-600">
         Your Order
       </h1>
-      <h2 className="p-5 mx-auto text-2xl flex flex-row w-fit">
+      <h2 className="mx-auto flex w-fit flex-row p-5 text-2xl">
         <GiThreeLeaves className="me-2" /> New Plants:{" "}
       </h2>
       <div className="flex flex-row justify-center">
@@ -51,18 +51,18 @@ from JSON format using `JSON.parse()` and update the state variables accordingly
               height={70}
               className="mx-4 mb-2"
             />
-            <p className="text-center my-auto">{item.quantity} of</p>
-            <p key={item.id} className="text-center my-auto">
+            <p className="my-auto text-center">{item.quantity} of</p>
+            <p key={item.id} className="my-auto text-center">
               {item.name}
             </p>
           </div>
         ))}
       </div>
 
-      <h2 className="pt-10 pb-5 text-2xl lg:text-start text-center">
+      <h2 className="pb-5 pt-10 text-center text-2xl lg:text-start">
         Your Details:
       </h2>
-      <div className="lg:ps-0 ps-6">
+      <div className="ps-6 lg:ps-0">
         <p>Name: {formData.name}</p>
         <p>Email: {formData.email}</p>
         <p>Phone: {formData.phone}</p>
@@ -72,7 +72,7 @@ from JSON format using `JSON.parse()` and update the state variables accordingly
       <div className="flex flex-row justify-end pt-5">
         <button
           onClick={() => window.history.back()}
-          className="pt-2 px-14 m-auto cursor-pointer bg-black w-60 h-10 text-white sm:text-base hover:bg-stone-700"
+          className="m-auto h-10 w-60 cursor-pointer bg-black px-14 pt-2 text-white hover:bg-stone-700 sm:text-base"
         >
           Go Back
         </button>

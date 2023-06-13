@@ -17,10 +17,10 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
   const searchBarRef = useRef(null);
 
   /** LEANRING NOTE
-   * The some() method is used to determine if at least one tag includes the search term, 
+   * The some() method is used to determine if at least one tag includes the search term,
    * ignoring case sensitivity. Without some(), using only filter() it would require an exact match
-   * between the searchTerm and any of the tags in order for the plant object to be included in the 
-   * filtered result. The parital matching is possible thanks to includes() method, which is used to 
+   * between the searchTerm and any of the tags in order for the plant object to be included in the
+   * filtered result. The parital matching is possible thanks to includes() method, which is used to
    * check if a string includes another string as a substring (within).
    */
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
   return (
     <div ref={searchBarRef} className="search-bar">
       <form
-        className="sm:p-5 pt-5 mx-auto pb-2 flex place-items-start lg:w-7/12"
+        className="mx-auto flex place-items-start pb-2 pt-5 sm:p-5 lg:w-7/12"
         onSubmit={handleFormSubmit}
       >
         <input
@@ -77,13 +77,13 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
           placeholder="Search by tags"
           value={searchTerm}
           onChange={handleInputChange}
-          className="rounded-s-full px-2 py-1 text-base w-8/12 sm:ms-8 ms-2"
+          className="ms-2 w-8/12 rounded-s-full px-2 py-1 text-base sm:ms-8"
         />
         <button
           type="submit"
-          className="p-1 px-2 h-8 text-lg bg-white rounded-e-full hover:text-stone-400"
+          className="h-8 rounded-e-full bg-white p-1 px-2 text-lg hover:text-stone-400"
         >
-          <RxMagnifyingGlass aria-label="search"/>
+          <RxMagnifyingGlass aria-label="search" />
         </button>
       </form>
       <div className="overflow-y-scroll scroll-smooth">
@@ -100,8 +100,8 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
               <Link
                 href={`/product/${plant.id}`}
                 passHref
-                aria-label="Go to see the product" 
-                className="flex sm:flex-row flex-col sm:items-start items-center hover:scale-95 ease-in-out duration-300"
+                aria-label="Go to see the product"
+                className="flex flex-col items-center duration-300 ease-in-out hover:scale-95 sm:flex-row sm:items-start"
               >
                 <Image
                   width={80}
@@ -111,17 +111,17 @@ export default function Searchbar({ setSearchBarOpen, setMiniNavOpen }) {
                   className="p-2"
                   priority={true}
                 />
-                <div className="flex sm:flex-col sm:justify-normal flex-row my-auto">
-                  <h2 className="font-bold sm:pe-0 pe-2">{plant.name}</h2>
+                <div className="my-auto flex flex-row sm:flex-col sm:justify-normal">
+                  <h2 className="pe-2 font-bold sm:pe-0">{plant.name}</h2>
                   <h3>{plant.price}€</h3>
-                  <div className="hidden sm:flex flex-row justify-end">
-                    <h5 className="text-sm opacity-40 italic">
+                  <div className="hidden flex-row justify-end sm:flex">
+                    <h5 className="text-sm italic opacity-40">
                       #{plant.tags.join(" #")}
                     </h5>
                   </div>
                 </div>
               </Link>
-              <div className="w-full h-[1px] bg-stone-400 rounded-full"></div>
+              <div className="h-[1px] w-full rounded-full bg-stone-400"></div>
             </div>
           );
         })}

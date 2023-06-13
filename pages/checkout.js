@@ -66,12 +66,12 @@ export default function Checkout() {
   };
 
   return (
-    <div className={`mt-14 lg:w-8/12 mx-auto ${castoro.className}`}>
-      <h1 className="text-center lg:pt-10 py-5 text-2xl font-bold text-stone-600">
+    <div className={`mx-auto mt-14 lg:w-8/12 ${castoro.className}`}>
+      <h1 className="py-5 text-center text-2xl font-bold text-stone-600 lg:pt-10">
         Your Order
       </h1>
       {cartItems.length === 0 && (
-        <p className="p-5 lg:pt-16 mx-auto text-2xl flex flex-row w-fit">
+        <p className="mx-auto flex w-fit flex-row p-5 text-2xl lg:pt-16">
           Your order is empty <RiPlantLine className="ms-2 mt-1" />
         </p>
       )}
@@ -79,7 +79,7 @@ export default function Checkout() {
         <div key={index} className="flex flex-row justify-between">
           <div className="flex flex-row">
             <button
-              className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"
+              className=" mx-2 my-auto h-7 w-7 rounded-full bg-stone-200 text-center text-lg font-bold hover:bg-stone-100 hover:text-stone-500"
               onClick={() => onRemoveFromCart(cartItem)}
             >
               -
@@ -93,31 +93,31 @@ export default function Checkout() {
               className="mx-3"
             />
             <button
-              className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"
+              className=" mx-2 my-auto h-7 w-7 rounded-full bg-stone-200 text-center text-lg font-bold hover:bg-stone-100 hover:text-stone-500"
               onClick={() => onAddToCart(cartItem)}
             >
               +
             </button>
-            <p className="text-xl my-auto px-3">{cartItem.name}</p>
+            <p className="my-auto px-3 text-xl">{cartItem.name}</p>
           </div>
           <div className="flex flex-row">
-            <p className="text-xl my-auto">
+            <p className="my-auto text-xl">
               {cartItem.quantity} x {cartItem.price.toFixed(2)}€
             </p>
           </div>
         </div>
       ))}
-      <div className="w-full h-[1px] bg-stone-400 rounded-full"></div>
-      <div className="flex flex-row px-2 justify-between pt-3">
-        <h1 className=" text-2xl lg:ps-16 ps-14 font-bold text-stone-600">
+      <div className="h-[1px] w-full rounded-full bg-stone-400"></div>
+      <div className="flex flex-row justify-between px-2 pt-3">
+        <h1 className=" ps-14 text-2xl font-bold text-stone-600 lg:ps-16">
           Total
         </h1>
-        <span className="lg:pe-0 pe-14 text-2xl font-bold text-stone-600">
+        <span className="pe-14 text-2xl font-bold text-stone-600 lg:pe-0">
           {calculateTotal().toFixed(2)}€
         </span>
       </div>
-      <div className="flex flex-row justify-end mt-5">
-        <h1 className="text-base lg:pe-16 font-bold text-stone-600">
+      <div className="mt-5 flex flex-row justify-end">
+        <h1 className="text-base font-bold text-stone-600 lg:pe-16">
           Choose your delivery:
         </h1>
         <select
@@ -131,9 +131,9 @@ export default function Checkout() {
           ))}
         </select>
       </div>
-      <div className="flex flex-row lg:mt-0 mt-5">
+      <div className="mt-5 flex flex-row lg:mt-0">
         <form name="user checkoutmn data">
-          <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto justify-between">
+          <div className="lg:mx-none mx-auto flex w-8/12 flex-col justify-between lg:w-full">
             {/** LEARNING NOTE
             * || (OR) statement in the `value` atribute provides a default value of an empty string, 
            preventing the input field from being controlled by an undefined or null value, which 
@@ -147,7 +147,7 @@ export default function Checkout() {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
+              className="my-2 rounded-sm border-2 border-stone-500 p-0.5 ps-1"
               value={formData.name || ""}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
@@ -157,7 +157,7 @@ export default function Checkout() {
               name="phone"
               required=""
               placeholder="Phone number"
-              className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
+              className="my-2 rounded-sm border-2 border-stone-500 p-0.5 ps-1"
               value={formData.phone || ""}
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
@@ -168,7 +168,7 @@ export default function Checkout() {
               required=""
               placeholder="E-mail"
               type="email"
-              className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
+              className="my-2 rounded-sm border-2 border-stone-500 p-0.5 ps-1"
               value={formData.email || ""}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
@@ -176,20 +176,20 @@ export default function Checkout() {
             />
           </div>
           <div className="flex flex-col justify-between">
-            <div className="flex flex-row text-2xl justify-evenly mt-2 ">
-              <BsPaypal className="mt-3 hover:text-stone-400 hover:scale-105" />
-              <FaGooglePay className="text-5xl hover:text-stone-400 hover:scale-105" />
-              <FaApplePay className="text-5xl hover:text-stone-400 hover:scale-105" />
+            <div className="mt-2 flex flex-row justify-evenly text-2xl ">
+              <BsPaypal className="mt-3 hover:scale-105 hover:text-stone-400" />
+              <FaGooglePay className="text-5xl hover:scale-105 hover:text-stone-400" />
+              <FaApplePay className="text-5xl hover:scale-105 hover:text-stone-400" />
             </div>
-            <div className="lg:w-full lg:mx-none mx-auto w-10/12 h-[1px] bg-stone-400 rounded-full"></div>
+            <div className="lg:mx-none mx-auto h-[1px] w-10/12 rounded-full bg-stone-400 lg:w-full"></div>
             <p className="my-4 text-center">or pay using credit card</p>
-            <div className="flex flex-col lg:w-full w-8/12 lg:mx-none mx-auto">
+            <div className="lg:mx-none mx-auto flex w-8/12 flex-col lg:w-full">
               <label>Card holder full name</label>
               <input
                 name="card-name"
                 type="text"
                 placeholder="Enter your full name"
-                className="border-2 border-stone-500 p-0.5 my-2 rounded-sm ps-1"
+                className="my-2 rounded-sm border-2 border-stone-500 p-0.5 ps-1"
               />
               <label>Card Number</label>
               <input
@@ -198,7 +198,7 @@ export default function Checkout() {
                 placeholder="0000 0000 0000 0000"
                 pattern="(\d{4}\s?){3}\d{4}(?!\d)"
                 maxLength="19"
-                className="border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                className="my-2 rounded-sm border-2 border-stone-500 p-0.5 ps-1 invalid:text-pink-900"
               />
               <div className="flex flex-row justify-between">
                 <h5>Expiry Date</h5> <h5> CVV</h5>
@@ -211,7 +211,7 @@ export default function Checkout() {
                   placeholder="01/23"
                   pattern="(0[1-9]|1[0-2])\/\d{2}"
                   maxLength={5}
-                  className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                  className="my-2 w-6/12 rounded-sm border-2 border-stone-500 p-0.5 ps-1 invalid:text-pink-900 lg:w-fit"
                 />
                 <input
                   type="text"
@@ -220,13 +220,13 @@ export default function Checkout() {
                   placeholder="CVV"
                   pattern="\d{3}"
                   maxLength="3"
-                  className="lg:w-fit w-6/12 border-2 border-stone-500 p-0.5 my-2 rounded-sm invalid:text-pink-900 ps-1"
+                  className="my-2 w-6/12 rounded-sm border-2 border-stone-500 p-0.5 ps-1 invalid:text-pink-900 lg:w-fit"
                 />
               </div>
               <Link href="/yourorder" className="mx-auto my-5 md:hidden">
                 <button
                   onClick={handleOrderClick}
-                  className="pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs"
+                  className="h-10 w-40 cursor-pointer bg-black pt-1 text-xs text-white hover:bg-stone-700 sm:text-sm"
                 >
                   ORDER
                 </button>
@@ -238,7 +238,7 @@ export default function Checkout() {
           <Link href="/yourorder" className="md:m-auto">
             <button
               onClick={handleOrderClick}
-              className="pt-2 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs"
+              className="h-10 w-40 cursor-pointer bg-black pt-2 text-xs text-white hover:bg-stone-700 sm:text-sm"
             >
               ORDER
             </button>

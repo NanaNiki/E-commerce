@@ -37,28 +37,32 @@ export const categoriesData = [
 
 export default function Categories() {
   return (
-    <section className="relative h-full mb-5">
+    <section className="relative mb-5 h-full">
       <div
         className="flex overflow-x-scroll scroll-smooth lg:justify-center lg:pt-10"
         id="scroll-down"
       >
         {categoriesData.map((category, index) => {
           return (
-            <span key={index} className="flex flex-col me-8 flex-shrink-0">
+            <span key={index} className="me-8 flex flex-shrink-0 flex-col">
               <Link
-                className={` z-10 translate-y-full w-fit h-fit bg-stone-200 bg-opacity-90 lg:text-2xl md:text-xl sm:text-lg text-sm md:p-3 p-2 mx-auto ${castoro.className} hover:scale-105 ease-in-out duration-300`}
+                className={` z-10 mx-auto h-fit w-fit translate-y-full bg-stone-200 bg-opacity-90 p-2 text-sm sm:text-lg md:p-3 md:text-xl lg:text-2xl ${castoro.className} duration-300 ease-in-out hover:scale-105`}
                 href={`/catalogue/category/${category.val}`}
                 passHref
               >
                 {category.name}
               </Link>
-              <Link href={`/catalogue/category/${category.val}`} aria-label="Go to see the category" passHref>
+              <Link
+                href={`/catalogue/category/${category.val}`}
+                aria-label="Go to see the category"
+                passHref
+              >
                 <Image
                   src={category.image}
                   width={280}
                   height={500}
                   alt={category.alt}
-                  className="inline-block cursor-pointer hover:scale-95 ease-in-out duration-300"
+                  className="inline-block cursor-pointer duration-300 ease-in-out hover:scale-95"
                   priority={true}
                 />{" "}
               </Link>

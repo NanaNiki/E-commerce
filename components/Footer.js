@@ -40,53 +40,53 @@ export default function Footer({ showPopUp, setShowPopUp }) {
 
   return (
     <>
-      <footer className="footer lg:pt-16 relative w-full">
+      <footer className="footer relative w-full lg:pt-16">
         <div
-          className={`flex flex-col justify-between p-5 pb-4 text-center lg:text-3xl sm:text-xl  ${castoro.className} `}
+          className={`flex flex-col justify-between p-5 pb-4 text-center sm:text-xl lg:text-3xl  ${castoro.className} `}
           id="newsletter"
         >
           <h2 className="lg:p-2">Get 15% off your next order,</h2>
           <h2 className="pb-2">Subscribe to our Newsletter</h2>
 
-          <div className="relative flex flex-row justify-center m-auto lg:p-10 lg:flex-nowrap md:flex-nowrap flex-wrap">
+          <div className="relative m-auto flex flex-row flex-wrap justify-center md:flex-nowrap lg:flex-nowrap lg:p-10">
             <input
               type="email"
               name="email"
-              className="ps-2 lg:w-[440px] h-10 bg-neutral-200 text-stone-950 text-base mb-4 border-2 invalid:text-pink-900"
+              className="mb-4 h-10 border-2 bg-neutral-200 ps-2 text-base text-stone-950 invalid:text-pink-900 lg:w-[440px]"
               placeholder="Enter your email here"
               required
             ></input>
             <Link href="mailto:nicol.wesolowska@gmail.com" target="_blank">
               <button
                 onClick={handleOpen}
-                className={` mx-auto pt-1 cursor-pointer bg-black w-40 h-10 text-white sm:text-sm hover:bg-stone-700 text-xs ${inter.className}`}
+                className={` mx-auto h-10 w-40 cursor-pointer bg-black pt-1 text-xs text-white hover:bg-stone-700 sm:text-sm ${inter.className}`}
               >
                 SUBSCRIBE
               </button>
             </Link>
           </div>
         </div>
-        <div className="flex flex-row justify-between sm:p-5 pb-3">
+        <div className="flex flex-row justify-between pb-3 sm:p-5">
           <div className="col-span-1 p-1.5">
-            <Link href="/#start" aria-label="Go to homepage"  passHref>
+            <Link href="/#start" aria-label="Go to homepage" passHref>
               <Image
-                src="/plantealogo.svg"
+                src="/images/plantealogo.svg"
                 alt="logo"
                 width={110}
                 height={50}
               />
             </Link>
           </div>
-          <div className="grid grid-cols-3 sm:w-3/4 w-11/12 ">
+          <div className="grid w-11/12 grid-cols-3 sm:w-3/4 ">
             {footertags.map((tag, index) => {
               return (
-                <div key={index} className="w-fit mx-1">
-                  <span className="sm:text-sm text-xs text-stone-400">
+                <div key={index} className="mx-1 w-fit">
+                  <span className="text-xs text-stone-400 sm:text-sm">
                     {tag.title}
                   </span>
                   <Link href={`${tag.url}`} target="_blank" passHref>
                     <span
-                      className={`lg:text-base sm:text-sm text-xs hover:text-stone-500 ${castoro.className} `}
+                      className={`text-xs hover:text-stone-500 sm:text-sm lg:text-base ${castoro.className} `}
                     >
                       {tag.name}
                     </span>
@@ -96,7 +96,7 @@ export default function Footer({ showPopUp, setShowPopUp }) {
             })}
           </div>
         </div>
-        <div className="flex flex-row justify-between text-xs text-stone-500 pt-0 p-2">
+        <div className="flex flex-row justify-between p-2 pt-0 text-xs text-stone-500">
           <p>Copyright &copy; 2023 All rights reserved</p>
           <p>
             Template from

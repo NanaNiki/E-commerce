@@ -49,14 +49,14 @@ export default function AllProducts() {
   };
 
   return (
-    <div className="p-5 mt-14">
+    <div className="mt-14 p-5">
       <h1
-        className={` lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center my-10 font-bold ${castoro.className}`}
+        className={` my-10 text-center text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl ${castoro.className}`}
         id="catalogue"
       >
         All Products
       </h1>
-      <div className="flex flex-row sm:justify-start justify-center">
+      <div className="flex flex-row justify-center sm:justify-start">
         <select
           value={sortMethod}
           onChange={(e) => setSortMethod(e.target.value)}
@@ -68,21 +68,25 @@ export default function AllProducts() {
           ))}
         </select>
       </div>
-      <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 p-2 justify-center mx-auto px-10 w-fit">
+      <div className="mx-auto grid w-fit grid-cols-2 justify-center p-2 px-10 md:grid-cols-3 lg:grid-cols-5">
         {sortPlants(plantsData).map((plant, index) => {
           return (
             <div key={index} className="w-fit">
-              <Link href={`/product/${plant.id}`} aria-label="Go to see the product"  passHref>
+              <Link
+                href={`/product/${plant.id}`}
+                aria-label="Go to see the product"
+                passHref
+              >
                 <div className="relative"> {plant.soldout && <Soldout />} </div>
                 <Image
                   src={plant.image}
                   width={200}
                   height={100}
                   alt={`Plant product ${plant.name}`}
-                  className="lg:mb-2 inline-block hover:scale-95 ease-in-out duration-300"
+                  className="inline-block duration-300 ease-in-out hover:scale-95 lg:mb-2"
                 />
                 <div
-                  className={` flex flex-row justify-between p-1 text-end md:text-base sm:text-sm text-xs ${inter.className}`}
+                  className={` flex flex-row justify-between p-1 text-end text-xs sm:text-sm md:text-base ${inter.className}`}
                 >
                   <h5>{plant.name}</h5>{" "}
                   <h5 className="font-bold">{plant.price}€</h5>

@@ -24,7 +24,7 @@ export default function ShoppingCart(props) {
     <div className="shopping-cart">
       <h1 className="text-center font-bold text-stone-600">Shopping Cart</h1>
       {cartItems.length === 0 && (
-        <p className="p-5 flex flex-row">
+        <p className="flex flex-row p-5">
           Your cart is empty <RiPlantLine className="ms-2 mt-1" />
         </p>
       )}
@@ -32,8 +32,9 @@ export default function ShoppingCart(props) {
         <div key={index} className="flex flex-row justify-between">
           <div className="flex flex-row">
             <button
-              className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"
-              onClick={() => onRemoveFromCart(cartItem)} aria-label="Remove from cart"
+              className="mx-2 my-auto h-7 w-7 rounded-full bg-stone-200 text-center text-lg font-bold hover:bg-stone-100 hover:text-stone-500"
+              onClick={() => onRemoveFromCart(cartItem)}
+              aria-label="Remove from cart"
             >
               -
             </button>
@@ -42,18 +43,19 @@ export default function ShoppingCart(props) {
               width={30}
               height={50}
               alt={`Plant product ${cartItem.name}`}
-              priority = {true}
+              priority={true}
             />
             <button
-              className=" mx-2 text-lg font-bold my-auto text-center rounded-full bg-stone-200 w-7 h-7 hover:text-stone-500 hover:bg-stone-100"
-              onClick={() => onAddToCart(cartItem)} aria-label="Add to cart"
+              className=" mx-2 my-auto h-7 w-7 rounded-full bg-stone-200 text-center text-lg font-bold hover:bg-stone-100 hover:text-stone-500"
+              onClick={() => onAddToCart(cartItem)}
+              aria-label="Add to cart"
             >
               +
             </button>
-            <p className="text-lg my-auto px-3">{cartItem.name}</p>
+            <p className="my-auto px-3 text-lg">{cartItem.name}</p>
           </div>
           <div className="flex flex-row">
-            <p className="text-lg my-auto">
+            <p className="my-auto text-lg">
               {cartItem.quantity} x {cartItem.price.toFixed(2)}€
             </p>
           </div>
@@ -69,7 +71,7 @@ export default function ShoppingCart(props) {
         <Link
           href={`/checkout`}
           passHref
-          className="mx-auto py-2 px-10 cursor-pointer bg-black h-10 text-white sm:text-sm hover:bg-stone-700"
+          className="mx-auto h-10 cursor-pointer bg-black px-10 py-2 text-white hover:bg-stone-700 sm:text-sm"
         >
           Check out
         </Link>

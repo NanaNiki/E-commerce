@@ -4,9 +4,9 @@
  * with a class name and some inline styles. The div displays the text "Soldout".
  */
 export default function Soldout() {
-    return (
-        <div className="z-10 absolute sm:top-4 sm:right-4 right-0 text-center sm:p-1.5 pt-2 p-1 lg:mx-auto bg-black w-[6.4rem] h-8 text-white sm:text-sm text-xs">
-          Soldout
-          </div>
-    )
+  return (
+    <div className="absolute right-0 z-10 h-8 w-[6.4rem] bg-black p-1 pt-2 text-center text-xs text-white sm:right-4 sm:top-4 sm:p-1.5 sm:text-sm lg:mx-auto">
+      Soldout
+    </div>
+  );
 }

@@ -14,16 +14,16 @@ const DynamicMap = dynamic(() => import("../components/Map.js"), {
 
 export default function Contact() {
   return (
-    <div className={`mt-14 lg:w-8/12 mx-auto ${castoro.className}`}>
-      <h1 className="p-5 lg:pt-16 mx-auto md:text-2xl text-xl md:text-start text-center flex flex-row w-fit">
+    <div className={`mx-auto mt-14 lg:w-8/12 ${castoro.className}`}>
+      <h1 className="mx-auto flex w-fit flex-row p-5 text-center text-xl md:text-start md:text-2xl lg:pt-16">
         Our Customer Service is always happy to help You!
       </h1>
-      <div className="flex flex-row md:ps-4 justify-center md:text-xl text-base">
+      <div className="flex flex-row justify-center text-base md:ps-4 md:text-xl">
         <BsFillTelephoneFill className="me-3 mt-1" />
         <Link
           href="tel:123-456-789"
           target="_blank"
-          className="hover:text-stone-600 hover:scale-105"
+          className="hover:scale-105 hover:text-stone-600"
         >
           +00 123 456 789
         </Link>
@@ -31,12 +31,12 @@ export default function Contact() {
         <Link
           href="mailto:nicol.wesolowska@gmail.com"
           target="_blank"
-          className="hover:text-stone-600 hover:scale-105"
+          className="hover:scale-105 hover:text-stone-600"
         >
           plantea@gmail.com
         </Link>
       </div>
-      <h1 className="p-5 lg:pt-7 mx-auto md:text-2xl text-xl flex flex-row w-fit">
+      <h1 className="mx-auto flex w-fit flex-row p-5 text-xl md:text-2xl lg:pt-7">
         Visit us!
       </h1>
       <div className="flex flex-row justify-center md:px-20">

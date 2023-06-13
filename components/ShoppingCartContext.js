@@ -114,7 +114,7 @@ export const ShoppingCartProvider = ({ children }) => {
       <div
         className={`${initialSC ? "" : "hidden"} ${
           shoppingCartOpen ? "slide-in" : "slide-out"
-        } z-20 fixed top-44 right-0 h-1/2 lg:w-4/12 sm:w-8/12 w-full flex flex-col bg-stone-300 p-5`}
+        } fixed right-0 top-44 z-20 flex h-1/2 w-full flex-col bg-stone-300 p-5 sm:w-8/12 lg:w-4/12`}
         ref={cartRef}
       >
         <ShoppingCart

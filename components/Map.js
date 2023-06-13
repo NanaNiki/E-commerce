@@ -9,7 +9,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const customIcon = L.icon({
-  iconUrl: "/leaves.svg",
+  iconUrl: "/images/leaves.svg",
   iconSize: [22, 22],
 });
 
