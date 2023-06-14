@@ -4,16 +4,22 @@
  * with the `ShoppingCartProvider` component. This allows the `ShoppingCartContext` to be accessed by
  * all child components within the app.
  */
+import Head from "next/head";
 import "@/styles/globals.css";
 import Layout from "../components/Layout";
 import { ShoppingCartProvider } from "../components/ShoppingCartContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <ShoppingCartProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ShoppingCartProvider>
+    <>
+      <Head>
+        <title>Plantea Shop</title>
+      </Head>
+      <ShoppingCartProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ShoppingCartProvider>
+    </>
   );
 }
