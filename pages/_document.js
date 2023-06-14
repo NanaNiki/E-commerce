@@ -15,9 +15,9 @@ export default function Document() {
         <meta
           name="description"
           content="Shop the best plants, for all your needs!"
+          title="Plantea Shop"
         />
         <link rel="shortcut icon" href="/images/favicon.ico" />
-        <title>Plantea Shop</title>
       </Head>
       <body>
         <Main />
